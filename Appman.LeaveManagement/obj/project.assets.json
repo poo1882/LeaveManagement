@@ -11626,11 +11626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\poo1882\\Documents\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
+      "projectUniqueName": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
       "projectName": "Appman.LeaveManagement",
-      "projectPath": "C:\\Users\\poo1882\\Documents\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
+      "projectPath": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
       "packagesPath": "C:\\Users\\poo1882\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\poo1882\\Documents\\LeaveManagement\\Appman.LeaveManagement\\obj\\",
+      "outputPath": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

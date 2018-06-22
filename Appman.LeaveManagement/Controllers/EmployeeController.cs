@@ -25,20 +25,20 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult AddEmployee(Employee employee)
         {
 
-            //var id = Guid.NewGuid();
-            //employee.Id = id;
-            //_empRepo.Add(new Employee {
-            //    Email = employee.Email,
-            //    FirstName = employee.FirstName,
-            //    LastName = employee.LastName,
-            //    Role = employee.Role,
-            //    StartDate = employee.StartDate,
-            //    Id = employee.Id,
-            //    ProfilePicture = employee.ProfilePicture
-            //});
+            var id = Guid.NewGuid();
+            employee.Id = id;
+            _empRepo.Add(new Employee
+            {
+                Id = employee.Id,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                Email = employee.Email,
+                ProfilePicture = employee.ProfilePicture,
+                Position = employee.Position,
+                IsActive = employee.IsActive
+            });
 
-            //return Ok(id);
-            return Ok();
+            return Ok(id);
 
         }
 
@@ -46,7 +46,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult DeleteEmployee([FromQuery] string email)
         {
-            
+
 
             _empRepo.Delete(email);
 
@@ -54,7 +54,7 @@ namespace Appman.LeaveManagement.Controllers
 
         }
 
-        
+
 
 
 
