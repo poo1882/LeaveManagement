@@ -28,11 +28,11 @@ namespace Appman.LeaveManagement.DatabaseContext
             });
         }
 
-        public DbSet<LeaveInfo> LeaveInfo { get; set; }
+        public DbSet<LeaveInfo> LeaveInfos { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<RemainingHours> RemainingHours { get; set; }
         public DbSet<MdGender> MdGenders { get; set; }
-        public DbSet<Reporting> reportings { get; set; }
+        public DbSet<Reporting> Reportings { get; set; }
 
 
 

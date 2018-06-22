@@ -4,14 +4,16 @@ using Appman.LeaveManagement.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    partial class LeaveManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180622110322_works_properly_for_Add_Delete_Employee")]
+    partial class works_properly_for_Add_Delete_Employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,7 +116,7 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.HasKey("EmployeeId", "ReportingTo");
 
-                    b.ToTable("Reportings");
+                    b.ToTable("reportings");
                 });
 #pragma warning restore 612, 618
         }
