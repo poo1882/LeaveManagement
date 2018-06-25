@@ -21,5 +21,12 @@ namespace Appman.LeaveManagement.Repositories
             return emp;
         }
 
+        public Boolean CreateForm(LeaveInfo info)
+        {
+            _dbContext.LeaveInfos.Add(info);
+            _dbContext.SaveChanges();
+            return (true); 
+        }
+
     }
 }
