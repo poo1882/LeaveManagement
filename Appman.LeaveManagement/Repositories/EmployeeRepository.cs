@@ -48,5 +48,11 @@ namespace Appman.LeaveManagement.Repositories
             //_dbContext.SaveChanges();
         }
 
+        public Employee GetProfile(string email)
+        {
+            var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == email);
+            return emp;
+        }
+
     }
 }
