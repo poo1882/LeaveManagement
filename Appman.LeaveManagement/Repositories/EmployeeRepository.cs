@@ -26,10 +26,10 @@ namespace Appman.LeaveManagement.Repositories
         }
 
 
-        public void Delete(string email)
+        public void Delete(Guid id)
         {
             //_dbContext.Employees.Remove(_dbContext.Employees.FirstOrDefault(x => x.Email == email));
-            _dbContext.Employees.FirstOrDefault(x => x.Email == email).IsActive = false;
+            _dbContext.Employees.FirstOrDefault(x => x.Id == id).IsActive = false;
             _dbContext.SaveChanges();
         }
 
@@ -49,11 +49,12 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext.SaveChanges();
         }
 
-        public Employee GetProfile(string email)
+        public Employee GetProfile(Guid id)
         {
-            var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == email);
+            var emp = _dbContext.Employees.FirstOrDefault(x => x.Id == id);
             return emp;
         }
 
+        
     }
 }

@@ -24,7 +24,7 @@ namespace Appman.LeaveManagement.Controllers
             var sickHours = _remRepo.ViewSickHour(id, year);
             var annualHours = _remRepo.ViewAnnualHour(id, year);
             var lwpHours = _remRepo.ViewLWPHour(id, year);
-
+            return Ok(id);
         }
     }
 }

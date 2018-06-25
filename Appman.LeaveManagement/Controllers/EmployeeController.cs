@@ -45,11 +45,11 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("Employee")]
         [HttpDelete]
-        public IActionResult DeleteEmployee([FromQuery] string email)
+        public IActionResult DeleteEmployee([FromQuery] Guid id)
         {
 
 
-            _empRepo.Delete(email);
+            _empRepo.Delete(id);
 
             return Ok();
 
@@ -57,9 +57,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("Employee")]
         [HttpGet]
-        public IActionResult GetProfile([FromQuery] string email)
+        public IActionResult GetProfile([FromQuery] Guid id)
         {
-            var emp = JsonConvert.SerializeObject(_empRepo.GetProfile(email));
+            var emp = JsonConvert.SerializeObject(_empRepo.GetProfile(id));
             return Content(emp, "application/json");
         }
 
