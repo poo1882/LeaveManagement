@@ -94,3 +94,14 @@ C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Deb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.dll
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.pdb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csproj.CopyComplete
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.deps.json
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.runtimeconfig.json
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.runtimeconfig.dev.json
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.dll
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.pdb
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csprojAssemblyReference.cache
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csproj.CoreCompileInputs.cache
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.AssemblyInfoInputs.cache
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.AssemblyInfo.cs
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.dll
+C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.pdb

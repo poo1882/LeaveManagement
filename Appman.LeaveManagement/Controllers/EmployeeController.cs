@@ -46,12 +46,8 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult DeleteEmployee([FromQuery] string email)
         {
-
-
             _empRepo.Delete(email);
-
             return Ok();
-
         }
 
 
