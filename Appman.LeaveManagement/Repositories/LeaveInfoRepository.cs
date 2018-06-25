@@ -14,12 +14,18 @@ namespace Appman.LeaveManagement.Repositories
         {
             _dbContext = dbContext;
         }
-
         public LeaveInfo ViewForm(Guid form)
         {
-            var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == form);
-            return emp;
+            var emp = _dbContext.LeaveInfos.ToList();//.FirstOrDefault(x => x.Id == form);
+            return emp!=null && emp.Count>0? emp.First(): new LeaveInfo() ;
         }
+        public void Add(LeaveInfo leaveInfo)
+        {
+            _dbContext.LeaveInfos.Add(leaveInfo);
+            _dbContext.SaveChanges();
+        }
+
+       
 
     }
 }

@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Appman.LeaveManagement.Controllers
             _empRepo = new EmployeeRepository(_dbContext);
         }
         [HttpPost]
-        [Route("AddEmployee")]
+        [Route("Employee")]
         public IActionResult AddEmployee(Employee employee)
         {
 
@@ -35,24 +36,32 @@ namespace Appman.LeaveManagement.Controllers
                 Email = employee.Email,
                 ProfilePicture = employee.ProfilePicture,
                 Position = employee.Position,
-                IsActive = employee.IsActive
+                IsActive = true
             });
 
             return Ok(id);
 
         }
 
-        [Route("DeleteEmployee")]
-        [HttpGet]
+        [Route("Employee")]
+        [HttpDelete]
         public IActionResult DeleteEmployee([FromQuery] string email)
         {
+
+
             _empRepo.Delete(email);
+
             return Ok();
+
         }
 
-
-
-
+        [Route("Employee")]
+        [HttpGet]
+        public IActionResult GetProfile([FromQuery] string email)
+        {
+            var emp = JsonConvert.SerializeObject(_empRepo.GetProfile(email));
+            return Content(emp, "application/json");
+        }
 
     }
 }

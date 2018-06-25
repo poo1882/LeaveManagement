@@ -21,12 +21,8 @@ namespace Appman.LeaveManagement.Controllers
             _leaveRepo = new LeaveInfoRepository(_dbContext);
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [Route("GetLeaveInfo")]
+        [HttpGet]
         public IActionResult GetLeaveInfo([FromQuery] Guid id)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewForm(id));

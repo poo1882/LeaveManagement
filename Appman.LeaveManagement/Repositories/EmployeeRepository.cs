@@ -28,7 +28,8 @@ namespace Appman.LeaveManagement.Repositories
 
         public void Delete(string email)
         {
-           _dbContext.Employees.Remove( _dbContext.Employees.FirstOrDefault(x => x.Email == email));
+            //_dbContext.Employees.Remove(_dbContext.Employees.FirstOrDefault(x => x.Email == email));
+            _dbContext.Employees.FirstOrDefault(x => x.Email == email).IsActive = false;
             _dbContext.SaveChanges();
         }
 
@@ -37,17 +38,22 @@ namespace Appman.LeaveManagement.Repositories
             //var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == employee.Email);
 
 
-            //emp.FirstName = employee.FirstName??emp.FirstName;
-            //emp.Lastname = employee.Lastname??emp.Lastname;
+            //emp.FirstName = employee.FirstName ?? emp.FirstName;
+            //emp.Lastname = employee.Lastname ?? emp.Lastname;
             //emp.Email = employee.Email;
             //emp.Role = employee.Role;
             //emp.ProfilePicture = employee.ProfilePicture;
 
 
-            //_dbContext.Employees.Update(emp);
-            //_dbContext.SaveChanges();
+            _dbContext.Employees.Update(employee);
+            _dbContext.SaveChanges();
         }
 
+        public Employee GetProfile(string email)
+        {
+            var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == email);
+            return emp;
+        }
 
     }
 }

@@ -41,7 +41,7 @@ namespace Appman.LeaveManagement
 
             services.AddDbContext<LeaveManagementDbContext>(option =>
             {
-                option.UseSqlServer("Server=LAPTOP-081QIMLG\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
+                option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
