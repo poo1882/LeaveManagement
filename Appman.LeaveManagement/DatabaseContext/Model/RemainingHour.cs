@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.DatabaseContext.Model
 {
-    public class RemainingHours
+    public class RemainingHour
     {
        
         public Guid EmployeeId { get; set; }

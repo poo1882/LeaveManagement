@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Appman.LeaveManagement.Controllers
 {
     [Route("/api/[Controller]")]
-    public class RemainingHourController
+    public class RemainingHourController : Controller
     {
         private readonly RemainingHourRepository _remRepo;
         private readonly LeaveManagementDbContext _dbContext;
@@ -19,11 +19,13 @@ namespace Appman.LeaveManagement.Controllers
             _remRepo = new RemainingHourRepository(_dbContext);
         }
 
+        [Route("RemaingHours")]
+        [HttpGet]
         public IActionResult ViewRemainingHour(Guid id,string year)
         {
-            var sickHours = _remRepo.ViewSickHour(id, year);
-            var annualHours = _remRepo.ViewAnnualHour(id, year);
-            var lwpHours = _remRepo.ViewLWPHour(id, year);
+            var sickHours = _remRepo.ViewHour(id, year,"Sick");
+            var annualHours = _remRepo.ViewHour(id, year,"Annual");
+            var lwpHours = _remRepo.ViewHour(id, year,"LWP");
             return Ok(id);
         }
     }

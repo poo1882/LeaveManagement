@@ -16,20 +16,37 @@ namespace Appman.LeaveManagement.Repositories
         }
         public LeaveInfo ViewForm(Guid form)
         {
-            var emp = _dbContext.LeaveInfos.ToList();//.FirstOrDefault(x => x.Id == form);
-            return emp!=null && emp.Count>0? emp.First(): new LeaveInfo() ;
+            var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == form);
+            return emp;
         }
-        public void Add(LeaveInfo leaveInfo)
-        {
-            _dbContext.LeaveInfos.Add(leaveInfo);
-            _dbContext.SaveChanges();
-        }
+      
         
         public Boolean CreateForm(LeaveInfo info)
         {
-            _dbContext.LeaveInfos.Add(info);
-            _dbContext.SaveChanges();
-            return (true); 
+            var remain = new RemainingHourRepository(_dbContext);
+            if(info.endDateTime == null)
+            {
+                if ( remain.ViewHour(info.EmployeeId,info.startDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
+                {
+                    _dbContext.LeaveInfos.Add(info);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                int totalDays = (info.endDateTime - info.startDateTime).Days;
+                int totalHours = (totalDays-1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                if (remain.ViewHour(info.EmployeeId, info.startDateTime.Year.ToString(), info.Type) >= totalHours)
+                {
+                    _dbContext.LeaveInfos.Add(info);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            
         }
 
     }
