@@ -18,18 +18,43 @@ namespace Appman.LeaveManagement.Repositories
         {
             var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == form);
             return emp;
+<<<<<<< HEAD
         }
         public void Add(LeaveInfo leaveInfo)
         {
             _dbContext.LeaveInfos.Add(leaveInfo);
             _dbContext.SaveChanges();
+=======
+>>>>>>> 182b1bf49a6fa533ab2f1d3b38104b7f77310a6a
         }
+      
         
         public Boolean CreateForm(LeaveInfo info)
         {
-            _dbContext.LeaveInfos.Add(info);
-            _dbContext.SaveChanges();
-            return (true); 
+            var remain = new RemainingHourRepository(_dbContext);
+            if(info.endDateTime == null)
+            {
+                if ( remain.ViewHour(info.EmployeeId,info.startDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
+                {
+                    _dbContext.LeaveInfos.Add(info);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                int totalDays = (info.endDateTime - info.startDateTime).Days;
+                int totalHours = (totalDays-1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                if (remain.ViewHour(info.EmployeeId, info.startDateTime.Year.ToString(), info.Type) >= totalHours)
+                {
+                    _dbContext.LeaveInfos.Add(info);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            
         }
 
         public List<LeaveInfo> GetHistory()
