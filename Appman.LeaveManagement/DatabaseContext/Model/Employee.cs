@@ -21,18 +21,5 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
 
     }
 
-
-    //public class EmployeeInput
-    //{
-        
-    //    internal Guid Id { get; set; }
-    //    public string Email { get; set; }
-    //    public string FirstName { get; set; }
-    //    public string Lastname { get; set; }
-    //    public string Role { get; set; }
-    //    public DateTime StartDate { get; set; }
-    //    public byte[] ProfilePicture { get; set; }
-
-
-    //}
+    
 }

@@ -1,4 +1,5 @@
 ﻿using Appman.LeaveManagement.DatabaseContext;
+using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,26 +19,23 @@ namespace Appman.LeaveManagement.Controllers
             _dbContext = leaveManagementDbContext;
             _remRepo = new RemainingHourRepository(_dbContext);
         }
-<<<<<<< HEAD
-        [Route("RemainingHour")]
-        [HttpGet]
-        public IActionResult ViewRemainingHour(Guid id,string year)
-        {
-            var sickHours = _remRepo.ViewSickHour(id, year);
-            var annualHours = _remRepo.ViewAnnualHour(id, year);
-            var lwpHours = _remRepo.ViewLWPHour(id, year);
-            return Ok();
-=======
 
         [Route("RemaingHours")]
         [HttpGet]
-        public IActionResult ViewRemainingHour(Guid id,string year)
+        public IActionResult RemainingHour(Guid id,string year)
         {
-            var sickHours = _remRepo.ViewHour(id, year,"Sick");
-            var annualHours = _remRepo.ViewHour(id, year,"Annual");
-            var lwpHours = _remRepo.ViewHour(id, year,"LWP");
-            return Ok(id);
->>>>>>> 182b1bf49a6fa533ab2f1d3b38104b7f77310a6a
+            var sickHour = _remRepo.ViewHour(id, year,"Sick");
+            var annualHour = _remRepo.ViewHour(id, year,"Annual");
+            var lwpHour = _remRepo.ViewHour(id, year,"LWP");
+            RemainingHour hours = new RemainingHour();
+            hours.EmployeeId = id;
+            hours.Year = year;
+            hours.AnnualHours = annualHour;
+            hours.SickHours = sickHour;
+            hours.LWPHours = lwpHour;
+            return Ok(hours);
         }
+
+
     }
 }

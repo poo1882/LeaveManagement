@@ -69,7 +69,6 @@ C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Deb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.pdb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.Views.dll
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Appman.LeaveManagement.Views.pdb
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csprojAssemblyReference.cache
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csproj.CoreCompileInputs.cache
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.RazorAssemblyInfo.cache
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.RazorAssemblyInfo.cs

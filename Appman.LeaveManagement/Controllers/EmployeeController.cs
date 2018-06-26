@@ -23,7 +23,7 @@ namespace Appman.LeaveManagement.Controllers
         }
         [HttpPost]
         [Route("Employee")]
-        public IActionResult AddEmployee(Employee employee)
+        public IActionResult AddEmployee([FromQuery] Employee employee)
         {
 
             var id = Guid.NewGuid();

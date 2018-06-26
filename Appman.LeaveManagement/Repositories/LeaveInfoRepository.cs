@@ -14,27 +14,18 @@ namespace Appman.LeaveManagement.Repositories
         {
             _dbContext = dbContext;
         }
-        public LeaveInfo ViewForm(Guid form)
+        public LeaveInfo ViewLeaveInfo(Guid form)
         {
             var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == form);
             return emp;
-<<<<<<< HEAD
         }
-        public void Add(LeaveInfo leaveInfo)
-        {
-            _dbContext.LeaveInfos.Add(leaveInfo);
-            _dbContext.SaveChanges();
-=======
->>>>>>> 182b1bf49a6fa533ab2f1d3b38104b7f77310a6a
-        }
-      
         
-        public Boolean CreateForm(LeaveInfo info)
+        public Boolean CreateLeaveInfo(LeaveInfo info)
         {
             var remain = new RemainingHourRepository(_dbContext);
-            if(info.endDateTime == null)
+            if(info.EndDateTime == null)
             {
-                if ( remain.ViewHour(info.EmployeeId,info.startDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
+                if ( remain.ViewHour(info.EmployeeId,info.StartDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
@@ -44,9 +35,9 @@ namespace Appman.LeaveManagement.Repositories
             }
             else
             {
-                int totalDays = (info.endDateTime - info.startDateTime).Days;
+                int totalDays = (info.EndDateTime - info.StartDateTime).Days;
                 int totalHours = (totalDays-1) * 8 + info.HoursStartDate + info.HoursEndDate;
-                if (remain.ViewHour(info.EmployeeId, info.startDateTime.Year.ToString(), info.Type) >= totalHours)
+                if (remain.ViewHour(info.EmployeeId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
@@ -75,14 +66,6 @@ namespace Appman.LeaveManagement.Repositories
                          join leaveinfo in _dbContext.LeaveInfos on reportlist.EmployeeId equals leaveinfo.EmployeeId
                          where reportlist.ReportingTo == employeeId
                          select leaveinfo;
-
-
-
-                         
-
-
-
-            //var list = _dbContext.LeaveInfos.Find(employeeId);
             return result.ToList();
         }
 

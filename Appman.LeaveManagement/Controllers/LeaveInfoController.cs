@@ -25,21 +25,21 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("LeaveInfo")]
         [HttpGet]
-        public IActionResult GetLeaveInfo([FromQuery] Guid id)
+        public IActionResult ViewLeaveInfo([FromQuery] Guid id)
         {
-            var emp = JsonConvert.SerializeObject(_leaveRepo.ViewForm(id));
+            var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(id));
             return Ok(emp);
         }
 
-        [Route("Form")]
+        [Route("LeaveInfo")]
         [HttpPost]
         public IActionResult CreateLeaveInfo([FromBody] LeaveInfo info)
         {
-            var emp = JsonConvert.SerializeObject(_leaveRepo.CreateForm(info));
+            var emp = JsonConvert.SerializeObject(_leaveRepo.CreateLeaveInfo(info));
             return Created("",emp);
         }
 
-        [Route("Remain")]
+        [Route("RemainingLeaveInfo")]
         [HttpGet]
         public IActionResult GetRemaining([FromQuery]Guid employeeId)
         {
@@ -47,6 +47,21 @@ namespace Appman.LeaveManagement.Controllers
             return Ok(leave);
         }
 
+        [Route("HistoryAll")]
+        [HttpGet]
+        public IActionResult GetHistory()
+        {
+            var list = _leaveRepo.GetHistory();
+            return Ok(list);
+        }
+
+        [Route("History")]
+        [HttpGet]
+        public IActionResult GetHistory(Guid employeeId)
+        {
+            var list = _leaveRepo.GetHistory(employeeId);
+            return Ok(list);
+        }
 
     }
 }
