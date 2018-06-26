@@ -18,7 +18,7 @@ namespace Appman.LeaveManagement.DatabaseContext
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<RemainingHours>().HasKey(table => new {
+            builder.Entity<RemainingHour>().HasKey(table => new {
                 table.EmployeeId,
                 table.Year
             });
@@ -30,7 +30,7 @@ namespace Appman.LeaveManagement.DatabaseContext
 
         public DbSet<LeaveInfo> LeaveInfos { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<RemainingHours> RemainingHours { get; set; }
+        public DbSet<RemainingHour> RemainingHours { get; set; }
         public DbSet<MdGender> MdGenders { get; set; }
         public DbSet<Reporting> Reportings { get; set; }
 

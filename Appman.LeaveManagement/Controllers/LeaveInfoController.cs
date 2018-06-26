@@ -28,15 +28,25 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetLeaveInfo([FromQuery] Guid id)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewForm(id));
-            return Content(emp, "application/json");
+            return Ok(emp);
         }
 
         [Route("Form")]
         [HttpPost]
-        public IActionResult CreateLeaveInfo([FromQuery] LeaveInfo info)
+        public IActionResult CreateLeaveInfo([FromBody] LeaveInfo info)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.CreateForm(info));
-            return Content(emp, "application/json");
+            return Created("",emp);
         }
+
+        [Route("Remain")]
+        [HttpGet]
+        public IActionResult GetRemaining([FromQuery]Guid employeeId)
+        {
+            var leave = _leaveRepo.GetRemaining(employeeId);
+            return Ok(leave);
+        }
+
+
     }
 }
