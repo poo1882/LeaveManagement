@@ -17,8 +17,6 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public string Position { get; set; }
         public DateTime StartWorkingDate { get; set; }
         public bool IsActive { get; set; }
-        
-
     }
 
     

@@ -19,8 +19,7 @@ namespace Appman.LeaveManagement
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-           // .UseUrls("http://0.0.0.0:5001")
-            
+            .UseIISIntegration()
                 .UseStartup<Startup>();
     }
 }

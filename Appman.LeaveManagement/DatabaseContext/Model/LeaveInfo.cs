@@ -21,8 +21,6 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public DateTime AprroveTime { get; set; }
         public Guid ApprovedBy { get; set; }
         public byte[] AttachedFile { get; set; }
-
-
-
+        public DateTime RequestedDateTime { get; set; }
     }
 }

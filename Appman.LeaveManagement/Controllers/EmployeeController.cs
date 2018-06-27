@@ -21,22 +21,23 @@ namespace Appman.LeaveManagement.Controllers
             _dbContext = leaveManagementDbContext;
             _empRepo = new EmployeeRepository(_dbContext);
         }
-        [HttpPost]
+        
         [Route("Employee")]
-        public IActionResult AddEmployee([FromQuery] Employee employee)
+        [HttpPost]
+        public IActionResult AddEmployee([FromBody] Employee employee)
         {
 
             var id = Guid.NewGuid();
             employee.Id = id;
             _empRepo.Add(new Employee
             {
-                Id = employee.Id,
+                Id = id,
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 Email = employee.Email,
                 ProfilePicture = employee.ProfilePicture,
                 Position = employee.Position,
-                IsActive = true
+                IsActive = employee.IsActive
             });
 
             return Ok(id);

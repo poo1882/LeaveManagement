@@ -34,9 +34,5 @@ namespace Appman.LeaveManagement.DatabaseContext
         public DbSet<MdGender> MdGenders { get; set; }
         public DbSet<Reporting> Reportings { get; set; }
 
-
-
-
-
     }
 }

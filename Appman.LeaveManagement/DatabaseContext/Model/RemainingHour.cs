@@ -10,7 +10,6 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
     {
        
         public Guid EmployeeId { get; set; }
-        
         public string Year { get; set; }
         public int AnnualHours { get; set; }
         public int SickHours { get; set; }

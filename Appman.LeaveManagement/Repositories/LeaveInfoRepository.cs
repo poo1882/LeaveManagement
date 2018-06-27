@@ -3,6 +3,7 @@ using Appman.LeaveManagement.DatabaseContext.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.Repositories
@@ -69,10 +70,16 @@ namespace Appman.LeaveManagement.Repositories
             return result.ToList();
         }
 
-       
+        public void Approve(Guid id)
+        {
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == id).ApprovalStatus = true;
+            _dbContext.SaveChanges();
+        }
 
-
-
-
+        public void Reject(Guid id)
+        {
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == id).ApprovalStatus = false;
+            _dbContext.SaveChanges();
+        }
     }
 }

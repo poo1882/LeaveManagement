@@ -11,27 +11,27 @@ using Newtonsoft.Json;
 namespace Appman.LeaveManagement.Controllers
 {
     [Route("/api/[Controller]")]
-    public class LeaveInfoController : Controller
+    public class LeaveController : Controller
     {
         private readonly LeaveInfoRepository _leaveRepo;
         private readonly LeaveManagementDbContext _dbContext;
 
-        public LeaveInfoController(LeaveManagementDbContext leaveInfo)
+        public LeaveController(LeaveManagementDbContext leaveInfo)
         {
             _dbContext = leaveInfo;
             _leaveRepo = new LeaveInfoRepository(_dbContext);
         }
 
 
-        [Route("LeaveInfo")]
+        [Route("{id}/Info")]
         [HttpGet]
-        public IActionResult ViewLeaveInfo([FromQuery] Guid id)
+        public IActionResult ViewLeaveInfo(Guid id)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(id));
             return Ok(emp);
         }
 
-        [Route("LeaveInfo")]
+        [Route("Add")]
         [HttpPost]
         public IActionResult CreateLeaveInfo([FromBody] LeaveInfo info)
         {
@@ -39,15 +39,15 @@ namespace Appman.LeaveManagement.Controllers
             return Created("",emp);
         }
 
-        [Route("RemainingLeaveInfo")]
+        [Route("{employeeId}/RemainingLeaveInfo")]
         [HttpGet]
-        public IActionResult GetRemaining([FromQuery]Guid employeeId)
+        public IActionResult GetRemaining(Guid employeeId)
         {
             var leave = _leaveRepo.GetRemaining(employeeId);
             return Ok(leave);
         }
 
-        [Route("HistoryAll")]
+        [Route("History")]
         [HttpGet]
         public IActionResult GetHistory()
         {
@@ -55,13 +55,15 @@ namespace Appman.LeaveManagement.Controllers
             return Ok(list);
         }
 
-        [Route("History")]
+        [Route("{employeeId}/History")]
         [HttpGet]
         public IActionResult GetHistory(Guid employeeId)
         {
             var list = _leaveRepo.GetHistory(employeeId);
             return Ok(list);
         }
+        
+        
 
     }
 }

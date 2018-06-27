@@ -28,7 +28,6 @@ namespace Appman.LeaveManagement.Repositories
 
         public void Delete(Guid id)
         {
-            //_dbContext.Employees.Remove(_dbContext.Employees.FirstOrDefault(x => x.Email == email));
             _dbContext.Employees.FirstOrDefault(x => x.Id == id).IsActive = false;
             _dbContext.SaveChanges();
         }
@@ -55,6 +54,10 @@ namespace Appman.LeaveManagement.Repositories
             return emp;
         }
 
-        
+        public List<Employee> GetEmployees()
+        {
+            List<Employee> result = _dbContext.Employees.Where(x => x.IsActive == true).ToList();
+            return result;
+        }
     }
 }

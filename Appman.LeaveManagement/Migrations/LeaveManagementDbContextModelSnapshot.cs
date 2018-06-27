@@ -3,7 +3,6 @@ using System;
 using Appman.LeaveManagement.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Appman.LeaveManagement.Migrations
@@ -15,9 +14,7 @@ namespace Appman.LeaveManagement.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.0-rtm-30799")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "2.1.0-rtm-30799");
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Employee", b =>
                 {
@@ -65,6 +62,8 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
+
+                    b.Property<DateTime>("RequestedDateTime");
 
                     b.Property<DateTime>("StartDateTime");
 
