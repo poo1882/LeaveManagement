@@ -13,11 +13,14 @@ using LeaveManagement.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using LeaveManagement.DatabaseContext;
 
 namespace LeaveManagement
 {
     public class Startup
     {
+
+        private readonly ConfigurationManager _config = new ConfigurationManager();
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -38,13 +41,21 @@ namespace LeaveManagement
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<LeaveManagementDbContext>(option =>
+            {
+                option.UseSqlite("Data Source=LeaveManagement.db");
+
+                // option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
+            });
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
-                googleOptions.ClientId = "614031307987-bq58dtnv7denm1gqp6vbdgh0cp7dat9v.apps.googleusercontent.com";
-                googleOptions.ClientSecret = "xItasMo5DyJ4jWyQSwQK1sBv";
+                googleOptions.ClientId = _config.Get<string>("GoogleAPI:ClientId");
+                googleOptions.ClientSecret = _config.Get<string>("GoogleAPI:Secret");
             });
 
             services.AddSwaggerGen(c =>
