@@ -18,14 +18,20 @@ namespace Appman.LeaveManagement.Migrations
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Employee", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("StaffId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
 
+                    b.Property<string>("GenderCode");
+
                     b.Property<bool>("IsActive");
+
+                    b.Property<bool>("IsInProbation");
+
+                    b.Property<bool>("IsSuperHr");
 
                     b.Property<string>("LastName");
 
@@ -33,29 +39,29 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<byte[]>("ProfilePicture");
 
+                    b.Property<string>("Section");
+
                     b.Property<DateTime>("StartWorkingDate");
 
-                    b.HasKey("Id");
+                    b.HasKey("StaffId");
 
                     b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.LeaveInfo", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("LeaveId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("ApprovalStatus");
+                    b.Property<string>("ApprovalStatus");
 
-                    b.Property<Guid>("ApprovedBy");
+                    b.Property<string>("ApprovedBy");
 
-                    b.Property<DateTime>("AprroveTime");
+                    b.Property<DateTime?>("AprrovedTime");
 
                     b.Property<byte[]>("AttachedFile");
 
                     b.Property<string>("Comment");
-
-                    b.Property<Guid>("EmployeeId");
 
                     b.Property<DateTime>("EndDateTime");
 
@@ -65,11 +71,13 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<DateTime>("RequestedDateTime");
 
+                    b.Property<string>("StaffId");
+
                     b.Property<DateTime>("StartDateTime");
 
                     b.Property<string>("Type");
 
-                    b.HasKey("Id");
+                    b.HasKey("LeaveId");
 
                     b.ToTable("LeaveInfos");
                 });
@@ -90,7 +98,7 @@ namespace Appman.LeaveManagement.Migrations
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.RemainingHour", b =>
                 {
-                    b.Property<Guid>("EmployeeId");
+                    b.Property<string>("StaffId");
 
                     b.Property<string>("Year");
 
@@ -100,18 +108,18 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<int>("SickHours");
 
-                    b.HasKey("EmployeeId", "Year");
+                    b.HasKey("StaffId", "Year");
 
                     b.ToTable("RemainingHours");
                 });
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Reporting", b =>
                 {
-                    b.Property<Guid>("EmployeeId");
+                    b.Property<string>("StaffId");
 
-                    b.Property<Guid>("ReportingTo");
+                    b.Property<string>("Approver");
 
-                    b.HasKey("EmployeeId", "ReportingTo");
+                    b.HasKey("StaffId", "Approver");
 
                     b.ToTable("Reportings");
                 });

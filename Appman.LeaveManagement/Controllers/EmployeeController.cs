@@ -26,12 +26,9 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPost]
         public IActionResult AddEmployee([FromBody] Employee employee)
         {
-
-            var id = Guid.NewGuid();
-            employee.Id = id;
             _empRepo.Add(new Employee
             {
-                Id = id,
+                StaffId = employee.StaffId,
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 Email = employee.Email,
@@ -40,17 +37,17 @@ namespace Appman.LeaveManagement.Controllers
                 IsActive = employee.IsActive
             });
 
-            return Ok(id);
+            return Ok(employee.StaffId);
 
         }
 
         [Route("Employee")]
         [HttpDelete]
-        public IActionResult DeleteEmployee([FromQuery] Guid id)
+        public IActionResult DeleteEmployee([FromBody] string staffId)
         {
 
 
-            _empRepo.Delete(id);
+            _empRepo.Delete(staffId);
 
             return Ok();
 
@@ -58,9 +55,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("Employee")]
         [HttpGet]
-        public IActionResult GetProfile([FromQuery] Guid id)
+        public IActionResult GetProfile([FromBody] string staffId)
         {
-            var emp = JsonConvert.SerializeObject(_empRepo.GetProfile(id));
+            var emp = JsonConvert.SerializeObject(_empRepo.GetProfile(staffId));
             return Content(emp, "application/json");
         }
 

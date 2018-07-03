@@ -15,9 +15,9 @@ namespace Appman.LeaveManagement.Repositories
         {
             _dbContext = dbContext;
         }
-        public LeaveInfo ViewLeaveInfo(Guid form)
+        public LeaveInfo ViewLeaveInfo(string id)
         {
-            var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == form);
+            var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == id);
             return emp;
         }
         
@@ -26,7 +26,7 @@ namespace Appman.LeaveManagement.Repositories
             var remain = new RemainingHourRepository(_dbContext);
             if(info.EndDateTime == null)
             {
-                if ( remain.ViewHour(info.EmployeeId,info.StartDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
+                if ( remain.ViewHour(info.StaffId,info.StartDateTime.Year.ToString(),info.Type) >= info.HoursStartDate)
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
@@ -38,7 +38,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 int totalDays = (info.EndDateTime - info.StartDateTime).Days;
                 int totalHours = (totalDays-1) * 8 + info.HoursStartDate + info.HoursEndDate;
-                if (remain.ViewHour(info.EmployeeId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
+                if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
@@ -54,32 +54,52 @@ namespace Appman.LeaveManagement.Repositories
             return _dbContext.LeaveInfos.ToList();
         }
 
-        public List<LeaveInfo> GetHistory(Guid employeeId)
+        public List<LeaveInfo> GetHistory(string staffId)
         {
 
-            return _dbContext.LeaveInfos.Where(x => x.EmployeeId == employeeId).ToList();
+            return _dbContext.LeaveInfos.Where(x => x.StaffId == staffId).ToList();
         }
 
-        public List<LeaveInfo> GetRemaining(Guid employeeId)
+        public List<LeaveInfo> GetRemaining(string staffId)
         {
 
             var result = from reportlist in _dbContext.Reportings
-                         join leaveinfo in _dbContext.LeaveInfos on reportlist.EmployeeId equals leaveinfo.EmployeeId
-                         where reportlist.ReportingTo == employeeId
+                         join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
+                         where reportlist.Approver == staffId
                          select leaveinfo;
             return result.ToList();
         }
 
-        public void Approve(Guid id)
+        public void Approve(string leaveId,string approver)
         {
-            _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == id).ApprovalStatus = true;
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovalStatus = "Approved";
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedBy = approver;
             _dbContext.SaveChanges();
         }
 
-        public void Reject(Guid id)
+        public void Reject(string leaveId,string approver)
         {
-            _dbContext.LeaveInfos.FirstOrDefault(x => x.Id == id).ApprovalStatus = false;
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovalStatus = "Rejected";
+            _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedBy = approver;
             _dbContext.SaveChanges();
+        }
+
+        public int PendingAmount(string staffId)
+        {
+            var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
+            return leaves.Where(x => x.ApprovalStatus == null).Count();
+        }
+
+        public int ApproveAmount(string staffId)
+        {
+            var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
+            return leaves.Where(x => x.ApprovalStatus == "Approved").Count();
+        }
+
+        public int RejectAmount(string staffId)
+        {
+            var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
+            return leaves.Where(x => x.ApprovalStatus == "Rejected").Count();
         }
     }
 }

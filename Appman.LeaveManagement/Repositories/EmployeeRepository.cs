@@ -17,40 +17,38 @@ namespace Appman.LeaveManagement.Repositories
 
         public void Add(Employee employee)
         {
-
-
             _dbContext.Employees.Add(employee);
             _dbContext.SaveChanges();
-
-
         }
 
 
-        public void Delete(Guid id)
+        public void Delete(string staffId)
         {
-            _dbContext.Employees.FirstOrDefault(x => x.Id == id).IsActive = false;
+            _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).IsActive = false;
             _dbContext.SaveChanges();
         }
 
-        public void Update(Employee employee)
+        //public void Update(Employee employee)
+        //{
+        //    //var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == employee.Email);
+
+
+        //    //emp.FirstName = employee.FirstName ?? emp.FirstName;
+        //    //emp.Lastname = employee.Lastname ?? emp.Lastname;
+        //    //emp.Email = employee.Email;
+        //    //emp.Role = employee.Role;
+        //    //emp.ProfilePicture = employee.ProfilePicture;
+
+
+        //    _dbContext.Employees.Update(employee);
+        //    _dbContext.SaveChanges();
+        //}
+
+        public Employee GetProfile(string staffId)
         {
-            //var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == employee.Email);
-
-
-            //emp.FirstName = employee.FirstName ?? emp.FirstName;
-            //emp.Lastname = employee.Lastname ?? emp.Lastname;
-            //emp.Email = employee.Email;
-            //emp.Role = employee.Role;
-            //emp.ProfilePicture = employee.ProfilePicture;
-
-
-            _dbContext.Employees.Update(employee);
-            _dbContext.SaveChanges();
-        }
-
-        public Employee GetProfile(Guid id)
-        {
-            var emp = _dbContext.Employees.FirstOrDefault(x => x.Id == id);
+            var emp = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
+            if (emp.IsActive == false)
+                return null;
             return emp;
         }
 

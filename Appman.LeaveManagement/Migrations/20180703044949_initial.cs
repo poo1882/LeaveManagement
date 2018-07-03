@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Appman.LeaveManagement.Migrations
 {
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,41 +11,45 @@ namespace Appman.LeaveManagement.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    StaffId = table.Column<string>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     ProfilePicture = table.Column<byte[]>(nullable: true),
                     Position = table.Column<string>(nullable: true),
                     StartWorkingDate = table.Column<DateTime>(nullable: false),
-                    IsActive = table.Column<bool>(nullable: false)
+                    IsActive = table.Column<bool>(nullable: false),
+                    Section = table.Column<string>(nullable: true),
+                    IsInProbation = table.Column<bool>(nullable: false),
+                    GenderCode = table.Column<string>(nullable: true),
+                    IsSuperHr = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.Id);
+                    table.PrimaryKey("PK_Employees", x => x.StaffId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "LeaveInfos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    LeaveId = table.Column<string>(nullable: false),
                     Type = table.Column<string>(nullable: true),
-                    EmployeeId = table.Column<Guid>(nullable: false),
+                    StaffId = table.Column<string>(nullable: true),
                     StartDateTime = table.Column<DateTime>(nullable: false),
                     EndDateTime = table.Column<DateTime>(nullable: false),
                     HoursStartDate = table.Column<int>(nullable: false),
                     HoursEndDate = table.Column<int>(nullable: false),
-                    ApprovalStatus = table.Column<bool>(nullable: false),
+                    ApprovalStatus = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
-                    AprroveTime = table.Column<DateTime>(nullable: false),
-                    ApprovedBy = table.Column<Guid>(nullable: false),
+                    AprrovedTime = table.Column<DateTime>(nullable: true),
+                    ApprovedBy = table.Column<string>(nullable: true),
                     AttachedFile = table.Column<byte[]>(nullable: true),
                     RequestedDateTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LeaveInfos", x => x.Id);
+                    table.PrimaryKey("PK_LeaveInfos", x => x.LeaveId);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,7 +69,7 @@ namespace Appman.LeaveManagement.Migrations
                 name: "RemainingHours",
                 columns: table => new
                 {
-                    EmployeeId = table.Column<Guid>(nullable: false),
+                    StaffId = table.Column<string>(nullable: false),
                     Year = table.Column<string>(nullable: false),
                     AnnualHours = table.Column<int>(nullable: false),
                     SickHours = table.Column<int>(nullable: false),
@@ -73,19 +77,19 @@ namespace Appman.LeaveManagement.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RemainingHours", x => new { x.EmployeeId, x.Year });
+                    table.PrimaryKey("PK_RemainingHours", x => new { x.StaffId, x.Year });
                 });
 
             migrationBuilder.CreateTable(
                 name: "Reportings",
                 columns: table => new
                 {
-                    EmployeeId = table.Column<Guid>(nullable: false),
-                    ReportingTo = table.Column<Guid>(nullable: false)
+                    StaffId = table.Column<string>(nullable: false),
+                    Approver = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reportings", x => new { x.EmployeeId, x.ReportingTo });
+                    table.PrimaryKey("PK_Reportings", x => new { x.StaffId, x.Approver });
                 });
         }
 

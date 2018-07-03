@@ -19,12 +19,12 @@ namespace Appman.LeaveManagement.DatabaseContext
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<RemainingHour>().HasKey(table => new {
-                table.EmployeeId,
+                table.StaffId,
                 table.Year
             });
             builder.Entity<Reporting>().HasKey(table => new {
-                table.EmployeeId,
-                table.ReportingTo
+                table.StaffId,
+                table.Approver
             });
         }
 

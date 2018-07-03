@@ -9,7 +9,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
     public class Employee
     {
         [Key]
-        public Guid Id { get; set; }
+        public string StaffId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -17,6 +17,10 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public string Position { get; set; }
         public DateTime StartWorkingDate { get; set; }
         public bool IsActive { get; set; }
+        public string Section { get; set; }
+        public bool IsInProbation { get; set; }
+        public string GenderCode { get; set; }
+        public bool IsSuperHr { get; set; }
     }
 
     

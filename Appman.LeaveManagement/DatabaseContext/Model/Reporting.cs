@@ -8,7 +8,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
 {
     public class Reporting
     {
-        public Guid EmployeeId { get; set; }
-        public Guid ReportingTo { get; set; }
+        public string StaffId { get; set; }
+        public string Approver { get; set; }
     }
 }

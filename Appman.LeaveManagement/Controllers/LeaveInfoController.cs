@@ -25,7 +25,7 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("{id}/Info")]
         [HttpGet]
-        public IActionResult ViewLeaveInfo(Guid id)
+        public IActionResult ViewLeaveInfo(string id)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(id));
             return Ok(emp);
@@ -41,9 +41,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("{employeeId}/RemainingLeaveInfo")]
         [HttpGet]
-        public IActionResult GetRemaining(Guid employeeId)
+        public IActionResult GetRemaining(string staffId)
         {
-            var leave = _leaveRepo.GetRemaining(employeeId);
+            var leave = _leaveRepo.GetRemaining(staffId);
             return Ok(leave);
         }
 
@@ -57,9 +57,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("{employeeId}/History")]
         [HttpGet]
-        public IActionResult GetHistory(Guid employeeId)
+        public IActionResult GetHistory(string staffId)
         {
-            var list = _leaveRepo.GetHistory(employeeId);
+            var list = _leaveRepo.GetHistory(staffId);
             return Ok(list);
         }
         

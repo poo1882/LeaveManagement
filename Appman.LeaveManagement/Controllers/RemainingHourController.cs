@@ -22,13 +22,13 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("RemaingHours")]
         [HttpGet]
-        public IActionResult RemainingHour(Guid id,string year)
+        public IActionResult RemainingHour(string staffId,string year)
         {
-            var sickHour = _remRepo.ViewHour(id, year,"Sick");
-            var annualHour = _remRepo.ViewHour(id, year,"Annual");
-            var lwpHour = _remRepo.ViewHour(id, year,"LWP");
+            var sickHour = _remRepo.ViewHour(staffId, year,"Sick");
+            var annualHour = _remRepo.ViewHour(staffId, year,"Annual");
+            var lwpHour = _remRepo.ViewHour(staffId, year,"LWP");
             RemainingHour hours = new RemainingHour();
-            hours.EmployeeId = id;
+            hours.StaffId = staffId;
             hours.Year = year;
             hours.AnnualHours = annualHour;
             hours.SickHours = sickHour;

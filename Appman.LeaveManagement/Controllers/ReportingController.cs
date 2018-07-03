@@ -18,17 +18,17 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("Reporting")]
         [HttpPost]
-        public IActionResult addReporting(Reporting reporting)
+        public IActionResult AddApprover(Reporting reporting)
         {
-            _repRepo.addReportingTo(reporting);
+            _repRepo.AddApprover(reporting);
             return Created("",reporting);
         }
 
         [Route("Reporting")]
         [HttpDelete]
-        public IActionResult removeReporting(Reporting reporting)
+        public IActionResult RemoveApprover(Reporting reporting)
         {
-            _repRepo.removeReporting(reporting);
+            _repRepo.RemoveApprover(reporting);
             return Ok();
         }
     }

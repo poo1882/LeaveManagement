@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +29,22 @@ namespace Appman.LeaveManagement.Controllers
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
             return Ok(leaves);
         }
+
+        [Route("Leave")] // create leave form 
+        [HttpPost]
+        public IActionResult CreateLeaveInfo([FromBody] LeaveInfo info)
+        {
+            var emp = JsonConvert.SerializeObject(_leaveRepo.CreateLeaveInfo(info));
+            return Created("", emp);
+        }
+
+        [Route("RemainingLeaveInfo")] // ดูว่าใครเหลือกี่ชั่วโมงในแต่ละประเภท
+        [HttpGet]
+        public IActionResult GetRemaining(string staffId)
+        {
+            var leave = _leaveRepo.GetRemaining(staffId);
+            return Ok(leave);
+        }
+
     }
 }

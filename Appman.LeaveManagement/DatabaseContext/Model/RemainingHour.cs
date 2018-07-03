@@ -8,8 +8,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
 {
     public class RemainingHour
     {
-       
-        public Guid EmployeeId { get; set; }
+        public string StaffId { get; set; }
         public string Year { get; set; }
         public int AnnualHours { get; set; }
         public int SickHours { get; set; }

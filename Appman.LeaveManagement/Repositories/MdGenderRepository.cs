@@ -7,23 +7,17 @@ using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.Repositories
 {
-    public class ReportingRepository
+    public class MdGenderRepository
     {
         LeaveManagementDbContext _dbContext;
-        public ReportingRepository(LeaveManagementDbContext dbContext)
+        public MdGenderRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public void AddApprover(Reporting reporting)
+        public void Add(MdGender mdGender)
         {
-            _dbContext.Reportings.Add(reporting);
-            _dbContext.SaveChanges();
-        }
-
-        public void RemoveApprover(Reporting reporting)
-        {
-            _dbContext.Reportings.Remove(reporting);
+            _dbContext.MdGenders.Add(mdGender);
             _dbContext.SaveChanges();
         }
     }
