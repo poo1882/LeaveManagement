@@ -18,7 +18,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public int HoursEndDate { get; set; }
         public string ApprovalStatus { get; set; }
         public string Comment { get; set; }
-        public DateTime? AprrovedTime { get; set; }
+        public DateTime? ApprovedTime { get; set; }
         public string ApprovedBy { get; set; }
         public byte[] AttachedFile { get; set; }
         public DateTime RequestedDateTime { get; set; }

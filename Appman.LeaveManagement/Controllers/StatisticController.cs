@@ -26,6 +26,14 @@ namespace Appman.LeaveManagement.Controllers
             _leaveRepo = new LeaveInfoRepository(_dbContext);
             _remRepo = new RemainingHourRepository(_dbContext);
         }
+
+
+        /// <summary>
+        ///     List all employees plus the statistic of leaves form (Pending, Approved, Rejected)
+        /// </summary>
+        /// <returns>
+        ///     Ok(List<Statistic>) - A list of everyone who is active
+        /// </returns>
         [Route("GetStatistics")]
         [HttpGet]
         public IActionResult GetStatistics()
@@ -33,15 +41,26 @@ namespace Appman.LeaveManagement.Controllers
             List<Statistic> result = new List<Statistic>();
             foreach (var item in _dbContext.Employees)
             {
-                Statistic stat = new Statistic(item.StaffId,_empRepo,_leaveRepo);
-                result.Add(stat);
+                if(item.IsActive == true)
+                {
+                    Statistic stat = new Statistic(item.StaffId, _empRepo, _leaveRepo);
+                    result.Add(stat);
+                }
             }
             return Ok(JsonConvert.SerializeObject(result));
         }
 
+
+        /// <summary>
+        ///     Show basic info. of an employee plus the history of leaveing
+        /// </summary>
+        /// <param name="staffId">An employee's id</param>
+        /// <returns>
+        ///     OneStatistic - An instance of name, position, with a leaveing history
+        /// </returns>
         [Route("GetLeaveStatistic")]
         [HttpGet]
-        public IActionResult GetLeaveStatistic(string staffId)
+        public IActionResult GetLeaveStatistic([FromQuery]string staffId)
         {
             OneStatistic result = new OneStatistic(staffId,_empRepo,_leaveRepo,_remRepo);
             return Ok(JsonConvert.SerializeObject(result));

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Appman.LeaveManagement.Migrations
 {
-    public partial class initial : Migration
+    public partial class initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,7 +42,7 @@ namespace Appman.LeaveManagement.Migrations
                     HoursEndDate = table.Column<int>(nullable: false),
                     ApprovalStatus = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
-                    AprrovedTime = table.Column<DateTime>(nullable: true),
+                    ApprovedTime = table.Column<DateTime>(nullable: true),
                     ApprovedBy = table.Column<string>(nullable: true),
                     AttachedFile = table.Column<byte[]>(nullable: true),
                     RequestedDateTime = table.Column<DateTime>(nullable: false)

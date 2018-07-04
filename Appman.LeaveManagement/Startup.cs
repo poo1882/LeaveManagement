@@ -37,7 +37,7 @@ namespace Appman.LeaveManagement
 
 
 
-      
+
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
@@ -54,9 +54,9 @@ namespace Appman.LeaveManagement
             {
                 option.UseSqlite("Data Source=LeaveManagement.db");
 
-               // option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
+                //option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
             });
-            
+
 
             services.ConfigureApplicationCookie(options =>
             {

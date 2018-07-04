@@ -15,35 +15,67 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext = dbContext;
         }
 
-        public void Add(Employee employee)
+        /// <summary>
+        ///     Add employee to database
+        /// </summary>
+        /// <param name="employee">An employee to be added</param>
+        /// <returns>
+        ///     true - if success
+        ///     false - if already exist
+        /// </returns>
+        public bool AddEmployee(Employee employee)
         {
+            if (_dbContext.Employees.Contains(employee))
+                return false;
             _dbContext.Employees.Add(employee);
             _dbContext.SaveChanges();
+            return true;
         }
 
-
-        public void Delete(string staffId)
+        /// <summary>
+        ///     Delete employee in database
+        /// </summary>
+        /// <param name="staffId">An id of the one who will be deleted</param>
+        /// <returns>
+        ///     true - if success
+        ///     false - if no id found
+        /// </returns>
+        public bool DeleteEmployee(string staffId)
         {
+            if (_dbContext.Employees.Where(x => x.StaffId == staffId) == null)
+                return false;
             _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).IsActive = false;
             _dbContext.SaveChanges();
+            return true;
         }
 
-        //public void Update(Employee employee)
-        //{
-        //    //var emp = _dbContext.Employees.FirstOrDefault(x => x.Email == employee.Email);
+
+        /// <summary>
+        ///     Update information of employee
+        /// </summary>
+        /// <param name="employee">A new employee's information to replace</param>
+        /// <returns>
+        ///     true - if success
+        ///     false - if no employee found to be updated
+        /// </returns>
+        public bool UpdateProfile(Employee employee)
+        {
+            if (!_dbContext.Employees.Contains(employee))
+                return false;
+            _dbContext.Employees.Update(employee);
+            _dbContext.SaveChanges();
+            return true;
+        }
 
 
-        //    //emp.FirstName = employee.FirstName ?? emp.FirstName;
-        //    //emp.Lastname = employee.Lastname ?? emp.Lastname;
-        //    //emp.Email = employee.Email;
-        //    //emp.Role = employee.Role;
-        //    //emp.ProfilePicture = employee.ProfilePicture;
-
-
-        //    _dbContext.Employees.Update(employee);
-        //    _dbContext.SaveChanges();
-        //}
-
+        /// <summary>
+        ///     Get basic information of the employee
+        /// </summary>
+        /// <param name="staffId">An id of the employee</param>
+        /// <returns>
+        ///     Employee - An instance of the employee
+        ///     null - if no employee found
+        /// </returns>
         public Employee GetProfile(string staffId)
         {
             var emp = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
@@ -51,6 +83,7 @@ namespace Appman.LeaveManagement.Repositories
                 return null;
             return emp;
         }
+
 
         public List<Employee> GetEmployees()
         {

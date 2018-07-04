@@ -27,8 +27,8 @@ namespace Appman.LeaveManagement.Models
             Position = employee.Position;
             Section = employee.Section;
             Pending = _leaveRepo.PendingAmount(staffId);
-            Approve = _leaveRepo.ApproveAmount(staffId);
-            Reject = _leaveRepo.RejectAmount(staffId);
+            Approve = _leaveRepo.ApprovedAmount(staffId);
+            Reject = _leaveRepo.RejectedAmount(staffId);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,18 +23,21 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("RemaingHours")]
         [HttpGet]
-        public IActionResult RemainingHour(string staffId,string year)
+        public IActionResult RemainingHour([FromQuery]string staffId,string year)
         {
-            var sickHour = _remRepo.ViewHour(staffId, year,"Sick");
-            var annualHour = _remRepo.ViewHour(staffId, year,"Annual");
-            var lwpHour = _remRepo.ViewHour(staffId, year,"LWP");
-            RemainingHour hours = new RemainingHour();
-            hours.StaffId = staffId;
-            hours.Year = year;
-            hours.AnnualHours = annualHour;
-            hours.SickHours = sickHour;
-            hours.LWPHours = lwpHour;
-            return Ok(hours);
+            var sickHour = _remRepo.ViewHour(staffId, year, "sick");
+            var annualHour = _remRepo.ViewHour(staffId, year, "annual");
+            var lwpHour = _remRepo.ViewHour(staffId, year, "lwp");
+            RemainingHour hours = new RemainingHour
+            {
+                StaffId = staffId,
+                Year = year,
+                AnnualHours = annualHour,
+                SickHours = sickHour,
+                LWPHours = lwpHour,
+            };
+            return Ok(JsonConvert.SerializeObject(hours));
+
         }
 
 

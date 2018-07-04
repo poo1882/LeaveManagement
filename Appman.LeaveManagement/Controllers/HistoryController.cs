@@ -27,15 +27,19 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ViewLeaves()
         {
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
-            return Ok(leaves);
+            if (leaves == null)
+                return new EmptyResult();
+            return Ok(JsonConvert.SerializeObject(leaves));
         }
 
-        [Route("{id}/Info")] //ดู form การลาของแต่ละคน
+        [Route("Info")] //ดู form การลาของแต่ละคน
         [HttpGet]
-        public IActionResult ViewLeaveInfo(string leaveId)
+        public IActionResult ViewLeaveInfo([FromQuery]string leaveId)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(leaveId));
-            return Ok(emp);
+            if (emp == null)
+                return new EmptyResult();
+            return Ok(JsonConvert.SerializeObject(emp));
         }
 
         //[Route("History")] // ดู history ของทุกคน
@@ -46,12 +50,14 @@ namespace Appman.LeaveManagement.Controllers
         //    return Ok(list);
         //}
 
-        [Route("{employeeId}/History")] // ดู history ของแต่ละคน
+        [Route("History")] // ดู history ของแต่ละคน
         [HttpGet]
-        public IActionResult GetHistory(string staffId)
+        public IActionResult GetHistory([FromQuery]string staffId)
         {
             var list = _leaveRepo.GetHistory(staffId);
-            return Ok(list);
+            if (list == null)
+                return new EmptyResult();
+            return Ok(JsonConvert.SerializeObject(list));
         }
 
 

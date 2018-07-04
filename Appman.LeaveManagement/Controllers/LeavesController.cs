@@ -27,15 +27,29 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ViewLeaves()
         {
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
-            return Ok(leaves);
+            return Ok(JsonConvert.SerializeObject(leaves));
         }
 
         [Route("Leave")] // create leave form 
         [HttpPost]
         public IActionResult CreateLeaveInfo([FromBody] LeaveInfo info)
         {
-            var emp = JsonConvert.SerializeObject(_leaveRepo.CreateLeaveInfo(info));
-            return Created("", emp);
+            bool isCreated = _leaveRepo.CreateLeaveInfo(info);
+            if (isCreated)
+            {
+                EmailController emailSender = new EmailController();
+                List<Reporting> reporting = _dbContext.Reportings.Where(x => x.StaffId == info.StaffId).ToList();
+                
+                foreach (var item in reporting)
+                {
+                    emailSender.SendRequestMailToApprover(_dbContext.Employees.FirstOrDefault(x => x.StaffId == item.Approver).Email);
+                }
+
+                emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email);
+                return Ok();
+            }
+            return new EmptyResult();
+            
         }
 
         [Route("RemainingLeaveInfo")] // ดูว่าใครเหลือกี่ชั่วโมงในแต่ละประเภท
@@ -43,7 +57,20 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetRemaining(string staffId)
         {
             var leave = _leaveRepo.GetRemaining(staffId);
-            return Ok(leave);
+            return Ok(JsonConvert.SerializeObject(leave));
+        }
+
+
+        [Route("SetStatus")]
+        [HttpPut]
+        public IActionResult SetStatus([FromQuery]string status,string leaveId,string approverId)
+        {
+            if(_leaveRepo.SetStatus(status, leaveId, approverId))
+            {
+                return Ok();
+            }
+            return new EmptyResult();            
+                
         }
 
     }

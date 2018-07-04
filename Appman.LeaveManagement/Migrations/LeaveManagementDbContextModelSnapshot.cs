@@ -57,7 +57,7 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<string>("ApprovedBy");
 
-                    b.Property<DateTime?>("AprrovedTime");
+                    b.Property<DateTime?>("ApprovedTime");
 
                     b.Property<byte[]>("AttachedFile");
 

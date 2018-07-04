@@ -23,12 +23,21 @@ namespace Appman.LeaveManagement.Controllers
             _empRepo = new EmployeeRepository(_dbContext);
         }
 
+        /// <summary>
+        ///     Show list of employee in the company
+        /// </summary>
+        /// <returns>
+        ///     List<Employee> - List of employee in the company
+        /// </returns>
         [Route("Employees")]
         [HttpGet]
         public IActionResult ViewAllEmployee()
         {
             List<Employee> result = _empRepo.GetEmployees();
-            return Ok(JsonConvert.SerializeObject(result));
+            if (result == null)
+                return new EmptyResult();
+
+            return Content(JsonConvert.SerializeObject(result), "application/json");
         }
     }
 }

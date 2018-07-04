@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20180703044949_initial")]
-    partial class initial
+    [Migration("20180704085631_initialize")]
+    partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,7 +59,7 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<string>("ApprovedBy");
 
-                    b.Property<DateTime?>("AprrovedTime");
+                    b.Property<DateTime?>("ApprovedTime");
 
                     b.Property<byte[]>("AttachedFile");
 
