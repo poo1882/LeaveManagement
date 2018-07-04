@@ -21,13 +21,13 @@ namespace Appman.LeaveManagement.Controllers
             _dbContext = leaveInfo;
             _leaveRepo = new LeaveInfoRepository(_dbContext);
         }
-
+        
         [Route("Leaves")]
         [HttpGet]
         public IActionResult ViewLeaves()
         {
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
-            return Ok(JsonConvert.SerializeObject(leaves));
+            return Content(JsonConvert.SerializeObject(leaves), "application/json");
         }
 
         [Route("Leave")] // create leave form 
@@ -57,7 +57,7 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetRemaining(string staffId)
         {
             var leave = _leaveRepo.GetRemaining(staffId);
-            return Ok(JsonConvert.SerializeObject(leave));
+            return Content(JsonConvert.SerializeObject(leave), "application/json");
         }
 
 

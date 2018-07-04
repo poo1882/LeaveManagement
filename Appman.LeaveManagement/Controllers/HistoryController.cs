@@ -29,7 +29,8 @@ namespace Appman.LeaveManagement.Controllers
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
             if (leaves == null)
                 return new EmptyResult();
-            return Ok(JsonConvert.SerializeObject(leaves));
+            
+            return Content(JsonConvert.SerializeObject(leaves), "application/json");
         }
 
         [Route("Info")] //ดู form การลาของแต่ละคน
@@ -39,7 +40,7 @@ namespace Appman.LeaveManagement.Controllers
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(leaveId));
             if (emp == null)
                 return new EmptyResult();
-            return Ok(JsonConvert.SerializeObject(emp));
+            return Content(JsonConvert.SerializeObject(emp), "application/json");
         }
 
         //[Route("History")] // ดู history ของทุกคน
@@ -57,7 +58,8 @@ namespace Appman.LeaveManagement.Controllers
             var list = _leaveRepo.GetHistory(staffId);
             if (list == null)
                 return new EmptyResult();
-            return Ok(JsonConvert.SerializeObject(list));
+            
+            return Content(JsonConvert.SerializeObject(list), "application/json");
         }
 
 

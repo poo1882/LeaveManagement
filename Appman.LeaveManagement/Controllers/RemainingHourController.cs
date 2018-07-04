@@ -36,8 +36,8 @@ namespace Appman.LeaveManagement.Controllers
                 SickHours = sickHour,
                 LWPHours = lwpHour,
             };
-            return Ok(JsonConvert.SerializeObject(hours));
-
+            
+            return Content(JsonConvert.SerializeObject(hours), "application/json");
         }
 
 

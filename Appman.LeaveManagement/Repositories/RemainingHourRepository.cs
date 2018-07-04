@@ -26,7 +26,7 @@ namespace Appman.LeaveManagement.Repositories
                 return _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId && x.Year == year).LWPHours;
         }
 
-        private void UpdateRemainHour(string staffId, string type, int totalHours)
+        public void UpdateRemainHour(string staffId, string type, int totalHours)
         {
             if (type.ToLower() == "annual")
             {

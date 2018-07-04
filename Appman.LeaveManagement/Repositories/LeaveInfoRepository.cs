@@ -11,6 +11,7 @@ namespace Appman.LeaveManagement.Repositories
 {
     public class LeaveInfoRepository
     {
+        private int totalHours = 0;
         LeaveManagementDbContext _dbContext;
         public LeaveInfoRepository(LeaveManagementDbContext dbContext)
         {
@@ -37,6 +38,7 @@ namespace Appman.LeaveManagement.Repositories
 
         public bool CreateLeaveInfo(LeaveInfo info)
         {
+            info.ApprovalStatus = "Pending";
             var remain = new RemainingHourRepository(_dbContext);
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
@@ -44,6 +46,7 @@ namespace Appman.LeaveManagement.Repositories
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
+                    totalHours = info.HoursStartDate;
                     return true;
                 }
                 return false;
@@ -51,7 +54,7 @@ namespace Appman.LeaveManagement.Repositories
             else
             {
                 int totalDays = (info.EndDateTime - info.StartDateTime).Days;
-                int totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
                 if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
                 {
                     //UpdateRemainHour(info.StaffId, info.Type, totalHours);
@@ -85,7 +88,9 @@ namespace Appman.LeaveManagement.Repositories
         /// </returns>
         public List<LeaveInfo> GetHistory(string staffId)
         {
-            return _dbContext.LeaveInfos.Where(x => x.StaffId == staffId).ToList();
+            var list = _dbContext.LeaveInfos;
+            var result = list.Where(x => x.StaffId == staffId).ToList();
+            return result;
         }
 
 
@@ -104,7 +109,7 @@ namespace Appman.LeaveManagement.Repositories
                          join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                          where reportlist.Approver == staffId
                          select leaveinfo;
-            return result.ToList();
+            return result.Where(x => x.ApprovalStatus == "Pending").ToList();
         }
 
         /// <summary>
@@ -140,6 +145,20 @@ namespace Appman.LeaveManagement.Repositories
             leave.ApprovedTime = DateTime.Now;
             leave.ApprovedBy = approveBy;
             leave.ApprovalStatus = status;
+            if(status.ToLower() == "approved")
+            {
+                var info = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
+                RemainingHourRepository remaining = new RemainingHourRepository(_dbContext);
+                if (info.StartDateTime.ToString() == info.EndDateTime.ToString())
+                    totalHours = info.HoursStartDate;
+                else
+                {
+                    int totalDays = (info.EndDateTime - info.StartDateTime).Days;
+                    totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                }
+                    
+                remaining.UpdateRemainHour(leave.StaffId, leave.Type,totalHours);
+            }
             _dbContext.SaveChanges();
             return true;
         }

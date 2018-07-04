@@ -16,6 +16,11 @@ namespace Appman.LeaveManagement.Controllers
         private readonly EmployeeRepository _empRepo;
         private readonly LeaveManagementDbContext _dbContext;
         private readonly RemainingHourRepository _remRepo;
+
+        /// <summary>
+        ///     Initialize EmployeeController with a specific database context
+        /// </summary>
+        /// <param name="leaveManagementDbContext">the targeted database context</param>
         public EmployeeController(LeaveManagementDbContext leaveManagementDbContext)
         {
 
@@ -82,6 +87,14 @@ namespace Appman.LeaveManagement.Controllers
 
         }
 
+        /// <summary>
+        ///     Update the information of an employee
+        /// </summary>
+        /// <param name="employee">The targeted employee</param>
+        /// <returns>
+        ///     Ok - if success
+        ///     EmptyResult - if no employee found
+        /// </returns>
         [Route("Employee")]
         [HttpPut]
         public IActionResult UpdateProfile([FromBody] Employee employee)

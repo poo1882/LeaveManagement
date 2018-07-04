@@ -27,7 +27,7 @@ namespace Appman.LeaveManagement.Models
         public int LWPHours;
         public List<LeaveInfo> Leaves;
 
-        public OneStatistic(string staffId, EmployeeRepository _empRepo, LeaveInfoRepository _leaveRepo, RemainingHourRepository _remRepo)
+        public OneStatistic(string staffId, EmployeeRepository _empRepo, RemainingHourRepository _remRepo)
         {
             Employee emp = _empRepo.GetProfile(staffId);
             FirstName = emp.FirstName;
@@ -38,7 +38,7 @@ namespace Appman.LeaveManagement.Models
             AnnualHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "Annual");
             SickHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "Sick");
             LWPHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "LWP");
-            List<LeaveInfo> leaves = _leaveRepo.GetHistory(staffId);
+            
         }
 
         //public OneStatistic(int LeaveId, LeaveInfoRepository _leaveRepo, EmployeeRepository _empRepo)

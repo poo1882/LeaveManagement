@@ -47,7 +47,7 @@ namespace Appman.LeaveManagement.Controllers
                     result.Add(stat);
                 }
             }
-            return Ok(JsonConvert.SerializeObject(result));
+            return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
 
@@ -62,8 +62,9 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult GetLeaveStatistic([FromQuery]string staffId)
         {
-            OneStatistic result = new OneStatistic(staffId,_empRepo,_leaveRepo,_remRepo);
-            return Ok(JsonConvert.SerializeObject(result));
+            OneStatistic result = new OneStatistic(staffId,_empRepo,_remRepo);
+            result.Leaves = _leaveRepo.GetHistory(staffId);
+            return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
         //[Route("GetLeaveInfo")]

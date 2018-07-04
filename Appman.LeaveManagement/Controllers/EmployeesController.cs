@@ -16,6 +16,10 @@ namespace Appman.LeaveManagement.Controllers
         private readonly EmployeeRepository _empRepo;
         private readonly LeaveManagementDbContext _dbContext;
 
+        /// <summary>
+        ///     Initialize EmployeesController
+        /// </summary>
+        /// <param name="leaveManagementDbContext">the targeted database context</param>
         public EmployeesController(LeaveManagementDbContext leaveManagementDbContext)
         {
 
@@ -23,8 +27,9 @@ namespace Appman.LeaveManagement.Controllers
             _empRepo = new EmployeeRepository(_dbContext);
         }
 
+        
         /// <summary>
-        ///     Show list of employee in the company
+        ///    Show list of employee in the company 
         /// </summary>
         /// <returns>
         ///     List<Employee> - List of employee in the company
