@@ -46,7 +46,6 @@ namespace Appman.LeaveManagement.Repositories
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
-                    totalHours = info.HoursStartDate;
                     return true;
                 }
                 return false;

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Appman.LeaveManagement</name>
+    </assembly>
+    <members>
+        <member name="M:Appman.LeaveManagement.Repositories.EmployeeRepository.AddEmployee(Appman.LeaveManagement.DatabaseContext.Model.Employee)">
+            <summary>
+                Add employee to database
+            </summary>
+            <param name="employee">An employee to be added</param>
+            <returns>
+                true - if success
+                false - if already exist
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.EmployeeRepository.DeleteEmployee(System.String)">
+            <summary>
+                Delete employee in database
+            </summary>
+            <param name="staffId">An id of the one who will be deleted</param>
+            <returns>
+                true - if success
+                false - if no id found
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.EmployeeRepository.UpdateProfile(Appman.LeaveManagement.DatabaseContext.Model.Employee)">
+            <summary>
+                Update information of employee
+            </summary>
+            <param name="employee">A new employee's information to replace</param>
+            <returns>
+                true - if success
+                false - if no employee found to be updated
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.EmployeeRepository.GetProfile(System.String)">
+            <summary>
+                Get basic information of the employee
+            </summary>
+            <param name="staffId">An id of the employee</param>
+            <returns>
+                Employee - An instance of the employee
+                null - if no employee found
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.ViewLeaveInfo(System.String)">
+            <summary>
+                View a leave's detail
+            </summary>
+            <param name="leaveId">An id of the form</param>
+            <returns>
+                LeaveInfo - An information of the form
+                null - if no form found
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.GetHistory(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.GetRemaining(System.String)" -->
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.SetStatus(System.String,System.String,System.String)">
+            <summary>
+                Set status of form to "Approved"
+            </summary>
+            <param name="leaveId">id of an approved form</param>
+            <param name="approverId">id of an approver</param>
+            <returns>
+                true - if success
+                false - if form is already approved or rejected, or no form found
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.PendingAmount(System.String)">
+            <summary>
+                Calculate the amount of pending leaves of an employee
+            </summary>
+            <param name="staffId">An employee's id</param>
+            <returns>
+                int - the number of pending forms
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.ApprovedAmount(System.String)">
+            <summary>
+                Calculate the amount of approved leaves of an employee
+            </summary>
+            <param name="staffId">An employee's id</param>
+            <returns>
+                int - the number of approved forms
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.RejectedAmount(System.String)">
+            <summary>
+                Calculate the amount of rejected leaves of an employee
+            </summary>
+            <param name="staffId">An employee's id</param>
+            <returns>
+                int - the number of rejected forms
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.LeaveInfoRepository.LeaveCount">
+            <summary>
+                Calculste the amount of forms
+            </summary>
+            <returns>
+                int - the number of leaves form
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.ReportingRepository.AddApprover(Appman.LeaveManagement.DatabaseContext.Model.Reporting)">
+            <summary>
+                Add approver of an employee
+            </summary>
+            <param name="reporting">An instance of Reporting containing the employee's id and approver's id</param>
+            <returns>
+                true - if success
+                false - if already exist
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Repositories.ReportingRepository.RemoveApprover(Appman.LeaveManagement.DatabaseContext.Model.Reporting)">
+            <summary>
+                Remove approver of an employee
+            </summary>
+            <param name="reporting">An instance of reporting that wants to delete</param>
+            <returns>
+                true - if success
+                false - if no reporting match
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeeController.#ctor(Appman.LeaveManagement.DatabaseContext.LeaveManagementDbContext)">
+            <summary>
+                Initialize EmployeeController with a specific database context
+            </summary>
+            <param name="leaveManagementDbContext">the targeted database context</param>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeeController.AddEmployee(Appman.LeaveManagement.DatabaseContext.Model.Employee)">
+            <summary>
+                Add an employee to database
+            </summary>
+            <param name="employee">An employee to be added</param>
+            <returns>
+                Ok - if success
+                null - if the employee is already exist
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeeController.DeleteEmployee(System.String)">
+            <summary>
+                Delete an employee (Actually set IsActive to false)
+            </summary>
+            <param name="staffId">An id of the one who will be deleted</param>
+            <returns>
+                Ok - if success
+                null - if no employee was found
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeeController.GetProfile(System.String)">
+            <summary>
+            Get basic information of an employee
+            </summary>
+            <param name="staffId">An id of the employee</param>
+            <returns>
+                Employee - An instance of the employee
+                null - if no id match
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeeController.UpdateProfile(Appman.LeaveManagement.DatabaseContext.Model.Employee)">
+            <summary>
+                Update the information of an employee
+            </summary>
+            <param name="employee">The targeted employee</param>
+            <returns>
+                Ok - if success
+                EmptyResult - if no employee found
+            </returns>
+        </member>
+        <member name="M:Appman.LeaveManagement.Controllers.EmployeesController.#ctor(Appman.LeaveManagement.DatabaseContext.LeaveManagementDbContext)">
+            <summary>
+                Initialize EmployeesController
+            </summary>
+            <param name="leaveManagementDbContext">the targeted database context</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee" -->
+        <!-- Badly formed XML comment ignored for member "M:Appman.LeaveManagement.Controllers.StatisticController.GetStatistics" -->
+        <member name="M:Appman.LeaveManagement.Controllers.StatisticController.GetLeaveStatistic(System.String)">
+            <summary>
+                Show basic info. of an employee plus the history of leaveing
+            </summary>
+            <param name="staffId">An employee's id</param>
+            <returns>
+                OneStatistic - An instance of name, position, with a leaveing history
+            </returns>
+        </member>
+    </members>
+</doc>
