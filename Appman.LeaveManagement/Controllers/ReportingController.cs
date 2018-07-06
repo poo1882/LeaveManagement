@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Appman.LeaveManagement.Controllers
 {
@@ -33,6 +34,14 @@ namespace Appman.LeaveManagement.Controllers
             if (_repRepo.RemoveApprover(reporting))
                 return Ok();
             return new EmptyResult();
+        }
+
+        [Route("Reporting")]
+        [HttpGet]
+        public IActionResult ViewAllReporting()
+        {
+            var result = _repRepo.ViewAllReporting();
+            return Content(JsonConvert.SerializeObject(result), "application/json");
         }
     }
 }

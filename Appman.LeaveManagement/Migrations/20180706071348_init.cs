@@ -3,16 +3,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Appman.LeaveManagement.Migrations
 {
-    public partial class initialize : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Approbations",
+                columns: table => new
+                {
+                    ApprobationGuid = table.Column<Guid>(nullable: false),
+                    LeaveId = table.Column<int>(nullable: false),
+                    ApproverId = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Approbations", x => x.ApprobationGuid);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
                     StaffId = table.Column<string>(nullable: false),
-                    StaffGuId = table.Column<Guid>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -36,7 +49,6 @@ namespace Appman.LeaveManagement.Migrations
                 {
                     LeaveId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    LeaveGuid = table.Column<Guid>(nullable: false),
                     Type = table.Column<string>(nullable: true),
                     StaffId = table.Column<string>(nullable: true),
                     StartDateTime = table.Column<DateTime>(nullable: false),
@@ -98,6 +110,9 @@ namespace Appman.LeaveManagement.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Approbations");
+
             migrationBuilder.DropTable(
                 name: "Employees");
 

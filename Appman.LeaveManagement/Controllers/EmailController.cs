@@ -22,31 +22,33 @@ namespace Appman.LeaveManagement.Repositories
             _leaveRepo = new LeaveInfoRepository(_dbContext);
 
         }
-        public bool SendRequestMailToApprover(string approverEmail,int leaveId)
+        public bool SendRequestMailToApprover(List<Approbation> approbations)
         {
             int i = 0;
-            List<string> approveLinks = _leaveRepo.GenerateReferenceCode(leaveId);
+            string api = "https://appmanleavemanagement.azurewebsites.net/api/Leaves/ApproveViaEmail?";
             var sb = new StringBuilder();
-            foreach (var item in approveLinks)
+            foreach (var item in approbations)
             {
-                
-                
                 i++;
-                if(i%2 == 1)
+                if(i%2==1)
                 {
+                    StringBuilder link = new StringBuilder();
+                    link.Append(api);
+                    link.AppendFormat("refNo="+item.ApprobationGuid.ToString());
                     sb = new StringBuilder();
-                     sb.Append("<body style='margin: 0px;'>");
-                    // Add your link
-                    sb.AppendFormat("<div><a href='{0}'>Click here to approve</a></div>", item);
-                    // Close the body element
+                    sb.Append("<body style='margin: 0px;'>");
+                    
+                    sb.AppendFormat("<div><a href='{0}'>Click here to approve</a></div>", link);
                 }
                 else
                 {
-                    sb.AppendFormat("<div><a href='{0}'>Click here to reject</a></div>", item);
+                    StringBuilder link = new StringBuilder();
+                    link.Append(api);
+                    link.AppendFormat("refNo=" + item.ApprobationGuid.ToString());
+                    sb.AppendFormat("<div><a href='{0}'>Click here to reject</a></div>",link);
                     sb.Append("</body>");
-                    // Get your e-mail contents using the ToString() method
                     var content = sb.ToString();
-                    SendMail(approverEmail, content);
+                    SendMail(_dbContext.Employees.FirstOrDefault(x => x.StaffId == item.ApproverId).Email,content);
                 }
             }
             return true;

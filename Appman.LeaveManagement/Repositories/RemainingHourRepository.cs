@@ -50,5 +50,10 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext.RemainingHours.Add(remaining);
             _dbContext.SaveChanges();
         }
+
+        public List<RemainingHour> ViewAllRemainingHour()
+        {
+            return _dbContext.RemainingHours.ToList();
+        }
     }
 }

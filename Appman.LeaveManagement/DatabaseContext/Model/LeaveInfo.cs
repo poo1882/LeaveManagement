@@ -10,7 +10,6 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
     {
         [Key]
         public int LeaveId { get; set; }
-        public Guid LeaveGuid { get; set; }
         public string Type { get; set; }
         public string StaffId { get; set; }
         public DateTime StartDateTime { get; set; }

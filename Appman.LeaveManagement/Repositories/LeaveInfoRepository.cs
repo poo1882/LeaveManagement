@@ -65,7 +65,6 @@ namespace Appman.LeaveManagement.Repositories
                     //UpdateRemainHour(info.StaffId, info.Type, totalHours);
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
-
                     return true;
                 }
                 return false;
@@ -265,26 +264,65 @@ namespace Appman.LeaveManagement.Repositories
 
         public List<string> GenerateReferenceCode(int leaveId)
         {
-            LeaveInfo leave = ViewLeaveInfo(leaveId);
-            List<string> result = new List<String>();
+            List<Approbation> approbations = _dbContext.Approbations.Where(x => x.LeaveId == leaveId).ToList();
+            List<string> result = new List<string>();
             string api = "https://appmanleavemanagement.azurewebsites.net/api/Leaves/ApproveViaEmail?";
-            List<Reporting> reportings = _repRepo.GetApprover(leave.StaffId);
+            foreach (var item in approbations)
+            {
+                var sb = new StringBuilder(api);
+                sb.AppendFormat("refNo="+item.ApprobationGuid.ToString());
+                result.Add(sb.ToString());
+            }
+            //LeaveInfo leave = ViewLeaveInfo(leaveId);
+            //List<string> result = new List<String>();
+            //
+            //List<Reporting> reportings = _repRepo.GetApprover(leave.StaffId);
             
+            //foreach (var item in reportings)
+            //{
+                
+            //    for (int j = 0; j < 2; j++)
+            //    {
+            //        var sb = new StringBuilder(api);
+            //        sb.AppendFormat("refNo1=" + leave.LeaveGuid.ToString() + "&");
+            //        sb.AppendFormat("refNo2=" + _empRepo.GetProfile(item.Approver).StaffGuId.ToString() + "&");
+
+            //        if (j == 0)
+            //            sb.Append("refNo3=Approved");
+            //        else
+            //            sb.Append("refNo3=Rejected");
+            //        result.Add(sb.ToString());
+            //    }
+            //}
+            return result;
+        }
+
+        public void AddApprobation (List<Approbation> approbations)
+        {
+            foreach (var item in approbations)
+            {
+                _dbContext.Approbations.Add(item);
+                _dbContext.SaveChanges();
+            }
+            
+        }
+
+        public List<Approbation> CreateApprobationSet(LeaveInfo leave)
+        {
+            List<Approbation> result = new List<Approbation>();
+            List<Reporting> reportings = new List<Reporting>();
+            reportings = _repRepo.GetApprover(leave.StaffId);
             foreach (var item in reportings)
             {
-                
-                for (int j = 0; j < 2; j++)
+                for(int i=0;i<2;i++)
                 {
-                    var sb = new StringBuilder(api);
-                    sb.AppendFormat("refNo1=" + leave.LeaveGuid.ToString() + "&");
-                    sb.AppendFormat("refNo2=" + _empRepo.GetProfile(item.Approver).StaffGuId.ToString() + "&");
-
-                    if (j == 0)
-                        sb.Append("refNo3=Approved");
+                    if (i == 0)
+                        result.Add(new Approbation { ApprobationGuid = new Guid(), LeaveId = leave.LeaveId, ApproverId = item.Approver, Status = "Approved" });
+                        
                     else
-                        sb.Append("refNo3=Rejected");
-                    result.Add(sb.ToString());
+                        result.Add(new Approbation { ApprobationGuid = new Guid(), LeaveId = leave.LeaveId, ApproverId = item.Approver, Status = "Rejected" });
                 }
+                
             }
             return result;
         }

@@ -9,14 +9,30 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20180705111831_initialize")]
-    partial class initialize
+    [Migration("20180706071348_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.0-rtm-30799");
+
+            modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Approbation", b =>
+                {
+                    b.Property<Guid>("ApprobationGuid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApproverId");
+
+                    b.Property<int>("LeaveId");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("ApprobationGuid");
+
+                    b.ToTable("Approbations");
+                });
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Employee", b =>
                 {
@@ -42,8 +58,6 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<string>("ProfilePicture");
 
                     b.Property<string>("Section");
-
-                    b.Property<Guid>("StaffGuId");
 
                     b.Property<DateTime>("StartWorkingDate");
 
@@ -72,8 +86,6 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
-
-                    b.Property<Guid>("LeaveGuid");
 
                     b.Property<DateTime>("RequestedDateTime");
 

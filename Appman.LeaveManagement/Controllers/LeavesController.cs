@@ -23,13 +23,13 @@ namespace Appman.LeaveManagement.Controllers
             _leaveRepo = new LeaveInfoRepository(_dbContext);
         }
         
-        [Route("Leaves")]
-        [HttpGet]
-        public IActionResult ViewLeaves()
-        {
-            List<LeaveInfo> leaves = _leaveRepo.GetHistory();
-            return Content(JsonConvert.SerializeObject(leaves), "application/json");
-        }
+        //[Route("Leaves")]
+        //[HttpGet]
+        //public IActionResult ViewLeaves()
+        //{
+        //    List<LeaveInfo> leaves = _leaveRepo.GetHistory();
+        //    return Content(JsonConvert.SerializeObject(leaves), "application/json");
+        //}
 
         [Route("Leave")] // create leave form 
         [HttpPost]
@@ -38,14 +38,11 @@ namespace Appman.LeaveManagement.Controllers
             bool isCreated = _leaveRepo.CreateLeaveInfo(info);
             if (isCreated)
             {
+                List<Approbation> approbations = new List<Approbation>();
+                approbations = _leaveRepo.CreateApprobationSet(info);
+                _leaveRepo.AddApprobation(approbations);
                 EmailController emailSender = new EmailController(_dbContext);
-                List<Reporting> reporting = _dbContext.Reportings.Where(x => x.StaffId == info.StaffId).ToList();
-                
-                foreach (var item in reporting)
-                {
-                    emailSender.SendRequestMailToApprover(_dbContext.Employees.FirstOrDefault(x => x.StaffId == item.Approver).Email,info.LeaveId);
-                }
-
+                emailSender.SendRequestMailToApprover(approbations);
                 emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email);
                 return Ok();
             }
@@ -53,7 +50,7 @@ namespace Appman.LeaveManagement.Controllers
             
         }
 
-        [Route("RemainingLeaveInfo")] // ดูว่าใครเหลือกี่ชั่วโมงในแต่ละประเภท
+        [Route("RemainingLeaveInfo")] // ดูใบที่รอการอนุมัติ
         [HttpGet]
         public IActionResult GetRemaining([FromQuery]string staffId)
         {
@@ -76,16 +73,18 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("ApproveViaEmail")]
         [HttpGet]
-        public IActionResult ApproveViaEmail([FromQuery] string refNo1,string refNo2,string refNo3)
+        public IActionResult ApproveViaEmail([FromQuery] string refNo)
         {
-            string status = refNo3;
-            int leaveId = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveGuid.ToString() == refNo1).LeaveId;
-            string approverId = _dbContext.Employees.FirstOrDefault(x => x.StaffGuId.ToString() == refNo2).StaffId;
+            Approbation approbation = _dbContext.Approbations.FirstOrDefault(x => x.ApprobationGuid.ToString() == refNo);
+            int leaveId = approbation.LeaveId;
+            string approverId = approbation.ApproverId;
+            string status = approbation.Status;
             if (_leaveRepo.SetStatus(status, leaveId, approverId))
                 return Ok();
             else
                 return new EmptyResult();
         }
+
         
 
     }

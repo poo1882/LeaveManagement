@@ -53,5 +53,10 @@ namespace Appman.LeaveManagement.Repositories
         {
             return _dbContext.Reportings.Where(x => x.StaffId == staffId).ToList();
         }
+
+        public List<Reporting> ViewAllReporting()
+        {
+            return _dbContext.Reportings.ToList();
+        }
     }
 }

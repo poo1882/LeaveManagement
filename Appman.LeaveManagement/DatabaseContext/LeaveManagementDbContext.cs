@@ -33,6 +33,6 @@ namespace Appman.LeaveManagement.DatabaseContext
         public DbSet<RemainingHour> RemainingHours { get; set; }
         public DbSet<MdGender> MdGenders { get; set; }
         public DbSet<Reporting> Reportings { get; set; }
-
+        public DbSet<Approbation> Approbations { get; set; }
     }
 }

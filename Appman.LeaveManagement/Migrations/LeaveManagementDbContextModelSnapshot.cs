@@ -16,6 +16,22 @@ namespace Appman.LeaveManagement.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.0-rtm-30799");
 
+            modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Approbation", b =>
+                {
+                    b.Property<Guid>("ApprobationGuid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApproverId");
+
+                    b.Property<int>("LeaveId");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("ApprobationGuid");
+
+                    b.ToTable("Approbations");
+                });
+
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Employee", b =>
                 {
                     b.Property<string>("StaffId")
@@ -40,8 +56,6 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<string>("ProfilePicture");
 
                     b.Property<string>("Section");
-
-                    b.Property<Guid>("StaffGuId");
 
                     b.Property<DateTime>("StartWorkingDate");
 
@@ -70,8 +84,6 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
-
-                    b.Property<Guid>("LeaveGuid");
 
                     b.Property<DateTime>("RequestedDateTime");
 
