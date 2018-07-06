@@ -35,7 +35,7 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("Info")] //ดู form การลาของแต่ละคน
         [HttpGet]
-        public IActionResult ViewLeaveInfo([FromQuery]string leaveId)
+        public IActionResult ViewLeaveInfo([FromQuery]int leaveId)
         {
             var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(leaveId));
             if (emp == null)

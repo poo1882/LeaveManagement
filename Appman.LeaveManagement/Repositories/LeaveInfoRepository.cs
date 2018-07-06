@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.Repositories
@@ -13,9 +14,13 @@ namespace Appman.LeaveManagement.Repositories
     {
         private int totalHours = 0;
         LeaveManagementDbContext _dbContext;
+        private readonly EmployeeRepository _empRepo;
+        private readonly ReportingRepository _repRepo;
         public LeaveInfoRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
+            _empRepo = new EmployeeRepository(_dbContext);
+            _repRepo = new ReportingRepository(_dbContext);
         }
 
         /// <summary>
@@ -26,7 +31,7 @@ namespace Appman.LeaveManagement.Repositories
         ///     LeaveInfo - An information of the form
         ///     null - if no form found
         /// </returns>
-        public LeaveInfo ViewLeaveInfo(string leaveId)
+        public LeaveInfo ViewLeaveInfo(int leaveId)
         {
             var emp = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
             if (emp == null)
@@ -39,6 +44,7 @@ namespace Appman.LeaveManagement.Repositories
         public bool CreateLeaveInfo(LeaveInfo info)
         {
             info.ApprovalStatus = "Pending";
+            info.ApprovedBy = null;
             var remain = new RemainingHourRepository(_dbContext);
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
@@ -120,7 +126,7 @@ namespace Appman.LeaveManagement.Repositories
         ///     true - if success
         ///     false - if form is already approved or rejected, or no form found
         /// </returns>
-        public bool SetStatus(string status,string leaveId,string approverId)
+        public bool SetStatus(string status,int leaveId,string approverId)
         {
             var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
             //var approver = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId);
@@ -245,6 +251,42 @@ namespace Appman.LeaveManagement.Repositories
         public string GenerateLeaveId()
         {
             return "LE" + LeaveCount().ToString("D10");
+        }
+
+        //public string ExportLeaveAsHtml(LeaveInfo leave)
+        //{
+        //    var sb = new StringBuilder("<body style='margin: 0px;'>");
+        //    sb.Append("แจ้งเตือนการสร้างใบลาใหม่")
+        //    sb.AppendFormat("<b>มีการสร้างใบลาใหม่จากคุณ {0}</b>",_dbContext.Employees.FirstOrDefault(leave.Ap));
+        //    sb.AppendFormat();
+        //    sb.Append("</body>");
+        //    return "";
+        //}
+
+        public List<string> GenerateReferenceCode(int leaveId)
+        {
+            LeaveInfo leave = ViewLeaveInfo(leaveId);
+            List<string> result = new List<String>();
+            string api = "https://appmanleavemanagement.azurewebsites.net/api/Leaves/ApproveViaEmail?";
+            List<Reporting> reportings = _repRepo.GetApprover(leave.StaffId);
+            
+            foreach (var item in reportings)
+            {
+                
+                for (int j = 0; j < 2; j++)
+                {
+                    var sb = new StringBuilder(api);
+                    sb.AppendFormat("refNo1=" + leave.LeaveGuid.ToString() + "&");
+                    sb.AppendFormat("refNo2=" + _empRepo.GetProfile(item.Approver).StaffGuId.ToString() + "&");
+
+                    if (j == 0)
+                        sb.Append("refNo3=Approved");
+                    else
+                        sb.Append("refNo3=Rejected");
+                    result.Add(sb.ToString());
+                }
+            }
+            return result;
         }
     }
 }

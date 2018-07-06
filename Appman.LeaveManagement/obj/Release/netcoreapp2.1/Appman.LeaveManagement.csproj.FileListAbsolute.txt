@@ -30,4 +30,3 @@ C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Rel
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\Appman.LeaveManagement.dll
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\Appman.LeaveManagement.pdb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\Appman.LeaveManagement.csproj.CopyComplete
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Release\netcoreapp2.1\Appman.LeaveManagement.xml

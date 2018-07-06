@@ -37,9 +37,11 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<string>("Position");
 
-                    b.Property<byte[]>("ProfilePicture");
+                    b.Property<string>("ProfilePicture");
 
                     b.Property<string>("Section");
+
+                    b.Property<Guid>("StaffGuId");
 
                     b.Property<DateTime>("StartWorkingDate");
 
@@ -50,7 +52,7 @@ namespace Appman.LeaveManagement.Migrations
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.LeaveInfo", b =>
                 {
-                    b.Property<string>("LeaveId")
+                    b.Property<int>("LeaveId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("ApprovalStatus");
@@ -68,6 +70,8 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
+
+                    b.Property<Guid>("LeaveGuid");
 
                     b.Property<DateTime>("RequestedDateTime");
 

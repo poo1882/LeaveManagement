@@ -48,5 +48,10 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext.SaveChanges();
             return true;
         }
+
+        public List<Reporting> GetApprover(string staffId)
+        {
+            return _dbContext.Reportings.Where(x => x.StaffId == staffId).ToList();
+        }
     }
 }

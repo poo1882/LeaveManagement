@@ -1,22 +1,54 @@
-﻿using Appman.LeaveManagement.DatabaseContext.Model;
+﻿using Appman.LeaveManagement.DatabaseContext;
+using Appman.LeaveManagement.DatabaseContext.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.Repositories
 {
     public class EmailController : Controller
     {
-        
-        public bool SendRequestMailToApprover(string approverEmail)
+        private readonly LeaveManagementDbContext _dbContext;
+        private readonly LeaveInfoRepository _leaveRepo;
+
+        public EmailController (LeaveManagementDbContext dbContext)
         {
-            string body = "";
-            if (SendMail(approverEmail, body) != "Mail has been successfully sent!")
-                return false;
+            _dbContext = dbContext;
+            _leaveRepo = new LeaveInfoRepository(_dbContext);
+
+        }
+        public bool SendRequestMailToApprover(string approverEmail,int leaveId)
+        {
+            int i = 0;
+            List<string> approveLinks = _leaveRepo.GenerateReferenceCode(leaveId);
+            var sb = new StringBuilder();
+            foreach (var item in approveLinks)
+            {
+                
+                
+                i++;
+                if(i%2 == 1)
+                {
+                    sb = new StringBuilder();
+                     sb.Append("<body style='margin: 0px;'>");
+                    // Add your link
+                    sb.AppendFormat("<div><a href='{0}'>Click here to approve</a></div>", item);
+                    // Close the body element
+                }
+                else
+                {
+                    sb.AppendFormat("<div><a href='{0}'>Click here to reject</a></div>", item);
+                    sb.Append("</body>");
+                    // Get your e-mail contents using the ToString() method
+                    var content = sb.ToString();
+                    SendMail(approverEmail, content);
+                }
+            }
             return true;
         }
         

@@ -10,10 +10,11 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
     {
         [Key]
         public string StaffId { get; set; }
+        public Guid StaffGuId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public byte[] ProfilePicture { get; set; }
+        public string ProfilePicture { get; set; }
         public string Position { get; set; }
         public DateTime StartWorkingDate { get; set; }
         public bool IsActive { get; set; }

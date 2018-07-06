@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20180704085631_initialize")]
+    [Migration("20180705111831_initialize")]
     partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,9 +39,11 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<string>("Position");
 
-                    b.Property<byte[]>("ProfilePicture");
+                    b.Property<string>("ProfilePicture");
 
                     b.Property<string>("Section");
+
+                    b.Property<Guid>("StaffGuId");
 
                     b.Property<DateTime>("StartWorkingDate");
 
@@ -52,7 +54,7 @@ namespace Appman.LeaveManagement.Migrations
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.LeaveInfo", b =>
                 {
-                    b.Property<string>("LeaveId")
+                    b.Property<int>("LeaveId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("ApprovalStatus");
@@ -70,6 +72,8 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
+
+                    b.Property<Guid>("LeaveGuid");
 
                     b.Property<DateTime>("RequestedDateTime");
 

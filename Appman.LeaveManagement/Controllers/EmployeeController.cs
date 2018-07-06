@@ -1,6 +1,7 @@
 ﻿using Appman.LeaveManagement.DatabaseContext;
 using Appman.LeaveManagement.DatabaseContext.Model;
 using Appman.LeaveManagement.Repositories;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;

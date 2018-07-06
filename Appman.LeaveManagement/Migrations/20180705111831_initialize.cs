@@ -12,10 +12,11 @@ namespace Appman.LeaveManagement.Migrations
                 columns: table => new
                 {
                     StaffId = table.Column<string>(nullable: false),
+                    StaffGuId = table.Column<Guid>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    ProfilePicture = table.Column<byte[]>(nullable: true),
+                    ProfilePicture = table.Column<string>(nullable: true),
                     Position = table.Column<string>(nullable: true),
                     StartWorkingDate = table.Column<DateTime>(nullable: false),
                     IsActive = table.Column<bool>(nullable: false),
@@ -33,7 +34,9 @@ namespace Appman.LeaveManagement.Migrations
                 name: "LeaveInfos",
                 columns: table => new
                 {
-                    LeaveId = table.Column<string>(nullable: false),
+                    LeaveId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    LeaveGuid = table.Column<Guid>(nullable: false),
                     Type = table.Column<string>(nullable: true),
                     StaffId = table.Column<string>(nullable: true),
                     StartDateTime = table.Column<DateTime>(nullable: false),
