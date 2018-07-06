@@ -105,5 +105,16 @@ namespace Appman.LeaveManagement.Controllers
             return new EmptyResult();
         }
 
+        [Route("GetEmployeeId")]
+        [HttpGet]
+        public IActionResult GetEmployeeId([FromQuery]string email)
+        {
+            Employee emp = _dbContext.Employees.FirstOrDefault(x => x.Email == email);
+            if (emp != null)
+                return Content(JsonConvert.SerializeObject(emp.StaffId), "application/json");
+            else
+                return new EmptyResult();
+        }
+
     }
 }
