@@ -90,5 +90,15 @@ namespace Appman.LeaveManagement.Repositories
             List<Employee> result = _dbContext.Employees.Where(x => x.IsActive == true).ToList();
             return result;
         }
+
+        public void ClearEmployees()
+        {
+            var employees = _dbContext.Employees;
+            foreach (var item in employees)
+            {
+                employees.Remove(item);
+            }
+            _dbContext.SaveChanges();
+        }
     }
 }

@@ -42,8 +42,8 @@ namespace Appman.LeaveManagement.Controllers
                 approbations = _leaveRepo.CreateApprobationSet(info);
                 _leaveRepo.AddApprobation(approbations);
                 EmailController emailSender = new EmailController(_dbContext);
-                emailSender.SendRequestMailToApprover(approbations);
-                emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email);
+                emailSender.SendRequestMailToApprover(approbations,info);
+                emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email, info);
                 return Ok();
             }
             return new EmptyResult();
@@ -55,6 +55,8 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetRemaining([FromQuery]string staffId)
         {
             var leave = _leaveRepo.GetRemaining(staffId);
+            if (leave == null)
+                return new EmptyResult();
             return Content(JsonConvert.SerializeObject(leave), "application/json");
         }
 
@@ -80,9 +82,16 @@ namespace Appman.LeaveManagement.Controllers
             string approverId = approbation.ApproverId;
             string status = approbation.Status;
             if (_leaveRepo.SetStatus(status, leaveId, approverId))
-                return Ok();
+            {
+                EmailController emailSender = new EmailController(_dbContext);
+                emailSender.SendResultToOwner(_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).StaffId,leaveId,approverId,status);
+                if(status.ToLower()[0] == 'a')
+                    return Ok("Approved successfully");
+                return Ok("Rejected successfully");
+            }
+                
             else
-                return new EmptyResult();
+                return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
         }
 
         

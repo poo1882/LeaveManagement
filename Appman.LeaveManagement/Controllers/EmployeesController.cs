@@ -44,5 +44,13 @@ namespace Appman.LeaveManagement.Controllers
 
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
+
+        [Route("Employees")]
+        [HttpDelete]
+        public IActionResult ClearAllEmployees()
+        {
+            _empRepo.ClearEmployees();
+            return Ok();
+        }
     }
 }

@@ -62,8 +62,10 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult GetLeaveStatistic([FromQuery]string staffId)
         {
-            OneStatistic result = new OneStatistic(staffId,_empRepo,_remRepo);
-            result.Leaves = _leaveRepo.GetHistory(staffId);
+            OneStatistic result = new OneStatistic(staffId, _empRepo, _remRepo)
+            {
+                Leaves = _leaveRepo.GetHistory(staffId)
+            };
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 

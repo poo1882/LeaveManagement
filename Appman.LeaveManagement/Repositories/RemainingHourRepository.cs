@@ -18,9 +18,9 @@ namespace Appman.LeaveManagement.Repositories
         public int ViewHour(string staffId, string year, string type)
         {
             type = type.ToLower();
-            if (type == "sick")
+            if (type[0] == 's')
                 return _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId && x.Year == year).SickHours;
-            else if (type == "annual")
+            else if (type[0] == 'a')
                 return _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId && x.Year == year).AnnualHours;
             else
                 return _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId && x.Year == year).LWPHours;
@@ -28,17 +28,17 @@ namespace Appman.LeaveManagement.Repositories
 
         public void UpdateRemainHour(string staffId, string type, int totalHours)
         {
-            if (type.ToLower() == "annual")
+            if (type.ToLower()[0] == 'a')
             {
                 _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).AnnualHours -= totalHours;
                 _dbContext.SaveChanges();
             }
-            else if (type.ToLower() == "sick")
+            else if (type.ToLower()[0] == 's')
             {
                 _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).SickHours -= totalHours;
                 _dbContext.SaveChanges();
             }
-            else if (type.ToLower() == "lwp")
+            else if (type.ToLower()[0] == 'l')
             {
                 _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).AnnualHours -= totalHours;
                 _dbContext.SaveChanges();

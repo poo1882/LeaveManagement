@@ -37,10 +37,10 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult ViewLeaveInfo([FromQuery]int leaveId)
         {
-            var emp = JsonConvert.SerializeObject(_leaveRepo.ViewLeaveInfo(leaveId));
-            if (emp == null)
+            var leave = _leaveRepo.ViewLeaveInfo(leaveId);
+            if (leave == null)
                 return new EmptyResult();
-            return Content(JsonConvert.SerializeObject(emp), "application/json");
+            return Content(JsonConvert.SerializeObject(leave), "application/json");
         }
 
         //[Route("History")] // ดู history ของทุกคน
@@ -60,6 +60,14 @@ namespace Appman.LeaveManagement.Controllers
                 return new EmptyResult();
             
             return Content(JsonConvert.SerializeObject(list), "application/json");
+        }
+
+        [Route("History")]
+        [HttpDelete]
+        public IActionResult ClearLeaveHistory()
+        {
+            _leaveRepo.ClearLeaveHistory();
+            return Ok();
         }
 
 

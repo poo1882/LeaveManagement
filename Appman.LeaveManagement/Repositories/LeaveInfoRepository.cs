@@ -147,7 +147,7 @@ namespace Appman.LeaveManagement.Repositories
 
             var approveBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstName;
             leave.ApprovedTime = DateTime.Now;
-            leave.ApprovedBy = approveBy;
+            leave.ApprovedBy = approverId;
             leave.ApprovalStatus = status;
             if(status.ToLower() == "approved")
             {
@@ -162,6 +162,12 @@ namespace Appman.LeaveManagement.Repositories
                 }
                     
                 remaining.UpdateRemainHour(leave.StaffId, leave.Type,totalHours);
+            }
+            var approbationsLeft = _dbContext.Approbations;
+            foreach (var item in approbationsLeft)
+            {
+                if (item.LeaveId == leaveId)
+                    approbationsLeft.Remove(item);
             }
             _dbContext.SaveChanges();
             return true;
@@ -325,6 +331,16 @@ namespace Appman.LeaveManagement.Repositories
                 
             }
             return result;
+        }
+
+        public void ClearLeaveHistory()
+        {
+            var leaves = _dbContext.LeaveInfos;
+            foreach (var item in leaves)
+            {
+                leaves.Remove(item);
+            }
+            _dbContext.SaveChanges();
         }
     }
 }
