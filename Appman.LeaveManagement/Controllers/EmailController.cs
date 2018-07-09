@@ -27,6 +27,8 @@ namespace Appman.LeaveManagement.Repositories
             int i = 0;
             string api = "https://appmanleavemanagement.azurewebsites.net/api/Leaves/ApproveViaEmail?";
             var sb = new StringBuilder();
+            string url = "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/11070664_902255393167706_2830773750406557759_n.png?_nc_fx=fbkk1-3&_nc_cat=0&oh=7721fcafb6bbd5d172efbbfd88c9544f&oe=5BE284C3";
+            string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
             var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstName;
             var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastName;
@@ -55,6 +57,8 @@ namespace Appman.LeaveManagement.Repositories
                     link.Append(api);
                     link.AppendFormat("refNo=" + item.ApprobationGuid.ToString());
                     sb.AppendFormat("<div><a href='{0}'>Click here to reject</a></div>", link);
+                    sb.AppendFormat("<img src='{0}' style='{1}'>", url, style);
+                    sb.AppendFormat("<div>AppMan Co.,Ltd<br>52 / 25 Pan road,<br>Silom Bangrak<br>Bangkok<br>10500<br>Tax invoice: 0105554076903<br>Tel: (+66)2 635 2874<br>www.appman.co.th</div>");
                     sb.Append("</body>");
                     var content = sb.ToString();
                     SendMail(_dbContext.Employees.FirstOrDefault(x => x.StaffId == item.ApproverId).Email, content);
@@ -69,6 +73,8 @@ namespace Appman.LeaveManagement.Repositories
             var sb = new StringBuilder();
             var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstName;
             var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastName;
+            string url = "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/11070664_902255393167706_2830773750406557759_n.png?_nc_fx=fbkk1-3&_nc_cat=0&oh=7721fcafb6bbd5d172efbbfd88c9544f&oe=5BE284C3";
+            string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
             sb.AppendFormat("<div>เลขที่ใบลา : {0}<br><br>Staff Id : {1}<br><br> ชื่อ : {2} {3} <br><br> วันที่ลา : {4}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime);
             if (leaveInfo.StartDateTime != leaveInfo.EndDateTime)
@@ -76,6 +82,8 @@ namespace Appman.LeaveManagement.Repositories
                 sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
             }
             sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br></div>", leaveInfo.Type, leaveInfo.Comment);
+            sb.AppendFormat("<img src='{0}' style='{1}'>", url, style);
+            sb.AppendFormat("<div>AppMan Co.,Ltd<br>52 / 25 Pan road,<br>Silom Bangrak<br>Bangkok<br>10500<br>Tax invoice: 0105554076903<br>Tel: (+66)2 635 2874<br>www.appman.co.th</div>");
             var body = sb.ToString();
             if (SendMail(email, body) != "Mail has been successfully sent!")
                 return false;
