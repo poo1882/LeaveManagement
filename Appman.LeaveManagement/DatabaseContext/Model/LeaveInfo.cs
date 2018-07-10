@@ -20,7 +20,9 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public string Comment { get; set; }
         public DateTime? ApprovedTime { get; set; }
         public string ApprovedBy { get; set; }
-        public byte[] AttachedFile { get; set; }
+        public string AttachedFile1 { get; set; }
+        public string AttachedFile2 { get; set; }
+        public string AttachedFile3 { get; set; }
         public DateTime RequestedDateTime { get; set; }
     }
 }

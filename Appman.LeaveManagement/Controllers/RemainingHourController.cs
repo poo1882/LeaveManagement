@@ -47,6 +47,7 @@ namespace Appman.LeaveManagement.Controllers
             var result = _remRepo.ViewAllRemainingHour();
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
+        
 
 
     }

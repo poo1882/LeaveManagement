@@ -13,6 +13,9 @@ using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Events;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Appman.LeaveManagement
@@ -22,6 +25,12 @@ namespace Appman.LeaveManagement
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel
+                .Information()
+                .WriteTo.RollingFile("log-{Date}.txt",LogEventLevel.Information)
+                .WriteTo.Seq("http://localhost:5341/")
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }
@@ -93,11 +102,15 @@ namespace Appman.LeaveManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));//
+            loggerFactory.AddDebug();//
+            loggerFactory.AddSerilog();//
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();//
             }
             else
             {
@@ -109,7 +122,7 @@ namespace Appman.LeaveManagement
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseCors("All");
-
+            //app.UseIdentity();
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

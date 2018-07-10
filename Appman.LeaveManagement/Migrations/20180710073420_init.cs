@@ -59,7 +59,9 @@ namespace Appman.LeaveManagement.Migrations
                     Comment = table.Column<string>(nullable: true),
                     ApprovedTime = table.Column<DateTime>(nullable: true),
                     ApprovedBy = table.Column<string>(nullable: true),
-                    AttachedFile = table.Column<byte[]>(nullable: true),
+                    AttachedFile1 = table.Column<string>(nullable: true),
+                    AttachedFile2 = table.Column<string>(nullable: true),
+                    AttachedFile3 = table.Column<string>(nullable: true),
                     RequestedDateTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

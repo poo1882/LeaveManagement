@@ -26,7 +26,7 @@ namespace Appman.LeaveManagement.Repositories
                 return _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId && x.Year == year).LWPHours;
         }
 
-        public void UpdateRemainHour(string staffId, string type, int totalHours)
+        public void DeductRemainHour(string staffId, string type, int totalHours)
         {
             if (type.ToLower()[0] == 'a')
             {
@@ -40,7 +40,26 @@ namespace Appman.LeaveManagement.Repositories
             }
             else if (type.ToLower()[0] == 'l')
             {
-                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).AnnualHours -= totalHours;
+                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).LWPHours -= totalHours;
+                _dbContext.SaveChanges();
+            }
+        }
+
+        public void AddRemainHour(string staffId, string type, int totalHours)
+        {
+            if (type.ToLower()[0] == 'a')
+            {
+                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).AnnualHours += totalHours;
+                _dbContext.SaveChanges();
+            }
+            else if (type.ToLower()[0] == 's')
+            {
+                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).SickHours += totalHours;
+                _dbContext.SaveChanges();
+            }
+            else if (type.ToLower()[0] == 'l')
+            {
+                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).LWPHours += totalHours;
                 _dbContext.SaveChanges();
             }
         }

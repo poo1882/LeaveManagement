@@ -10,6 +10,7 @@ namespace Appman.LeaveManagement.Repositories
     public class EmployeeRepository
     {
         LeaveManagementDbContext _dbContext;
+        
         public EmployeeRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -98,7 +99,188 @@ namespace Appman.LeaveManagement.Repositories
             {
                 employees.Remove(item);
             }
+            var reportings = _dbContext.Reportings;
+            foreach (var item in _dbContext.Reportings)
+            {
+                reportings.Remove(item);   
+            }
+            var remainingHours = _dbContext.RemainingHours;
+            foreach (var item in remainingHours)
+            {
+                remainingHours.Remove(item);
+            }
+
             _dbContext.SaveChanges();
+        }
+
+        public bool InitializeEmployees(string password)
+        {
+            if (password != "init")
+                return false;
+            RemainingHourRepository remRepo = new RemainingHourRepository(_dbContext);
+            AddEmployee(new Employee
+            {
+                StaffId = "00007",
+                FirstName = "Gun",
+                LastName = "Zo",
+                Email = "sirapobmech@gmail.com",
+                ProfilePicture = null,
+                Position = "Frontend",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "01",
+                IsSuperHr = false
+            });
+            
+            RemainingHour remain = new RemainingHour(100, "00007", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00008",
+                FirstName = "Knack",
+                LastName = "Ly",
+                Email = "kasidis.sr@mail.kmutt.ac.th",
+                ProfilePicture = null,
+                Position = "Business Analyst",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Non-Developer",
+                IsInProbation = false,
+                GenderCode = "01",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00008", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00006",
+                FirstName = "Poo",
+                LastName = "Siriwimon",
+                Email = "poo_poo1882@hotmail.com",
+                ProfilePicture = null,
+                Position = "Backend",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "02",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00006", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00005",
+                FirstName = "Jenny",
+                LastName = "Ji",
+                Email = "jennydoubles@hotmail.com",
+                ProfilePicture = null,
+                Position = "Mobile",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "02",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00005", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00001",
+                FirstName = "Tangkwa",
+                LastName = "Ly",
+                Email = "psrisuwankum@gmail.com",
+                ProfilePicture = null,
+                Position = "Frontend",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "02",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00001", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00002",
+                FirstName = "Jill",
+                LastName = "Ly",
+                Email = "jilltitinan@gmail.com",
+                ProfilePicture = null,
+                Position = "Backend",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "02",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00002", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00003",
+                FirstName = "Got",
+                LastName = "Ly",
+                Email = "supakit.dha@hotmail.com",
+                ProfilePicture = null,
+                Position = "QA",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Non-Developer",
+                IsInProbation = false,
+                GenderCode = "01",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00003", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00004",
+                FirstName = "Stamp",
+                LastName = "Ly",
+                Email = "notphattri.stamp@hotmail.com",
+                ProfilePicture = null,
+                Position = "UX/UI",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Non-Developer",
+                IsInProbation = false,
+                GenderCode = "02",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00004", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+
+            AddEmployee(new Employee
+            {
+                StaffId = "00009",
+                FirstName = "Puen",
+                LastName = "Ly",
+                Email = "nuttasit10@gmail.com",
+                ProfilePicture = null,
+                Position = "Frontend",
+                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                IsActive = true,
+                Section = "Developer",
+                IsInProbation = false,
+                GenderCode = "01",
+                IsSuperHr = false
+            });
+            remain = new RemainingHour(100, "00009", DateTime.Now.Year.ToString());
+            remRepo.generateHours(remain);
+            return true;
         }
     }
 }

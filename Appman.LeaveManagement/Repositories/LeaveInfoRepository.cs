@@ -45,13 +45,16 @@ namespace Appman.LeaveManagement.Repositories
         {
             info.ApprovalStatus = "Pending";
             info.ApprovedBy = null;
-            var remain = new RemainingHourRepository(_dbContext);
+            RemainingHourRepository remain = new RemainingHourRepository(_dbContext);
+            int totalHours = 0;
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
                 if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate)
                 {
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
+                    totalHours = info.HoursStartDate;
+                    remain.DeductRemainHour(info.StaffId,info.Type,totalHours);
                     return true;
                 }
                 return false;
@@ -65,10 +68,12 @@ namespace Appman.LeaveManagement.Repositories
                     //UpdateRemainHour(info.StaffId, info.Type, totalHours);
                     _dbContext.LeaveInfos.Add(info);
                     _dbContext.SaveChanges();
+                    remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
                     return true;
                 }
                 return false;
             }
+            
 
         }
 
@@ -149,7 +154,7 @@ namespace Appman.LeaveManagement.Repositories
             leave.ApprovedTime = DateTime.Now;
             leave.ApprovedBy = approverId;
             leave.ApprovalStatus = status;
-            if(status.ToLower() == "approved")
+            if(status.ToLower() == "rejected")
             {
                 var info = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
                 RemainingHourRepository remaining = new RemainingHourRepository(_dbContext);
@@ -161,7 +166,7 @@ namespace Appman.LeaveManagement.Repositories
                     totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
                 }
                     
-                remaining.UpdateRemainHour(leave.StaffId, leave.Type,totalHours);
+                remaining.AddRemainHour(leave.StaffId, leave.Type,totalHours);
             }
             var approbationsLeft = _dbContext.Approbations;
             foreach (var item in approbationsLeft)

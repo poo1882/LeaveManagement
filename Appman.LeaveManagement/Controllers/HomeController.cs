@@ -5,14 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Appman.LeaveManagement.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Appman.LeaveManagement.Controllers
 {
     public class HomeController : Controller
     {
+        
         [HttpGet]
         public IActionResult Index()
         {
+            //var p = new Person { FirstName = "Ajden", LastName = "Towfeek" };
+            //_logger.LogInformation("Just trying out the logger {@Person}", p);
             return View();
         }
         [HttpGet]

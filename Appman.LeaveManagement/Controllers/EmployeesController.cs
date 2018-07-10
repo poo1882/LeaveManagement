@@ -50,7 +50,16 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ClearAllEmployees()
         {
             _empRepo.ClearEmployees();
-            return Ok();
+            return Ok("Employees data has been deleted.");
+        }
+
+        [Route("InitializeEmployees")]
+        [HttpGet]
+        public IActionResult InitializeEmployee([FromQuery] string password)
+        {
+            if (!_empRepo.InitializeEmployees(password))
+                return Ok("Duplicated initialization was rejected.");
+            return Ok("Initialize employees successfully.");
         }
     }
 }

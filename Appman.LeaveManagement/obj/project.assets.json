@@ -2490,12 +2490,13 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Microsoft.NETCore.App/2.1.0-preview1-26216-03": {
+      "Microsoft.NETCore.App/2.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.DotNetHostPolicy": "2.1.0-preview1-26216-03",
-          "Microsoft.NETCore.Platforms": "2.1.0-preview1-26216-02",
-          "NETStandard.Library": "2.0.1"
+          "Microsoft.NETCore.DotNetHostPolicy": "2.1.0",
+          "Microsoft.NETCore.Platforms": "2.1.0",
+          "Microsoft.NETCore.Targets": "2.1.0",
+          "NETStandard.Library": "2.0.3"
         },
         "compile": {
           "ref/netcoreapp2.1/Microsoft.CSharp.dll": {},
@@ -2591,7 +2592,6 @@
           "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll": {},
           "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll": {},
           "ref/netcoreapp2.1/System.Runtime.InteropServices.dll": {},
-          "ref/netcoreapp2.1/System.Runtime.Intrinsics.dll": {},
           "ref/netcoreapp2.1/System.Runtime.Loader.dll": {},
           "ref/netcoreapp2.1/System.Runtime.Numerics.dll": {},
           "ref/netcoreapp2.1/System.Runtime.Serialization.Formatters.dll": {},
@@ -2648,22 +2648,22 @@
           "build/netcoreapp2.1/Microsoft.NETCore.App.targets": {}
         }
       },
-      "Microsoft.NETCore.DotNetAppHost/2.1.0-preview1-26216-03": {
+      "Microsoft.NETCore.DotNetAppHost/2.1.0": {
         "type": "package"
       },
-      "Microsoft.NETCore.DotNetHostPolicy/2.1.0-preview1-26216-03": {
+      "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.DotNetHostResolver": "2.1.0-preview1-26216-03"
+          "Microsoft.NETCore.DotNetHostResolver": "2.1.0"
         }
       },
-      "Microsoft.NETCore.DotNetHostResolver/2.1.0-preview1-26216-03": {
+      "Microsoft.NETCore.DotNetHostResolver/2.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.DotNetAppHost": "2.1.0-preview1-26216-03"
+          "Microsoft.NETCore.DotNetAppHost": "2.1.0"
         }
       },
-      "Microsoft.NETCore.Platforms/2.1.0-preview1-26216-02": {
+      "Microsoft.NETCore.Platforms/2.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -2672,7 +2672,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/1.1.0": {
+      "Microsoft.NETCore.Targets/2.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -2691,6 +2691,19 @@
         },
         "runtime": {
           "lib/net451/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
         }
       },
       "Microsoft.Owin.Security/4.0.0": {
@@ -2848,7 +2861,7 @@
           }
         }
       },
-      "NETStandard.Library/2.0.1": {
+      "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -3134,6 +3147,141 @@
           }
         }
       },
+      "Serilog/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.AspNetCore/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection": "2.0.0",
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Serilog": "2.5.0",
+          "Serilog.Extensions.Logging": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.AspNetCore.dll": {}
+        }
+      },
+      "Serilog.Extensions.Logging/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.0.0",
+          "Serilog": "2.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "Serilog.Formatting.Compact/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Serilog.Formatting.Compact.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Serilog.Formatting.Compact.dll": {}
+        }
+      },
+      "Serilog.Sinks.File/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.5.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.File.dll": {}
+        }
+      },
+      "Serilog.Sinks.PeriodicBatching/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Threading.Timer": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll": {}
+        }
+      },
+      "Serilog.Sinks.RollingFile/3.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog.Sinks.File": "3.2.0",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll": {}
+        }
+      },
+      "Serilog.Sinks.Seq/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Serilog": "2.5.0",
+          "Serilog.Formatting.Compact": "1.0.0",
+          "Serilog.Sinks.File": "4.0.0",
+          "Serilog.Sinks.PeriodicBatching": "2.1.1",
+          "System.Net.Http": "4.3.2"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Seq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Seq.dll": {}
+        }
+      },
+      "Serilog.Sinks.SQLite/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Serilog": "2.7.1",
+          "System.Data.SQLite.Core": "1.0.108"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Sinks.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Sinks.SQLite.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_green/1.1.11": {
         "type": "package",
         "dependencies": {
@@ -3389,7 +3537,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -3572,6 +3720,18 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Data.SQLite.Core/1.0.108": {
+        "type": "package",
+        "compile": {
+          "lib/net46/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Data.SQLite.dll": {}
+        },
+        "build": {
+          "build/net46/_._": {}
         }
       },
       "System.Diagnostics.Contracts/4.3.0": {
@@ -3944,7 +4104,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "System.Net.Http/4.3.0": {
+      "System.Net.Http/4.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -4765,6 +4925,17 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.Thread.dll": {}
+        }
+      },
+      "System.Threading.Timer/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.2/System.Threading.Timer.dll": {}
         }
       },
       "System.ValueTuple/4.3.0": {
@@ -7076,18 +7247,19 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NETCore.App/2.1.0-preview1-26216-03": {
-      "sha512": "76o+qUv4nMXBgOoe8TiaxtrrzKcLF2aDt6LTsQRErOhGM25dsKssmxjUyJOZSD08FMIszDU2AAixtFZSsDr98Q==",
+    "Microsoft.NETCore.App/2.1.0": {
+      "sha512": "AvT774nTFgU8cYcGO9j1EMwuayKslxqYTurg32HGpWa2hEYNuW2+XgYVVNcZe6Ndbr84QX6fwaOZfd5n+1m2OA==",
       "type": "package",
-      "path": "microsoft.netcore.app/2.1.0-preview1-26216-03",
+      "path": "microsoft.netcore.app/2.1.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "Microsoft.NETCore.App.versions.txt",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netcoreapp2.1/Microsoft.NETCore.App.PlatformManifest.txt",
         "build/netcoreapp2.1/Microsoft.NETCore.App.props",
         "build/netcoreapp2.1/Microsoft.NETCore.App.targets",
-        "microsoft.netcore.app.2.1.0-preview1-26216-03.nupkg.sha512",
+        "microsoft.netcore.app.2.1.0.nupkg.sha512",
         "microsoft.netcore.app.nuspec",
         "ref/netcoreapp/_._",
         "ref/netcoreapp2.1/Microsoft.CSharp.dll",
@@ -7097,7 +7269,6 @@
         "ref/netcoreapp2.1/Microsoft.Win32.Primitives.dll",
         "ref/netcoreapp2.1/Microsoft.Win32.Primitives.xml",
         "ref/netcoreapp2.1/System.AppContext.dll",
-        "ref/netcoreapp2.1/System.AppContext.xml",
         "ref/netcoreapp2.1/System.Buffers.dll",
         "ref/netcoreapp2.1/System.Buffers.xml",
         "ref/netcoreapp2.1/System.Collections.Concurrent.dll",
@@ -7152,13 +7323,9 @@
         "ref/netcoreapp2.1/System.Drawing.Primitives.xml",
         "ref/netcoreapp2.1/System.Drawing.dll",
         "ref/netcoreapp2.1/System.Dynamic.Runtime.dll",
-        "ref/netcoreapp2.1/System.Dynamic.Runtime.xml",
         "ref/netcoreapp2.1/System.Globalization.Calendars.dll",
-        "ref/netcoreapp2.1/System.Globalization.Calendars.xml",
         "ref/netcoreapp2.1/System.Globalization.Extensions.dll",
-        "ref/netcoreapp2.1/System.Globalization.Extensions.xml",
         "ref/netcoreapp2.1/System.Globalization.dll",
-        "ref/netcoreapp2.1/System.Globalization.xml",
         "ref/netcoreapp2.1/System.IO.Compression.Brotli.dll",
         "ref/netcoreapp2.1/System.IO.Compression.FileSystem.dll",
         "ref/netcoreapp2.1/System.IO.Compression.ZipFile.dll",
@@ -7168,7 +7335,6 @@
         "ref/netcoreapp2.1/System.IO.FileSystem.DriveInfo.dll",
         "ref/netcoreapp2.1/System.IO.FileSystem.DriveInfo.xml",
         "ref/netcoreapp2.1/System.IO.FileSystem.Primitives.dll",
-        "ref/netcoreapp2.1/System.IO.FileSystem.Primitives.xml",
         "ref/netcoreapp2.1/System.IO.FileSystem.Watcher.dll",
         "ref/netcoreapp2.1/System.IO.FileSystem.Watcher.xml",
         "ref/netcoreapp2.1/System.IO.FileSystem.dll",
@@ -7180,9 +7346,7 @@
         "ref/netcoreapp2.1/System.IO.Pipes.dll",
         "ref/netcoreapp2.1/System.IO.Pipes.xml",
         "ref/netcoreapp2.1/System.IO.UnmanagedMemoryStream.dll",
-        "ref/netcoreapp2.1/System.IO.UnmanagedMemoryStream.xml",
         "ref/netcoreapp2.1/System.IO.dll",
-        "ref/netcoreapp2.1/System.IO.xml",
         "ref/netcoreapp2.1/System.Linq.Expressions.dll",
         "ref/netcoreapp2.1/System.Linq.Expressions.xml",
         "ref/netcoreapp2.1/System.Linq.Parallel.dll",
@@ -7240,7 +7404,6 @@
         "ref/netcoreapp2.1/System.Reflection.Emit.dll",
         "ref/netcoreapp2.1/System.Reflection.Emit.xml",
         "ref/netcoreapp2.1/System.Reflection.Extensions.dll",
-        "ref/netcoreapp2.1/System.Reflection.Extensions.xml",
         "ref/netcoreapp2.1/System.Reflection.Metadata.dll",
         "ref/netcoreapp2.1/System.Reflection.Metadata.xml",
         "ref/netcoreapp2.1/System.Reflection.Primitives.dll",
@@ -7248,9 +7411,7 @@
         "ref/netcoreapp2.1/System.Reflection.TypeExtensions.dll",
         "ref/netcoreapp2.1/System.Reflection.TypeExtensions.xml",
         "ref/netcoreapp2.1/System.Reflection.dll",
-        "ref/netcoreapp2.1/System.Reflection.xml",
         "ref/netcoreapp2.1/System.Resources.Reader.dll",
-        "ref/netcoreapp2.1/System.Resources.Reader.xml",
         "ref/netcoreapp2.1/System.Resources.ResourceManager.dll",
         "ref/netcoreapp2.1/System.Resources.ResourceManager.xml",
         "ref/netcoreapp2.1/System.Resources.Writer.dll",
@@ -7260,14 +7421,12 @@
         "ref/netcoreapp2.1/System.Runtime.Extensions.dll",
         "ref/netcoreapp2.1/System.Runtime.Extensions.xml",
         "ref/netcoreapp2.1/System.Runtime.Handles.dll",
-        "ref/netcoreapp2.1/System.Runtime.Handles.xml",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.xml",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.xml",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.dll",
         "ref/netcoreapp2.1/System.Runtime.InteropServices.xml",
-        "ref/netcoreapp2.1/System.Runtime.Intrinsics.dll",
         "ref/netcoreapp2.1/System.Runtime.Loader.dll",
         "ref/netcoreapp2.1/System.Runtime.Loader.xml",
         "ref/netcoreapp2.1/System.Runtime.Numerics.dll",
@@ -7298,14 +7457,12 @@
         "ref/netcoreapp2.1/System.Security.Principal.dll",
         "ref/netcoreapp2.1/System.Security.Principal.xml",
         "ref/netcoreapp2.1/System.Security.SecureString.dll",
-        "ref/netcoreapp2.1/System.Security.SecureString.xml",
         "ref/netcoreapp2.1/System.Security.dll",
         "ref/netcoreapp2.1/System.ServiceModel.Web.dll",
         "ref/netcoreapp2.1/System.ServiceProcess.dll",
         "ref/netcoreapp2.1/System.Text.Encoding.Extensions.dll",
         "ref/netcoreapp2.1/System.Text.Encoding.Extensions.xml",
         "ref/netcoreapp2.1/System.Text.Encoding.dll",
-        "ref/netcoreapp2.1/System.Text.Encoding.xml",
         "ref/netcoreapp2.1/System.Text.RegularExpressions.dll",
         "ref/netcoreapp2.1/System.Text.RegularExpressions.xml",
         "ref/netcoreapp2.1/System.Threading.Overlapped.dll",
@@ -7330,7 +7487,6 @@
         "ref/netcoreapp2.1/System.Transactions.Local.xml",
         "ref/netcoreapp2.1/System.Transactions.dll",
         "ref/netcoreapp2.1/System.ValueTuple.dll",
-        "ref/netcoreapp2.1/System.ValueTuple.xml",
         "ref/netcoreapp2.1/System.Web.HttpUtility.dll",
         "ref/netcoreapp2.1/System.Web.HttpUtility.xml",
         "ref/netcoreapp2.1/System.Web.dll",
@@ -7346,7 +7502,6 @@
         "ref/netcoreapp2.1/System.Xml.XPath.dll",
         "ref/netcoreapp2.1/System.Xml.XPath.xml",
         "ref/netcoreapp2.1/System.Xml.XmlDocument.dll",
-        "ref/netcoreapp2.1/System.Xml.XmlDocument.xml",
         "ref/netcoreapp2.1/System.Xml.XmlSerializer.dll",
         "ref/netcoreapp2.1/System.Xml.XmlSerializer.xml",
         "ref/netcoreapp2.1/System.Xml.dll",
@@ -7357,68 +7512,75 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.DotNetAppHost/2.1.0-preview1-26216-03": {
-      "sha512": "TzUgHVt/7hw5Ea/agrXcs0ATN1UXGO2eWfbJ2jE7tEixn/OjUKsFOAp1G2+by2VzaMexr/RgmZ4+PiZFHEwy3Q==",
+    "Microsoft.NETCore.DotNetAppHost/2.1.0": {
+      "sha512": "f/47I60Wg3SrveTvnecCQhCZCAMYlUujWF15EQ/AZTqF/54qeEJjbCIAxKcZI8ToUYzSg6JdfrHggsgjCyCE9Q==",
       "type": "package",
-      "path": "microsoft.netcore.dotnetapphost/2.1.0-preview1-26216-03",
+      "path": "microsoft.netcore.dotnetapphost/2.1.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "microsoft.netcore.dotnetapphost.2.1.0-preview1-26216-03.nupkg.sha512",
+        "microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
         "microsoft.netcore.dotnetapphost.nuspec",
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.DotNetHostPolicy/2.1.0-preview1-26216-03": {
-      "sha512": "8GVVXAaCfbGcnYffzuRq8ZinphQCXIYSWalgp4xoJz73pCAVi3CaWBBhFLBZrlMsXbkIPDjkzBiDMUDcbGmzkg==",
+    "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {
+      "sha512": "p50yZYKzhH64lmArJgoKjtvsNehECa+/sAuOQzZh5uDNBTbRKxjN8IXP1e517xdVsgrFcSNxSEVDKZIOWVjGcQ==",
       "type": "package",
-      "path": "microsoft.netcore.dotnethostpolicy/2.1.0-preview1-26216-03",
+      "path": "microsoft.netcore.dotnethostpolicy/2.1.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "microsoft.netcore.dotnethostpolicy.2.1.0-preview1-26216-03.nupkg.sha512",
+        "microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
         "microsoft.netcore.dotnethostpolicy.nuspec",
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.DotNetHostResolver/2.1.0-preview1-26216-03": {
-      "sha512": "C/KrTMazxlJCwmi746lx1/QwaFrs3NBacr8JwKR1xBoBfF3i+eLY1tfE9XR+6dKYql3VaATsb4/PwSmLuW5nnQ==",
+    "Microsoft.NETCore.DotNetHostResolver/2.1.0": {
+      "sha512": "fS9D8a+y55n6mHMbNqgHXaPGkjmpVH9h97OyrBxsCuo3Z8aQaFMJ5xIfmzji2ntUd/3truhMbSgSfIelHOkQpg==",
       "type": "package",
-      "path": "microsoft.netcore.dotnethostresolver/2.1.0-preview1-26216-03",
+      "path": "microsoft.netcore.dotnethostresolver/2.1.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "microsoft.netcore.dotnethostresolver.2.1.0-preview1-26216-03.nupkg.sha512",
+        "microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
         "microsoft.netcore.dotnethostresolver.nuspec",
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.1.0-preview1-26216-02": {
-      "sha512": "N6EA09LfBNpWTV/fjuAEhcsrl5iD+vIKML0P2TxrwiUd8ThCvOM4cdvimqGhJuBeHkgdSl+sFi0HvWnTkhin0g==",
+    "Microsoft.NETCore.Platforms/2.1.0": {
+      "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.1.0-preview1-26216-02",
+      "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.1.0-preview1-26216-02.nupkg.sha512",
+        "microsoft.netcore.platforms.2.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-    "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+    "Microsoft.NETCore.Targets/2.1.0": {
+      "sha512": "etaYwrLZQUS+b3UWTpCnUggd6SQ/ZIkZ5pHnoR7+dIWt/wp2Rv3CvMKOZISsrt7FYCHKwCxfcepuuyEWkQxADg==",
       "type": "package",
-      "path": "microsoft.netcore.targets/1.1.0",
+      "path": "microsoft.netcore.targets/2.1.0",
       "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
+        "microsoft.netcore.targets.2.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
-        "runtime.json"
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Owin/4.0.0": {
@@ -7430,6 +7592,17 @@
         "lib/net451/Microsoft.Owin.dll",
         "microsoft.owin.4.0.0.nupkg.sha512",
         "microsoft.owin.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+      "sha512": "7zRXPcjn1OwHrhJ71KjfU07B//xxBhK3PfYZxVKDVdv1DhDPDAMAshmW1h7sFMcT7gLvSp78uDcKSucpuccCxw==",
+      "type": "package",
+      "path": "microsoft.owin.host.systemweb/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.Host.SystemWeb.dll",
+        "lib/net451/Microsoft.Owin.Host.SystemWeb.xml",
+        "microsoft.owin.host.systemweb.4.0.0.nupkg.sha512",
+        "microsoft.owin.host.systemweb.nuspec"
       ]
     },
     "Microsoft.Owin.Security/4.0.0": {
@@ -7749,14 +7922,13 @@
         "version.txt"
       ]
     },
-    "NETStandard.Library/2.0.1": {
-      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
+    "NETStandard.Library/2.0.3": {
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
-      "path": "netstandard.library/2.0.1",
+      "path": "netstandard.library/2.0.3",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -7873,7 +8045,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.1.nupkg.sha512",
+        "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -8208,6 +8380,137 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Serilog/2.7.1": {
+      "sha512": "5eS6AD4hesOYvlwYqjntLaOonDnEiY22QiMUKueJHPrm5vm1k4tzXgOgCb2mJoMnj6l5Wt6AXV5liXzXymvarg==",
+      "type": "package",
+      "path": "serilog/2.7.1",
+      "files": [
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.pdb",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.pdb",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.pdb",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.pdb",
+        "lib/netstandard1.3/Serilog.xml",
+        "serilog.2.7.1.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.AspNetCore/2.1.1": {
+      "sha512": "euuzaDEF8RuTszbqZnYYOm15bGKm0ID3Vaj++sDhmxeL79a8yRemhv2Y8knjvqoOatIpN7Cqd6Jma0A+Pk+V7g==",
+      "type": "package",
+      "path": "serilog.aspnetcore/2.1.1",
+      "files": [
+        "lib/netstandard2.0/Serilog.AspNetCore.dll",
+        "lib/netstandard2.0/Serilog.AspNetCore.xml",
+        "serilog.aspnetcore.2.1.1.nupkg.sha512",
+        "serilog.aspnetcore.nuspec"
+      ]
+    },
+    "Serilog.Extensions.Logging/2.0.0": {
+      "sha512": "JAh1vHmbiwDAjA9VmUQjAXvlGm+vDv8usarajlkx7Arm6Zai+CPY4naE4N9M3Eh520wY5GmIWpM+7zmfMbdTOw==",
+      "type": "package",
+      "path": "serilog.extensions.logging/2.0.0",
+      "files": [
+        "lib/net45/Serilog.Extensions.Logging.dll",
+        "lib/net45/Serilog.Extensions.Logging.xml",
+        "lib/net46/Serilog.Extensions.Logging.dll",
+        "lib/net46/Serilog.Extensions.Logging.xml",
+        "lib/net461/Serilog.Extensions.Logging.dll",
+        "lib/net461/Serilog.Extensions.Logging.xml",
+        "lib/netstandard1.3/Serilog.Extensions.Logging.dll",
+        "lib/netstandard1.3/Serilog.Extensions.Logging.xml",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.dll",
+        "lib/netstandard2.0/Serilog.Extensions.Logging.xml",
+        "serilog.extensions.logging.2.0.0.nupkg.sha512",
+        "serilog.extensions.logging.nuspec"
+      ]
+    },
+    "Serilog.Formatting.Compact/1.0.0": {
+      "sha512": "r3QYz02y7+B7Ng30hyJM929OJhem7SsJ4XDUE0Zfptj2MRiQfpPUb5f58juAFjp/TnNeSX2QNzZEnHwLeoJfHQ==",
+      "type": "package",
+      "path": "serilog.formatting.compact/1.0.0",
+      "files": [
+        "lib/net45/Serilog.Formatting.Compact.dll",
+        "lib/net45/Serilog.Formatting.Compact.xml",
+        "lib/netstandard1.1/Serilog.Formatting.Compact.dll",
+        "lib/netstandard1.1/Serilog.Formatting.Compact.xml",
+        "serilog.formatting.compact.1.0.0.nupkg.sha512",
+        "serilog.formatting.compact.nuspec"
+      ]
+    },
+    "Serilog.Sinks.File/4.0.0": {
+      "sha512": "vBj43RkAbeP1dzoPFR2+LfV5GevDRPDq6265JJBv223lMvT9rfdwe/S/I9ow7aZSLYKfw4qPDw6NW8YwjbDbvg==",
+      "type": "package",
+      "path": "serilog.sinks.file/4.0.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.File.dll",
+        "lib/net45/Serilog.Sinks.File.xml",
+        "lib/netstandard1.3/Serilog.Sinks.File.dll",
+        "lib/netstandard1.3/Serilog.Sinks.File.xml",
+        "serilog.sinks.file.4.0.0.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
+      ]
+    },
+    "Serilog.Sinks.PeriodicBatching/2.1.1": {
+      "sha512": "L1iZtcEzQdEIYCPvhYJYB2RofPg+i1NhHJfS+DpXLyLSMS6OXebqaI1fxWhmJRIjD9D9BuXi23FkZTQDiP7cHw==",
+      "type": "package",
+      "path": "serilog.sinks.periodicbatching/2.1.1",
+      "files": [
+        "lib/net45/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/net45/Serilog.Sinks.PeriodicBatching.xml",
+        "lib/netstandard1.1/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/netstandard1.1/Serilog.Sinks.PeriodicBatching.xml",
+        "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll",
+        "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.xml",
+        "serilog.sinks.periodicbatching.2.1.1.nupkg.sha512",
+        "serilog.sinks.periodicbatching.nuspec"
+      ]
+    },
+    "Serilog.Sinks.RollingFile/3.3.0": {
+      "sha512": "2lT5X1r3GH4P0bRWJfhA7etGl8Q2Ipw9AACvtAHWRUSpYZ42NGVyHoVs2ALBZ/cAkkS+tA4jl80Zie144eLQPg==",
+      "type": "package",
+      "path": "serilog.sinks.rollingfile/3.3.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.RollingFile.dll",
+        "lib/net45/Serilog.Sinks.RollingFile.xml",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.dll",
+        "lib/netstandard1.3/Serilog.Sinks.RollingFile.xml",
+        "serilog.sinks.rollingfile.3.3.0.nupkg.sha512",
+        "serilog.sinks.rollingfile.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Seq/4.0.0": {
+      "sha512": "02HTAboPlG6+/u63+o4bffS5f9VOLMn0/76OsK+Ii90IufoTO6YWIEzZ84KUYjmQnjToe0lrVbLa7qOJdUCYbg==",
+      "type": "package",
+      "path": "serilog.sinks.seq/4.0.0",
+      "files": [
+        "lib/net45/Serilog.Sinks.Seq.dll",
+        "lib/net45/Serilog.Sinks.Seq.xml",
+        "lib/netstandard1.1/Serilog.Sinks.Seq.dll",
+        "lib/netstandard1.1/Serilog.Sinks.Seq.xml",
+        "lib/netstandard1.3/Serilog.Sinks.Seq.dll",
+        "lib/netstandard1.3/Serilog.Sinks.Seq.xml",
+        "serilog.sinks.seq.4.0.0.nupkg.sha512",
+        "serilog.sinks.seq.nuspec"
+      ]
+    },
+    "Serilog.Sinks.SQLite/4.0.0": {
+      "sha512": "k4539qA1D4lmtGI78e0hsAVMZeyXX64baE/XTlS655cjFEwhM1ikV0qknMlerOo125ktXFTCKRWBTNfyCwI3AQ==",
+      "type": "package",
+      "path": "serilog.sinks.sqlite/4.0.0",
+      "files": [
+        "lib/net452/Serilog.Sinks.SQLite.dll",
+        "lib/netstandard2.0/Serilog.Sinks.SQLite.dll",
+        "serilog.sinks.sqlite.4.0.0.nupkg.sha512",
+        "serilog.sinks.sqlite.nuspec"
       ]
     },
     "SQLitePCLRaw.bundle_green/1.1.11": {
@@ -8972,6 +9275,45 @@
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.108": {
+      "sha512": "BwfMIy9q4OBRCKlAPMOfu2SuVm/5sfHHCqIWqT9n3U4ytmv9vXSXIkpntmYACBbwcTFh1tqcoJPSLKFOsD5ruA==",
+      "type": "package",
+      "path": "system.data.sqlite.core/1.0.108",
+      "files": [
+        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/x64/SQLite.Interop.dll",
+        "build/net20/x86/SQLite.Interop.dll",
+        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/x64/SQLite.Interop.dll",
+        "build/net40/x86/SQLite.Interop.dll",
+        "build/net45/System.Data.SQLite.Core.targets",
+        "build/net45/x64/SQLite.Interop.dll",
+        "build/net45/x86/SQLite.Interop.dll",
+        "build/net451/System.Data.SQLite.Core.targets",
+        "build/net451/x64/SQLite.Interop.dll",
+        "build/net451/x86/SQLite.Interop.dll",
+        "build/net46/System.Data.SQLite.Core.targets",
+        "build/net46/x64/SQLite.Interop.dll",
+        "build/net46/x86/SQLite.Interop.dll",
+        "lib/net20/System.Data.SQLite.dll",
+        "lib/net20/System.Data.SQLite.dll.config",
+        "lib/net20/System.Data.SQLite.xml",
+        "lib/net40/System.Data.SQLite.dll",
+        "lib/net40/System.Data.SQLite.dll.config",
+        "lib/net40/System.Data.SQLite.xml",
+        "lib/net45/System.Data.SQLite.dll",
+        "lib/net45/System.Data.SQLite.dll.config",
+        "lib/net45/System.Data.SQLite.xml",
+        "lib/net451/System.Data.SQLite.dll",
+        "lib/net451/System.Data.SQLite.dll.config",
+        "lib/net451/System.Data.SQLite.xml",
+        "lib/net46/System.Data.SQLite.dll",
+        "lib/net46/System.Data.SQLite.dll.config",
+        "lib/net46/System.Data.SQLite.xml",
+        "system.data.sqlite.core.1.0.108.nupkg.sha512",
+        "system.data.sqlite.core.nuspec"
       ]
     },
     "System.Diagnostics.Contracts/4.3.0": {
@@ -10129,10 +10471,10 @@
         "version.txt"
       ]
     },
-    "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+    "System.Net.Http/4.3.2": {
+      "sha512": "y7hv0o0weI0j0mvEcBOdt1F3CAADiWlcw3e54m8TfYiRmBPDIsHElx8QUPDlY4x6yWXKPGN0Z2TuXCTPgkm5WQ==",
       "type": "package",
-      "path": "system.net.http/4.3.0",
+      "path": "system.net.http/4.3.2",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
@@ -10152,49 +10494,9 @@
         "ref/monotouch10/_._",
         "ref/net45/_._",
         "ref/net46/System.Net.Http.dll",
-        "ref/net46/System.Net.Http.xml",
-        "ref/net46/de/System.Net.Http.xml",
-        "ref/net46/es/System.Net.Http.xml",
-        "ref/net46/fr/System.Net.Http.xml",
-        "ref/net46/it/System.Net.Http.xml",
-        "ref/net46/ja/System.Net.Http.xml",
-        "ref/net46/ko/System.Net.Http.xml",
-        "ref/net46/ru/System.Net.Http.xml",
-        "ref/net46/zh-hans/System.Net.Http.xml",
-        "ref/net46/zh-hant/System.Net.Http.xml",
         "ref/netcore50/System.Net.Http.dll",
-        "ref/netcore50/System.Net.Http.xml",
-        "ref/netcore50/de/System.Net.Http.xml",
-        "ref/netcore50/es/System.Net.Http.xml",
-        "ref/netcore50/fr/System.Net.Http.xml",
-        "ref/netcore50/it/System.Net.Http.xml",
-        "ref/netcore50/ja/System.Net.Http.xml",
-        "ref/netcore50/ko/System.Net.Http.xml",
-        "ref/netcore50/ru/System.Net.Http.xml",
-        "ref/netcore50/zh-hans/System.Net.Http.xml",
-        "ref/netcore50/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.1/System.Net.Http.dll",
-        "ref/netstandard1.1/System.Net.Http.xml",
-        "ref/netstandard1.1/de/System.Net.Http.xml",
-        "ref/netstandard1.1/es/System.Net.Http.xml",
-        "ref/netstandard1.1/fr/System.Net.Http.xml",
-        "ref/netstandard1.1/it/System.Net.Http.xml",
-        "ref/netstandard1.1/ja/System.Net.Http.xml",
-        "ref/netstandard1.1/ko/System.Net.Http.xml",
-        "ref/netstandard1.1/ru/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.1/zh-hant/System.Net.Http.xml",
         "ref/netstandard1.3/System.Net.Http.dll",
-        "ref/netstandard1.3/System.Net.Http.xml",
-        "ref/netstandard1.3/de/System.Net.Http.xml",
-        "ref/netstandard1.3/es/System.Net.Http.xml",
-        "ref/netstandard1.3/fr/System.Net.Http.xml",
-        "ref/netstandard1.3/it/System.Net.Http.xml",
-        "ref/netstandard1.3/ja/System.Net.Http.xml",
-        "ref/netstandard1.3/ko/System.Net.Http.xml",
-        "ref/netstandard1.3/ru/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.Http.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.Http.xml",
         "ref/portable-net45+win8+wpa81/_._",
         "ref/win8/_._",
         "ref/wpa81/_._",
@@ -10205,7 +10507,7 @@
         "runtimes/win/lib/net46/System.Net.Http.dll",
         "runtimes/win/lib/netcore50/System.Net.Http.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
-        "system.net.http.4.3.0.nupkg.sha512",
+        "system.net.http.4.3.2.nupkg.sha512",
         "system.net.http.nuspec"
       ]
     },
@@ -12487,6 +12789,59 @@
         "system.threading.thread.nuspec"
       ]
     },
+    "System.Threading.Timer/4.0.1": {
+      "sha512": "saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
+      "type": "package",
+      "path": "system.threading.timer/4.0.1",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/_._",
+        "lib/portable-net451+win81+wpa81/_._",
+        "lib/win81/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/_._",
+        "ref/netcore50/System.Threading.Timer.dll",
+        "ref/netcore50/System.Threading.Timer.xml",
+        "ref/netcore50/de/System.Threading.Timer.xml",
+        "ref/netcore50/es/System.Threading.Timer.xml",
+        "ref/netcore50/fr/System.Threading.Timer.xml",
+        "ref/netcore50/it/System.Threading.Timer.xml",
+        "ref/netcore50/ja/System.Threading.Timer.xml",
+        "ref/netcore50/ko/System.Threading.Timer.xml",
+        "ref/netcore50/ru/System.Threading.Timer.xml",
+        "ref/netcore50/zh-hans/System.Threading.Timer.xml",
+        "ref/netcore50/zh-hant/System.Threading.Timer.xml",
+        "ref/netstandard1.2/System.Threading.Timer.dll",
+        "ref/netstandard1.2/System.Threading.Timer.xml",
+        "ref/netstandard1.2/de/System.Threading.Timer.xml",
+        "ref/netstandard1.2/es/System.Threading.Timer.xml",
+        "ref/netstandard1.2/fr/System.Threading.Timer.xml",
+        "ref/netstandard1.2/it/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ja/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ko/System.Threading.Timer.xml",
+        "ref/netstandard1.2/ru/System.Threading.Timer.xml",
+        "ref/netstandard1.2/zh-hans/System.Threading.Timer.xml",
+        "ref/netstandard1.2/zh-hant/System.Threading.Timer.xml",
+        "ref/portable-net451+win81+wpa81/_._",
+        "ref/win81/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.timer.4.0.1.nupkg.sha512",
+        "system.threading.timer.nuspec"
+      ]
+    },
     "System.ValueTuple/4.3.0": {
       "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
       "type": "package",
@@ -12824,36 +13179,43 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNet.WebApi.Cors >= 5.2.4",
-      "Microsoft.AspNetCore.App",
+      "Microsoft.AspNetCore.App >= 2.1.0",
       "Microsoft.AspNetCore.Authentication.Google >= 2.1.0",
       "Microsoft.AspNetCore.Identity >= 2.1.0",
       "Microsoft.AspNetCore.Identity.UI >= 2.1.0",
       "Microsoft.EntityFrameworkCore >= 2.1.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.0",
-      "Microsoft.NETCore.App >= 2.1.0-preview1-26216-03",
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Microsoft.Owin.Host.SystemWeb >= 4.0.0",
       "Microsoft.Owin.Security.OAuth >= 4.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.0",
+      "Serilog >= 2.7.1",
+      "Serilog.AspNetCore >= 2.1.1",
+      "Serilog.Sinks.File >= 4.0.0",
+      "Serilog.Sinks.RollingFile >= 3.3.0",
+      "Serilog.Sinks.SQLite >= 4.0.0",
+      "Serilog.Sinks.Seq >= 4.0.0",
       "Swashbuckle.AspNetCore >= 2.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Appman_Laptop_56\\.nuget\\packages\\": {},
+    "C:\\Users\\poo1882\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Appman_Laptop_56\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
+      "projectUniqueName": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
       "projectName": "Appman.LeaveManagement",
-      "projectPath": "C:\\Users\\Appman_Laptop_56\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
-      "packagesPath": "C:\\Users\\Appman_Laptop_56\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Appman_Laptop_56\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\obj\\",
+      "projectPath": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\Appman.LeaveManagement.csproj",
+      "packagesPath": "C:\\Users\\poo1882\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\poo1882\\Documents\\GitHub\\LeaveManagement\\Appman.LeaveManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Appman_Laptop_56\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\poo1882\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12883,8 +13245,10 @@
             "version": "[5.2.4, )"
           },
           "Microsoft.AspNetCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "(, )"
+            "version": "[2.1.0, )",
+            "autoReferenced": true
           },
           "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
@@ -12908,8 +13272,12 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.1.0-preview1-26216-03, )",
+            "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.Owin.Host.SystemWeb": {
+            "target": "Package",
+            "version": "[4.0.0, )"
           },
           "Microsoft.Owin.Security.OAuth": {
             "target": "Package",
@@ -12918,6 +13286,30 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Serilog": {
+            "target": "Package",
+            "version": "[2.7.1, )"
+          },
+          "Serilog.AspNetCore": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
+          "Serilog.Sinks.File": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Serilog.Sinks.RollingFile": {
+            "target": "Package",
+            "version": "[3.3.0, )"
+          },
+          "Serilog.Sinks.SQLite": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Serilog.Sinks.Seq": {
+            "target": "Package",
+            "version": "[4.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -12933,16 +13325,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1604",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Project dependency Microsoft.AspNetCore.App does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.",
-      "libraryId": "Microsoft.AspNetCore.App",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",
@@ -12987,6 +13369,16 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin.Host.SystemWeb 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin.Host.SystemWeb",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Package 'Microsoft.Owin.Security 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security",
       "targetGraphs": [
@@ -13009,6 +13401,16 @@
       "warningLevel": 1,
       "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "Owin",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SQLite.Core 1.0.108' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Data.SQLite.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
       ]

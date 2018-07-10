@@ -43,5 +43,24 @@ namespace Appman.LeaveManagement.Controllers
             var result = _repRepo.ViewAllReporting();
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
+
+        [Route("InitializeReportings")]
+        [HttpGet]
+        public IActionResult InitializeReportings([FromQuery] string password)
+        {
+
+            if (!_repRepo.InitializeReportings(password))
+                return Ok("Duplicated initialization was rejected.");
+            return Ok("Initialize reportings successfully.");
+        }
+
+        [Route("ClearReportings")]
+        [HttpGet]
+        public IActionResult ClearReportings()
+        {
+            _repRepo.ClearReportings();
+            return Ok("Clear reportings successfully.");
+        }
+
     }
 }
