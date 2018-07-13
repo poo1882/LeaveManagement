@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20180710073420_init")]
+    [Migration("20180713072724_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

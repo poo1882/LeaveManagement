@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <None Update="LeaveManagement.db">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

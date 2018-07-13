@@ -454,3 +454,76 @@ FROM \"RemainingHours\" AS \"r\""
 2018-07-13 11:49:15.203 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
 2018-07-13 11:49:15.249 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.RemainingHourController.ViewAllReporting (Appman.LeaveManagement)" in 41.3403ms
 2018-07-13 11:49:15.253 +07:00 [Information] Request finished in 97.0749ms 200 application/json
+2018-07-13 14:26:51.747 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-13 14:26:51.747 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-13 14:26:51.885 +07:00 [Information] Request finished in 117.6921ms 200 
+2018-07-13 14:26:52.212 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-13 14:26:52.238 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-13 14:26:52.254 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9466ms.
+2018-07-13 14:26:52.291 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-13 14:26:52.461 +07:00 [Information] Executed ViewResult - view "Index" executed in 189.0072ms.
+2018-07-13 14:26:52.467 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 249.3895ms
+2018-07-13 14:26:52.541 +07:00 [Information] Request finished in 756.0016ms 200 text/html; charset=utf-8
+2018-07-13 14:26:52.581 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-13 14:26:52.581 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner1.svg  
+2018-07-13 14:26:52.587 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-13 14:26:52.591 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner3.svg  
+2018-07-13 14:26:52.596 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-13 14:26:52.611 +07:00 [Information] The file "/images/banner1.svg" was not modified
+2018-07-13 14:26:52.614 +07:00 [Information] The file "/js/site.js" was not modified
+2018-07-13 14:26:52.615 +07:00 [Information] The file "/images/banner3.svg" was not modified
+2018-07-13 14:26:52.624 +07:00 [Information] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified
+2018-07-13 14:26:52.626 +07:00 [Information] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified
+2018-07-13 14:26:52.635 +07:00 [Information] Request finished in 78.2678ms 304 image/svg+xml
+2018-07-13 14:26:52.671 +07:00 [Information] Request finished in 55.6062ms 304 application/javascript
+2018-07-13 14:26:52.714 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner2.svg  
+2018-07-13 14:26:52.717 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/css/site.css  
+2018-07-13 14:26:52.720 +07:00 [Information] Request finished in 78.0111ms 304 image/svg+xml
+2018-07-13 14:26:52.743 +07:00 [Information] The file "/images/banner2.svg" was not modified
+2018-07-13 14:26:52.753 +07:00 [Information] The file "/css/site.css" was not modified
+2018-07-13 14:26:52.773 +07:00 [Information] Request finished in 104.9592ms 304 image/svg+xml
+2018-07-13 14:26:52.776 +07:00 [Information] Request finished in 66.0231ms 304 text/css
+2018-07-13 14:26:52.789 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/jquery/dist/jquery.js  
+2018-07-13 14:26:52.793 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-13 14:26:52.843 +07:00 [Information] The file "/lib/jquery/dist/jquery.js" was not modified
+2018-07-13 14:26:52.848 +07:00 [Information] Request finished in 19.7209ms 301 
+2018-07-13 14:26:52.859 +07:00 [Information] Request finished in 121.4888ms 304 application/javascript
+2018-07-13 14:26:52.862 +07:00 [Information] Request finished in 82.7097ms 304 text/css
+2018-07-13 14:26:52.878 +07:00 [Information] Request finished in 61.1628ms 304 application/javascript
+2018-07-13 14:26:52.883 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-13 14:26:52.890 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-13 14:26:52.894 +07:00 [Information] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified
+2018-07-13 14:26:52.904 +07:00 [Information] Request finished in 31.4661ms 304 font/woff2
+2018-07-13 14:26:52.963 +07:00 [Information] Request finished in 32.7749ms 200 text/html
+2018-07-13 14:26:53.410 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-13 14:26:53.666 +07:00 [Information] Request finished in 272.1969ms 200 application/json;charset=utf-8
+2018-07-13 14:27:47.301 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-13 14:27:47.301 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-13 14:27:47.301 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-13 14:27:47.386 +07:00 [Information] Request finished in 92.2323ms 200 
+2018-07-13 14:27:47.416 +07:00 [Information] Request finished in 127.4938ms 301 
+2018-07-13 14:27:47.437 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-13 14:27:47.482 +07:00 [Information] Request finished in 40.61ms 200 text/html
+2018-07-13 14:27:47.754 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-13 14:27:47.780 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-13 14:27:47.792 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.886ms.
+2018-07-13 14:27:47.849 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-13 14:27:48.033 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-13 14:27:48.099 +07:00 [Information] Executed ViewResult - view "Index" executed in 279.9434ms.
+2018-07-13 14:27:48.105 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 345.0464ms
+2018-07-13 14:27:48.138 +07:00 [Information] Request finished in 837.3008ms 200 text/html; charset=utf-8
+2018-07-13 14:27:48.289 +07:00 [Information] Request finished in 268.3907ms 200 application/json;charset=utf-8
+2018-07-13 14:27:53.417 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/Employees  
+2018-07-13 14:27:53.429 +07:00 [Information] Route matched with "{action = \"ViewAllEmployee\", controller = \"Employees\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)"
+2018-07-13 14:27:53.561 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-13 14:27:53.780 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-13 14:27:54.002 +07:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-13 14:27:54.023 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-13 14:27:54.070 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 492.4637ms.
+2018-07-13 14:27:54.092 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-13 14:27:54.138 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" in 665.6138ms
+2018-07-13 14:27:54.237 +07:00 [Information] Request finished in 731.0172ms 200 application/json
