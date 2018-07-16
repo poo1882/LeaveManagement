@@ -1,0 +1,304 @@
+2018-07-16 10:59:29.536 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 10:59:29.536 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-16 10:59:29.536 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 10:59:29.678 +07:00 [Information] Request finished in 136.7951ms 200 
+2018-07-16 10:59:29.861 +07:00 [Information] Request finished in 210.6939ms 200 text/html
+2018-07-16 10:59:29.937 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-standalone-preset.js  
+2018-07-16 10:59:29.947 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-bundle.js  
+2018-07-16 10:59:30.015 +07:00 [Information] The file "/swagger-ui-standalone-preset.js" was not modified
+2018-07-16 10:59:30.015 +07:00 [Information] The file "/swagger-ui-bundle.js" was not modified
+2018-07-16 10:59:30.026 +07:00 [Information] Request finished in 157.6323ms 304 application/javascript
+2018-07-16 10:59:30.030 +07:00 [Information] Request finished in 150.9359ms 304 application/javascript
+2018-07-16 10:59:30.081 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui.css  
+2018-07-16 10:59:30.096 +07:00 [Information] The file "/swagger-ui.css" was not modified
+2018-07-16 10:59:30.125 +07:00 [Information] Request finished in 69.6075ms 304 text/css
+2018-07-16 10:59:30.551 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-16 10:59:30.574 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 10:59:30.985 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 10:59:31.049 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/favicon-32x32.png  
+2018-07-16 10:59:31.103 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 19.5828ms.
+2018-07-16 10:59:31.183 +07:00 [Information] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2018-07-16 10:59:31.199 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/favicon-16x16.png  
+2018-07-16 10:59:31.203 +07:00 [Information] Request finished in 208.5371ms 200 image/png
+2018-07-16 10:59:31.236 +07:00 [Information] Sending file. Request path: '"/favicon-16x16.png"'. Physical path: '"N/A"'
+2018-07-16 10:59:31.292 +07:00 [Information] Request finished in 58.8853ms 200 image/png
+2018-07-16 10:59:31.708 +07:00 [Information] Request finished in 874.2857ms 200 application/json;charset=utf-8
+2018-07-16 10:59:35.351 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 10:59:36.127 +07:00 [Information] Executed ViewResult - view "Index" executed in 4955.0919ms.
+2018-07-16 10:59:36.152 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 5550.1352ms
+2018-07-16 10:59:36.193 +07:00 [Information] Request finished in 6651.5759ms 200 text/html; charset=utf-8
+2018-07-16 10:59:49.506 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=jennydoubles%40hotmail.com  
+2018-07-16 10:59:49.534 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-16 10:59:49.799 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["jennydoubles@hotmail.com"]) - Validation state: Valid
+2018-07-16 10:59:50.076 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 10:59:50.346 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 10:59:50.376 +07:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@__ToLower_0='?' (Size = 24)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-16 10:59:50.403 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.EmptyResult" in 600.4287ms.
+2018-07-16 10:59:50.413 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 870.4868ms
+2018-07-16 10:59:50.427 +07:00 [Information] Request finished in 913.8913ms 200 
+2018-07-16 11:00:21.469 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/Employees  
+2018-07-16 11:00:21.476 +07:00 [Information] Route matched with "{action = \"ViewAllEmployee\", controller = \"Employees\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)"
+2018-07-16 11:00:21.506 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 11:00:21.515 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:00:21.530 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:21.542 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-16 11:00:21.550 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 40.3619ms.
+2018-07-16 11:00:21.564 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:00:21.598 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" in 88.8985ms
+2018-07-16 11:00:21.615 +07:00 [Information] Request finished in 132.4552ms 200 application/json
+2018-07-16 11:00:28.834 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/InitializeEmployees?password=init  
+2018-07-16 11:00:28.841 +07:00 [Information] Route matched with "{action = \"InitializeEmployee\", controller = \"Employees\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.InitializeEmployee (Appman.LeaveManagement)"
+2018-07-16 11:00:28.852 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.InitializeEmployee (Appman.LeaveManagement)" with arguments (["init"]) - Validation state: Valid
+2018-07-16 11:00:28.862 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:00:28.898 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:28.906 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:28.982 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.023 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 21), @p2='?' (Size = 3), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 8), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.076 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.086 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.105 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.111 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.126 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.133 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 27), @p2='?' (Size = 5), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 16), @p9='?', @p10='?' (Size = 13), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.148 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.155 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.167 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.176 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.182 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.189 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 23), @p2='?' (Size = 3), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 9), @p8='?' (Size = 7), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.202 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.212 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.225 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.232 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.239 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.247 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 24), @p2='?' (Size = 5), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 6), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.263 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.271 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.283 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.292 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.305 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.312 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 22), @p2='?' (Size = 7), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 8), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.325 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.338 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.357 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.363 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.370 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.379 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 21), @p2='?' (Size = 4), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 7), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.394 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.401 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.413 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.419 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.428 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.434 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 23), @p2='?' (Size = 3), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 2), @p9='?', @p10='?' (Size = 13), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.448 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.455 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.467 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.474 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.481 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.488 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 28), @p2='?' (Size = 5), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 5), @p9='?', @p10='?' (Size = 13), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.501 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.511 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.522 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.529 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__p_0_StaffId='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN @__p_0_StaffId IN (
+        SELECT \"e\".\"StaffId\"
+        FROM \"Employees\" AS \"e\"
+    )
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-16 11:00:29.538 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.552 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 20), @p2='?' (Size = 4), @p3='?' (Size = 2), @p4='?', @p5='?', @p6='?', @p7='?' (Size = 2), @p8='?' (Size = 8), @p9='?', @p10='?' (Size = 9), @p11='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"Employees\" (\"StaffId\", \"Email\", \"FirstName\", \"GenderCode\", \"IsActive\", \"IsInProbation\", \"IsSuperHr\", \"LastName\", \"Position\", \"ProfilePicture\", \"Section\", \"StartWorkingDate\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2018-07-16 11:00:29.579 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:29.586 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 5), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"RemainingHours\" (\"StaffId\", \"Year\", \"AnnualHours\", \"LWPHours\", \"SickHours\")
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2018-07-16 11:00:29.598 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.InitializeEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 741.0598ms.
+2018-07-16 11:00:29.612 +07:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-07-16 11:00:29.623 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.InitializeEmployee (Appman.LeaveManagement)" in 774.7238ms
+2018-07-16 11:00:29.634 +07:00 [Information] Request finished in 792.5007ms 200 application/json; charset=utf-8
+2018-07-16 11:00:32.719 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/Employees  
+2018-07-16 11:00:32.728 +07:00 [Information] Route matched with "{action = \"ViewAllEmployee\", controller = \"Employees\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)"
+2018-07-16 11:00:32.732 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 11:00:32.738 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:00:32.750 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:32.756 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-16 11:00:32.774 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 36.4483ms.
+2018-07-16 11:00:32.778 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:00:32.784 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" in 50.1885ms
+2018-07-16 11:00:32.790 +07:00 [Information] Request finished in 74.0569ms 200 application/json
+2018-07-16 11:00:47.469 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=jennydoubles%40hotmail.com  
+2018-07-16 11:00:47.474 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-16 11:00:47.480 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["jennydoubles@hotmail.com"]) - Validation state: Valid
+2018-07-16 11:00:47.485 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:00:47.495 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:47.509 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__ToLower_0='?' (Size = 24)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-16 11:00:47.517 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 30.3722ms.
+2018-07-16 11:00:47.529 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:00:47.545 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 54.6028ms
+2018-07-16 11:00:47.551 +07:00 [Information] Request finished in 80.2587ms 200 application/json
+2018-07-16 11:00:52.359 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=Jennydoubles%40hotmail.com  
+2018-07-16 11:00:52.378 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-16 11:00:52.395 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["Jennydoubles@hotmail.com"]) - Validation state: Valid
+2018-07-16 11:00:52.407 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:00:52.431 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:00:52.443 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__ToLower_0='?' (Size = 24)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-16 11:00:52.456 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 48.7401ms.
+2018-07-16 11:00:52.463 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:00:52.482 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 85.4852ms
+2018-07-16 11:00:52.492 +07:00 [Information] Request finished in 202.0986ms 200 application/json
+2018-07-16 11:01:01.605 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=jiLLtitinan%40gmail.com  
+2018-07-16 11:01:01.610 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-16 11:01:01.615 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["jiLLtitinan@gmail.com"]) - Validation state: Valid
+2018-07-16 11:01:01.623 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:01:01.629 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:01:01.636 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__ToLower_0='?' (Size = 21)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-16 11:01:01.643 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 22.278ms.
+2018-07-16 11:01:01.649 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:01:01.668 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 39.8314ms
+2018-07-16 11:01:01.675 +07:00 [Information] Request finished in 67.6682ms 200 application/json

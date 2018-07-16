@@ -109,7 +109,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult GetEmployeeId([FromQuery]string email)
         {
-            Employee emp = _dbContext.Employees.FirstOrDefault(x => x.Email == email);
+            Employee emp = _dbContext.Employees.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
             if (emp != null)
                 return Content(JsonConvert.SerializeObject(emp.StaffId), "application/json");
             else
