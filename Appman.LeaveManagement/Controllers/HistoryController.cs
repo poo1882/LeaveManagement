@@ -27,10 +27,13 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ViewLeaves()
         {
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
+            var ordered = leaves
+               .OrderByDescending(v => v.ApprovalStatus == "Pending")
+               .ThenBy(v => v.RequestedDateTime);
             if (leaves == null)
                 return new EmptyResult();
             
-            return Content(JsonConvert.SerializeObject(leaves), "application/json");
+            return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
 
         [Route("Info")] //ดู form การลาของแต่ละคน
