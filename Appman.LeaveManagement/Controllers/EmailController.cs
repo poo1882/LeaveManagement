@@ -3,11 +3,14 @@ using Appman.LeaveManagement.DatabaseContext.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Appman.LeaveManagement.Repositories
 {
@@ -47,8 +50,11 @@ namespace Appman.LeaveManagement.Repositories
                     {
                         sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
                     }
-                    sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br></div>", leaveInfo.Type, leaveInfo.Comment);
-
+                    sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
+                    if(leaveInfo.AttachedFile != null)
+                    {
+                        sb.AppendFormat("See the attached file in website <br><br></div>");
+                    }
                     sb.AppendFormat("<div><a href='{0}'>Click here to approve</a></div>", link);
                 }
                 else
@@ -81,7 +87,11 @@ namespace Appman.LeaveManagement.Repositories
             {
                 sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
             }
-            sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br></div>", leaveInfo.Type, leaveInfo.Comment);
+            sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
+            if (leaveInfo.AttachedFile != null)
+            {
+                sb.AppendFormat("See the attached file in website <br><br></div>");
+            }
             sb.AppendFormat("<img src='{0}' style='{1}'>", url, style);
             sb.AppendFormat("<div>AppMan Co.,Ltd<br>52 / 25 Pan road,<br>Silom Bangrak<br>Bangkok<br>10500<br>Tax invoice: 0105554076903<br>Tel: (+66)2 635 2874<br>www.appman.co.th</div>");
             var body = sb.ToString();
