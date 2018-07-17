@@ -51,7 +51,7 @@ namespace Appman.LeaveManagement.Repositories
                         sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
                     }
                     sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
-                    if(leaveInfo.AttachedFile != null)
+                    if (leaveInfo.AttachedFile1 != null)
                     {
                         sb.AppendFormat("See the attached file in website <br><br></div>");
                     }
@@ -88,7 +88,7 @@ namespace Appman.LeaveManagement.Repositories
                 sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
             }
             sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
-            if (leaveInfo.AttachedFile != null)
+            if (leaveInfo.AttachedFile1 != null)
             {
                 sb.AppendFormat("See the attached file in website <br><br></div>");
             }

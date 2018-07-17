@@ -51,7 +51,7 @@ namespace Appman.LeaveManagement.Repositories
             totalHoursFirstDay = _dbContext.LeaveInfos.Where(x => x.StaffId == info.StaffId && x.EndDateTime == info.EndDateTime).Sum(x => x.HoursEndDate);
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
-                if (totalHoursFirstDay - info.HoursStartDate > 0)
+                if (totalHoursFirstDay + info.HoursStartDate <= 8)
                 {
                     if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate)
                     {
@@ -67,7 +67,7 @@ namespace Appman.LeaveManagement.Repositories
             }
             else
             {
-                if (totalHoursFirstDay - info.HoursStartDate > 0 && totalHoursLastDay - info.HoursEndDate > 0)
+                if (totalHoursFirstDay+info.HoursStartDate <= 8 && totalHoursLastDay +info.HoursEndDate <=8)
                 {
                     int totalDays = (info.EndDateTime - info.StartDateTime).Days;
                     totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;

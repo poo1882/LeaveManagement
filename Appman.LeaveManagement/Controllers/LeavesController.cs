@@ -78,7 +78,8 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ApproveViaEmail([FromQuery] string refNo)
         {
             Approbation approbation = _dbContext.Approbations.FirstOrDefault(x => x.ApprobationGuid.ToString() == refNo);
-            
+            if(approbation == null)
+                return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
             int leaveId = approbation.LeaveId;
             string approverId = approbation.ApproverId;
             string status = approbation.Status;

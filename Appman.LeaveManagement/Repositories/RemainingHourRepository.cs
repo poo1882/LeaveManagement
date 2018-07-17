@@ -28,21 +28,20 @@ namespace Appman.LeaveManagement.Repositories
 
         public void DeductRemainHour(string staffId, string type, int totalHours)
         {
+            RemainingHour remainingHours = _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId);
             if (type.ToLower()[0] == 'a')
             {
-                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).AnnualHours -= totalHours;
-                _dbContext.SaveChanges();
+                remainingHours.AnnualHours -= totalHours;
             }
             else if (type.ToLower()[0] == 's')
             {
-                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).SickHours -= totalHours;
-                _dbContext.SaveChanges();
+                remainingHours.SickHours -= totalHours;
             }
             else if (type.ToLower()[0] == 'l')
             {
-                _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == staffId).LWPHours -= totalHours;
-                _dbContext.SaveChanges();
+                remainingHours.LWPHours -= totalHours;
             }
+            _dbContext.SaveChanges();
         }
 
         public void AddRemainHour(string staffId, string type, int totalHours)

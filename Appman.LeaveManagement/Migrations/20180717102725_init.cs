@@ -59,8 +59,12 @@ namespace Appman.LeaveManagement.Migrations
                     Comment = table.Column<string>(nullable: true),
                     ApprovedTime = table.Column<DateTime>(nullable: true),
                     ApprovedBy = table.Column<string>(nullable: true),
-                    AttachedFile = table.Column<string>(nullable: true),
-                    AttachedFileName = table.Column<string>(nullable: true),
+                    AttachedFile1 = table.Column<string>(nullable: true),
+                    AttachedFileName1 = table.Column<string>(nullable: true),
+                    AttachedFile2 = table.Column<string>(nullable: true),
+                    AttachedFileName2 = table.Column<string>(nullable: true),
+                    AttachedFile3 = table.Column<string>(nullable: true),
+                    AttachedFileName3 = table.Column<string>(nullable: true),
                     RequestedDateTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -89,7 +93,10 @@ namespace Appman.LeaveManagement.Migrations
                     Year = table.Column<string>(nullable: false),
                     AnnualHours = table.Column<int>(nullable: false),
                     SickHours = table.Column<int>(nullable: false),
-                    LWPHours = table.Column<int>(nullable: false)
+                    LWPHours = table.Column<int>(nullable: false),
+                    TotalAnnualHours = table.Column<int>(nullable: false),
+                    TotalSickHours = table.Column<int>(nullable: false),
+                    TotalLWPHours = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

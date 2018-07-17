@@ -116,5 +116,12 @@ namespace Appman.LeaveManagement.Controllers
                 return NotFound();
         }
 
+        [Route("Role")]
+        [HttpGet]
+        public IActionResult GetRole([FromQuery] string staffId)
+        {
+            return Content(JsonConvert.SerializeObject(_empRepo.GetRole(staffId)),"application/json");
+        }
+
     }
 }

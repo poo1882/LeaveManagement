@@ -94,6 +94,17 @@ namespace Appman.LeaveManagement.Repositories
             return result;
         }
 
+        public string GetRole(string staffId)
+        {
+            Employee employee = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
+            if (employee.IsSuperHr)
+                return "Admin";
+            if (_dbContext.Reportings.Any(x => x.Approver == staffId))
+                return "Approver";
+            return "Normal";
+        }
+
+
         public void ClearEmployees()
         {
             var employees = _dbContext.Employees;
@@ -124,7 +135,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00007",
                 FirstName = "Gun",
-                LastName = "Zo",
+                LastName = "Sirapob",
                 Email = "sirapobmech@gmail.com",
                 ProfilePicture = null,
                 Position = "Frontend",
@@ -143,7 +154,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00008",
                 FirstName = "Knack",
-                LastName = "Ly",
+                LastName = "Kasidis",
                 Email = "kasidis.sr@mail.kmutt.ac.th",
                 ProfilePicture = null,
                 Position = "Business Analyst",
@@ -179,8 +190,8 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00005",
                 FirstName = "Jenny",
-                LastName = "Ji",
-                Email = "jennydoubles@hotmail.com",
+                LastName = "Supornthip",
+                Email = "supornthip.s@appman.co.th",
                 ProfilePicture = null,
                 Position = "Mobile",
                 StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
@@ -197,7 +208,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00001",
                 FirstName = "Tangkwa",
-                LastName = "Ly",
+                LastName = "Puttachart",
                 Email = "psrisuwankum@gmail.com",
                 ProfilePicture = null,
                 Position = "Frontend",
@@ -215,7 +226,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00002",
                 FirstName = "Jill",
-                LastName = "Ly",
+                LastName = "Titinan",
                 Email = "jilltitinan@gmail.com",
                 ProfilePicture = null,
                 Position = "Backend",
@@ -233,7 +244,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00003",
                 FirstName = "Got",
-                LastName = "Ly",
+                LastName = "Supakit",
                 Email = "supakit.dha@hotmail.com",
                 ProfilePicture = null,
                 Position = "QA",
@@ -251,7 +262,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00004",
                 FirstName = "Stamp",
-                LastName = "Ly",
+                LastName = "Notphattri",
                 Email = "notphattri.stamp@hotmail.com",
                 ProfilePicture = null,
                 Position = "UX/UI",
@@ -269,7 +280,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 StaffId = "00009",
                 FirstName = "Puen",
-                LastName = "Ly",
+                LastName = "Nuttasit",
                 Email = "nuttasit10@gmail.com",
                 ProfilePicture = null,
                 Position = "Frontend",

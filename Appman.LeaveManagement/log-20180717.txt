@@ -415,3 +415,387 @@ ORDER BY \"leaveinfo\".\"LeaveId\" DESC"
 2018-07-17 11:30:44.022 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
 2018-07-17 11:30:44.035 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.LeavesController.GetRemaining (Appman.LeaveManagement)" in 51.3739ms
 2018-07-17 11:30:44.042 +07:00 [Information] Request finished in 77.2074ms 200 application/json
+2018-07-17 11:51:25.192 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:51:25.192 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:51:25.333 +07:00 [Information] Request finished in 119.5773ms 200 
+2018-07-17 11:51:25.608 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:51:25.628 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:51:25.638 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8811ms.
+2018-07-17 11:51:25.670 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:51:25.929 +07:00 [Information] Executed ViewResult - view "Index" executed in 277.8027ms.
+2018-07-17 11:51:25.934 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 321.152ms
+2018-07-17 11:51:25.962 +07:00 [Information] Request finished in 773.0102ms 200 text/html; charset=utf-8
+2018-07-17 11:51:25.970 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 11:51:25.986 +07:00 [Information] Request finished in 14.1891ms 404 
+2018-07-17 11:58:29.822 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:58:29.822 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:58:29.822 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:58:29.914 +07:00 [Information] Request finished in 96.2665ms 200 
+2018-07-17 11:58:29.984 +07:00 [Information] Request finished in 169.6233ms 301 
+2018-07-17 11:58:30.006 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:58:30.063 +07:00 [Information] Request finished in 53.6775ms 200 text/html
+2018-07-17 11:58:30.270 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:58:30.290 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:58:30.300 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6155ms.
+2018-07-17 11:58:30.334 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:58:30.536 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:58:30.773 +07:00 [Information] Executed ViewResult - view "Index" executed in 458.7268ms.
+2018-07-17 11:58:30.785 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 503.5178ms
+2018-07-17 11:58:30.799 +07:00 [Information] Request finished in 990.0193ms 200 text/html; charset=utf-8
+2018-07-17 11:58:30.836 +07:00 [Information] Request finished in 302.94ms 200 application/json;charset=utf-8
+2018-07-17 11:58:34.828 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:58:34.837 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:58:34.841 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:58:34.849 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1273ms.
+2018-07-17 11:58:34.854 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:58:34.890 +07:00 [Information] Executed ViewResult - view "Index" executed in 7.5596ms.
+2018-07-17 11:58:34.902 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 11:58:34.903 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 53.9041ms
+2018-07-17 11:58:34.920 +07:00 [Information] Request finished in 82.3393ms 200 text/html; charset=utf-8
+2018-07-17 11:58:34.922 +07:00 [Information] Request finished in 22.823ms 404 
+2018-07-17 11:58:36.504 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-17 11:58:36.550 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 11:58:36.580 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 11:58:36.593 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 11:58:36.744 +07:00 [Information] Executed action "/Account/Login" in 180.8691ms
+2018-07-17 11:58:36.754 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/lib/jquery-validation/dist/jquery.validate.js  
+2018-07-17 11:58:36.757 +07:00 [Information] Request finished in 249.0223ms 200 text/html; charset=utf-8
+2018-07-17 11:58:36.758 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2018-07-17 11:58:36.784 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"'. Physical path: '"N/A"'
+2018-07-17 11:58:36.787 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"N/A"'
+2018-07-17 11:58:36.797 +07:00 [Information] Request finished in 42.0038ms 200 application/javascript
+2018-07-17 11:58:36.798 +07:00 [Information] Request finished in 45.2825ms 200 application/javascript
+2018-07-17 11:58:38.055 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 11:58:38.081 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 11:58:38.131 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 11:58:38.139 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 11:58:38.155 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 11:58:38.161 +07:00 [Information] Executed action "/Account/ExternalLogin" in 74.7952ms
+2018-07-17 11:58:38.167 +07:00 [Information] Request finished in 109.853ms 302 
+2018-07-17 12:00:00.157 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/  
+2018-07-17 12:00:00.651 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:00:00.677 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:00:00.700 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0792ms.
+2018-07-17 12:00:00.742 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:00:01.201 +07:00 [Information] Executed ViewResult - view "Index" executed in 437.4669ms.
+2018-07-17 12:00:01.213 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner1.svg  
+2018-07-17 12:00:01.217 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner2.svg  
+2018-07-17 12:00:01.222 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner4.svg  
+2018-07-17 12:00:01.226 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 556.6037ms
+2018-07-17 12:00:01.230 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-17 12:00:01.251 +07:00 [Information] Sending file. Request path: '"/images/banner1.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner1.svg"'
+2018-07-17 12:00:01.251 +07:00 [Information] Request finished in 36.7098ms 404 
+2018-07-17 12:00:01.259 +07:00 [Information] Request finished in 1101.0732ms 200 text/html; charset=utf-8
+2018-07-17 12:00:01.260 +07:00 [Information] Request finished in 53.9144ms 200 image/svg+xml
+2018-07-17 12:00:01.285 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner3.svg  
+2018-07-17 12:00:01.287 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+2018-07-17 12:00:01.298 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2018-07-17 12:00:01.305 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\css\site.css"'
+2018-07-17 12:00:01.313 +07:00 [Information] Request finished in 11.6172ms 200 text/css
+2018-07-17 12:00:01.315 +07:00 [Information] Sending file. Request path: '"/images/banner2.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner2.svg"'
+2018-07-17 12:00:01.343 +07:00 [Information] Sending file. Request path: '"/images/banner3.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner3.svg"'
+2018-07-17 12:00:01.350 +07:00 [Information] Request finished in 147.2316ms 200 image/svg+xml
+2018-07-17 12:00:01.350 +07:00 [Information] Request finished in 82.5801ms 200 image/svg+xml
+2018-07-17 12:00:01.361 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-17 12:00:01.369 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\js\site.js"'
+2018-07-17 12:00:01.370 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-17 12:00:01.379 +07:00 [Information] Request finished in 16.9981ms 200 application/javascript
+2018-07-17 12:00:01.384 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\js\bootstrap.js"'
+2018-07-17 12:00:01.395 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\css\bootstrap.css"'
+2018-07-17 12:00:01.397 +07:00 [Information] Request finished in 19.6531ms 200 application/javascript
+2018-07-17 12:00:01.404 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\jquery\dist\jquery.js"'
+2018-07-17 12:00:01.406 +07:00 [Information] Request finished in 211.9261ms 200 text/css
+2018-07-17 12:00:01.410 +07:00 [Information] Request finished in 133.7959ms 200 application/javascript
+2018-07-17 12:00:01.454 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-17 12:00:01.479 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"'
+2018-07-17 12:00:01.485 +07:00 [Information] Request finished in 32.8632ms 200 font/woff2
+2018-07-17 12:00:03.729 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/Account/Login  
+2018-07-17 12:00:03.781 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:00:03.816 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:00:03.828 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:00:03.988 +07:00 [Information] Executed action "/Account/Login" in 168.3449ms
+2018-07-17 12:00:03.993 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2018-07-17 12:00:04.008 +07:00 [Information] Request finished in 273.5886ms 200 text/html; charset=utf-8
+2018-07-17 12:00:04.014 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"'. Physical path: '"N/A"'
+2018-07-17 12:00:04.016 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/lib/jquery-validation/dist/jquery.validate.js  
+2018-07-17 12:00:04.028 +07:00 [Information] Request finished in 45.9288ms 200 application/javascript
+2018-07-17 12:00:04.030 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"N/A"'
+2018-07-17 12:00:04.035 +07:00 [Information] Request finished in 61.0642ms 200 application/javascript
+2018-07-17 12:00:04.898 +07:00 [Information] Request starting HTTP/1.1 POST https://localhost:5001/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:00:04.917 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:00:04.960 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:00:04.972 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:00:04.984 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:00:04.994 +07:00 [Information] Executed action "/Account/ExternalLogin" in 70.084ms
+2018-07-17 12:00:05.001 +07:00 [Information] Request finished in 103.2658ms 302 
+2018-07-17 12:00:16.993 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/  
+2018-07-17 12:00:17.429 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:00:17.450 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:00:17.460 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6598ms.
+2018-07-17 12:00:17.492 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:00:17.828 +07:00 [Information] Executed ViewResult - view "Index" executed in 350.8265ms.
+2018-07-17 12:00:17.879 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 407.1352ms
+2018-07-17 12:00:17.931 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner4.svg  
+2018-07-17 12:00:18.016 +07:00 [Information] Request finished in 904.4479ms 200 text/html; charset=utf-8
+2018-07-17 12:00:18.153 +07:00 [Information] Request finished in 177.341ms 404 
+2018-07-17 12:00:22.329 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+2018-07-17 12:00:22.345 +07:00 [Information] Request finished in 10.1235ms 301 
+2018-07-17 12:00:22.361 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+2018-07-17 12:00:22.403 +07:00 [Information] Request finished in 23.4243ms 200 text/html
+2018-07-17 12:00:22.403 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+2018-07-17 12:00:22.404 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+2018-07-17 12:00:22.414 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+2018-07-17 12:00:22.477 +07:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2018-07-17 12:00:22.484 +07:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2018-07-17 12:00:22.486 +07:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2018-07-17 12:00:22.513 +07:00 [Information] Request finished in 110.4778ms 200 text/css
+2018-07-17 12:00:22.519 +07:00 [Information] Request finished in 92.104ms 200 application/javascript
+2018-07-17 12:00:22.521 +07:00 [Information] Request finished in 111.3661ms 200 application/javascript
+2018-07-17 12:00:23.011 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+2018-07-17 12:00:23.198 +07:00 [Information] Request finished in 193.8963ms 200 application/json;charset=utf-8
+2018-07-17 12:00:48.968 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/  
+2018-07-17 12:00:48.973 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:00:48.981 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:00:48.985 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.2493ms.
+2018-07-17 12:00:48.994 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:00:49.078 +07:00 [Information] Executed ViewResult - view "Index" executed in 70.5805ms.
+2018-07-17 12:00:49.088 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/images/banner4.svg  
+2018-07-17 12:00:49.096 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 103.6455ms
+2018-07-17 12:00:49.100 +07:00 [Information] Request finished in 12.2969ms 404 
+2018-07-17 12:00:49.104 +07:00 [Information] Request finished in 137.0257ms 200 text/html; charset=utf-8
+2018-07-17 12:00:50.369 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/Account/Login  
+2018-07-17 12:00:50.420 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:00:50.452 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:00:50.463 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:00:50.588 +07:00 [Information] Executed action "/Account/Login" in 158.3603ms
+2018-07-17 12:00:50.594 +07:00 [Information] Request finished in 224.3791ms 200 text/html; charset=utf-8
+2018-07-17 12:00:51.469 +07:00 [Information] Request starting HTTP/1.1 POST https://localhost:5001/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:00:51.485 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:00:51.520 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:00:51.531 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:00:51.547 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:00:51.553 +07:00 [Information] Executed action "/Account/ExternalLogin" in 62.7649ms
+2018-07-17 12:00:51.560 +07:00 [Information] Request finished in 88.8577ms 302 
+2018-07-17 12:00:51.811 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/signin-google?state=CfDJ8Cj-8aIcRvpLtot5wpcE_I0quXXKhnbtuZK-mcsekcQipa_GgPz5XueJriNCNfP9pH3s2ZLwoU0DLOZfp-VnKiJ6EhrVpfM8_VAHVMDXse9xs4RavEyQYSPFNfZJlfbCEjTJYarrLaPChVvr1bOP3Uuxsh6c7oiyywMpw4hgUWfwocG7761u4y_50_yHEgU9A3EfmmQ4YiCCQuIAleNbJqgy6bHUxQmttjDOJw3oAiqBAvGlsrTP1SxHHxq6D-x8p9H4K6MjJZQFmiXJEqcE9fjPvt1htABmwWG9siogsQ9sPX_bPxh4R7kumvpfwdHdhA&code=4/AADKBCwsTg0qZzKm3eKZBgra6wtQA8flQaU1tZbkmlwHWqCTpK6YW7Vy13kh1bKSZs_VBmlUzgnxUGxPypSo7NY&authuser=0&session_state=64f0789d3769bfd81a322a4274be345ddf1edf4e..2e08&prompt=none  
+2018-07-17 12:00:52.737 +07:00 [Information] AuthenticationScheme: "Identity.External" signed in.
+2018-07-17 12:00:52.749 +07:00 [Information] Request finished in 943.4157ms 302 
+2018-07-17 12:00:52.759 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/Account/ExternalLogin?returnUrl=%2F&handler=Callback  
+2018-07-17 12:00:52.764 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:00:52.769 +07:00 [Information] Executing handler method "OnGetCallbackAsync" with arguments (["/", ""]) - ModelState is Valid
+2018-07-17 12:00:52.998 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 12:00:53.255 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 12:00:53.301 +07:00 [Error] Failed executing DbCommand ("8"ms) [Parameters=["@__loginProvider_0='?' (Size = 6), @__providerKey_1='?' (Size = 21)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"userLogin\".\"LoginProvider\", \"userLogin\".\"ProviderKey\", \"userLogin\".\"ProviderDisplayName\", \"userLogin\".\"UserId\"
+FROM \"AspNetUserLogins\" AS \"userLogin\"
+WHERE (\"userLogin\".\"LoginProvider\" = @__loginProvider_0) AND (\"userLogin\".\"ProviderKey\" = @__providerKey_1)
+LIMIT 2"
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUserLogins'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+2018-07-17 12:00:53.377 +07:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"Appman.LeaveManagement.Data.ApplicationDbContext"'."
+""Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUserLogins'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SingleOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)"
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUserLogins'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SingleOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+2018-07-17 12:00:53.423 +07:00 [Error] An exception occurred in the database while iterating the results of a query for context type '"Appman.LeaveManagement.Data.ApplicationDbContext"'."
+""Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUserLogins'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SingleOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)"
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUserLogins'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SingleOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+2018-07-17 12:00:53.434 +07:00 [Information] Executed action "/Account/ExternalLogin" in 666.4111ms
+2018-07-17 12:00:53.450 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 12:00:53.572 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 12:00:53.597 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 12:00:53.618 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"name\" = '__EFMigrationsHistory' AND \"type\" = 'table';"
+2018-07-17 12:00:53.665 +07:00 [Information] Request finished in 870.8887ms 500 text/html; charset=utf-8
+2018-07-17 12:01:07.589 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/Identity/Account/Login  
+2018-07-17 12:01:07.597 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:01:07.603 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:01:07.613 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:01:07.638 +07:00 [Information] Executed action "/Account/Login" in 21.6875ms
+2018-07-17 12:01:07.647 +07:00 [Information] Request finished in 55.5489ms 200 text/html; charset=utf-8
+2018-07-17 12:01:31.955 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 12:01:31.955 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 12:01:32.042 +07:00 [Information] Request finished in 87.0759ms 200 
+2018-07-17 12:01:32.335 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:01:32.354 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:01:32.368 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8907ms.
+2018-07-17 12:01:32.398 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:01:32.656 +07:00 [Information] Executed ViewResult - view "Index" executed in 269.3465ms.
+2018-07-17 12:01:32.662 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 321.1361ms
+2018-07-17 12:01:32.699 +07:00 [Information] Request finished in 742.2723ms 200 text/html; charset=utf-8
+2018-07-17 12:01:32.701 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 12:01:32.711 +07:00 [Information] Request finished in 14.1861ms 404 
+2018-07-17 12:01:38.014 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-17 12:01:38.061 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:01:38.102 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:01:38.112 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:01:38.236 +07:00 [Information] Executed action "/Account/Login" in 160.8614ms
+2018-07-17 12:01:38.247 +07:00 [Information] Request finished in 230.0816ms 200 text/html; charset=utf-8
+2018-07-17 12:01:39.570 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:01:39.585 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:01:39.623 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:01:39.629 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:01:39.638 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:01:39.643 +07:00 [Information] Executed action "/Account/ExternalLogin" in 53.9875ms
+2018-07-17 12:01:39.648 +07:00 [Information] Request finished in 76.7714ms 302 
+2018-07-17 12:03:54.852 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 12:03:54.852 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 12:03:54.921 +07:00 [Information] Request finished in 73.0991ms 200 
+2018-07-17 12:03:55.179 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:03:55.206 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:03:55.219 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9561ms.
+2018-07-17 12:03:55.249 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:03:55.497 +07:00 [Information] Executed ViewResult - view "Index" executed in 263.004ms.
+2018-07-17 12:03:55.501 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 318.5057ms
+2018-07-17 12:03:55.553 +07:00 [Information] Request finished in 686.6777ms 200 text/html; charset=utf-8
+2018-07-17 12:03:55.554 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 12:03:55.570 +07:00 [Information] Request finished in 15.0302ms 404 
+2018-07-17 12:03:57.362 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-17 12:03:57.403 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:03:57.447 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:03:57.466 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:03:57.585 +07:00 [Information] Executed action "/Account/Login" in 172.3265ms
+2018-07-17 12:03:57.595 +07:00 [Information] Request finished in 228.451ms 200 text/html; charset=utf-8
+2018-07-17 12:04:07.230 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:04:07.260 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:04:07.307 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:04:07.315 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:04:07.324 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:04:07.328 +07:00 [Information] Executed action "/Account/ExternalLogin" in 64.2112ms
+2018-07-17 12:04:07.334 +07:00 [Information] Request finished in 104.6175ms 302 
+2018-07-17 12:04:11.953 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-17 12:04:11.961 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:04:11.967 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:04:11.973 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:04:11.992 +07:00 [Information] Executed action "/Account/Login" in 17.267ms
+2018-07-17 12:04:12.007 +07:00 [Information] Request finished in 46.79ms 200 text/html; charset=utf-8
+2018-07-17 12:04:48.297 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/  
+2018-07-17 12:04:48.779 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 12:04:48.804 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 12:04:48.817 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3.1401ms.
+2018-07-17 12:04:48.850 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 12:04:49.337 +07:00 [Information] Executed ViewResult - view "Index" executed in 428.5634ms.
+2018-07-17 12:04:49.348 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/css/site.css  
+2018-07-17 12:04:49.350 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/images/banner2.svg  
+2018-07-17 12:04:49.359 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/images/banner3.svg  
+2018-07-17 12:04:49.363 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-17 12:04:49.379 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 560.6487ms
+2018-07-17 12:04:49.383 +07:00 [Information] Sending file. Request path: '"/images/banner3.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner3.svg"'
+2018-07-17 12:04:49.418 +07:00 [Information] Request finished in 42.5535ms 200 image/svg+xml
+2018-07-17 12:04:49.429 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/images/banner4.svg  
+2018-07-17 12:04:49.431 +07:00 [Information] Request finished in 1136.6658ms 200 text/html; charset=utf-8
+2018-07-17 12:04:49.455 +07:00 [Information] Request finished in 20.3298ms 404 
+2018-07-17 12:04:49.469 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/images/banner1.svg  
+2018-07-17 12:04:49.481 +07:00 [Information] Sending file. Request path: '"/images/banner2.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner2.svg"'
+2018-07-17 12:04:49.493 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/lib/jquery/dist/jquery.js  
+2018-07-17 12:04:49.506 +07:00 [Information] Request finished in 147.7846ms 200 image/svg+xml
+2018-07-17 12:04:49.509 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-17 12:04:49.525 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-17 12:04:49.533 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\css\site.css"'
+2018-07-17 12:04:49.536 +07:00 [Information] Sending file. Request path: '"/images/banner1.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner1.svg"'
+2018-07-17 12:04:49.568 +07:00 [Information] Request finished in 204.5365ms 200 text/css
+2018-07-17 12:04:49.595 +07:00 [Information] Request finished in 90.9917ms 200 image/svg+xml
+2018-07-17 12:04:49.600 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\js\site.js"'
+2018-07-17 12:04:49.602 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\css\bootstrap.css"'
+2018-07-17 12:04:49.638 +07:00 [Information] Request finished in 97.0851ms 200 application/javascript
+2018-07-17 12:04:49.645 +07:00 [Information] Request finished in 258.0484ms 200 text/css
+2018-07-17 12:04:49.646 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\js\bootstrap.js"'
+2018-07-17 12:04:49.661 +07:00 [Information] Request finished in 150.4971ms 200 application/javascript
+2018-07-17 12:04:49.668 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\jquery\dist\jquery.js"'
+2018-07-17 12:04:49.679 +07:00 [Information] Request finished in 203.4077ms 200 application/javascript
+2018-07-17 12:04:49.748 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-17 12:04:49.762 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"'
+2018-07-17 12:04:49.777 +07:00 [Information] Request finished in 32.2678ms 200 font/woff2
+2018-07-17 12:04:52.546 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/Identity/Account/Login  
+2018-07-17 12:04:52.610 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:04:52.652 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:04:52.664 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:04:52.819 +07:00 [Information] Executed action "/Account/Login" in 168.934ms
+2018-07-17 12:04:52.830 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/Identity/lib/jquery-validation/dist/jquery.validate.js  
+2018-07-17 12:04:52.834 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2018-07-17 12:04:52.839 +07:00 [Information] Request finished in 277.8302ms 200 text/html; charset=utf-8
+2018-07-17 12:04:52.846 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"N/A"'
+2018-07-17 12:04:52.848 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"'. Physical path: '"N/A"'
+2018-07-17 12:04:52.854 +07:00 [Information] Request finished in 46.5893ms 200 application/javascript
+2018-07-17 12:04:52.855 +07:00 [Information] Request finished in 55.704ms 200 application/javascript
+2018-07-17 12:04:56.089 +07:00 [Information] Request starting HTTP/1.1 POST https://localhost:5000/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:04:56.110 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:04:56.144 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:04:56.151 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:04:56.162 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:04:56.167 +07:00 [Information] Executed action "/Account/ExternalLogin" in 53.4189ms
+2018-07-17 12:04:56.173 +07:00 [Information] Request finished in 82.8827ms 302 
+2018-07-17 12:05:01.793 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5000/Identity/Account/Login  
+2018-07-17 12:05:01.798 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-17 12:05:01.805 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-17 12:05:01.810 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-17 12:05:01.834 +07:00 [Information] Executed action "/Account/Login" in 17.6027ms
+2018-07-17 12:05:01.843 +07:00 [Information] Request finished in 49.5743ms 200 text/html; charset=utf-8
+2018-07-17 12:05:34.553 +07:00 [Information] Request starting HTTP/1.1 POST https://localhost:5000/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-17 12:05:34.560 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-17 12:05:34.570 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-17 12:05:34.575 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-17 12:05:34.579 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-17 12:05:34.583 +07:00 [Information] Executed action "/Account/ExternalLogin" in 19.922ms
+2018-07-17 12:05:34.590 +07:00 [Information] Request finished in 41.2748ms 302 
+2018-07-17 18:13:56.702 +07:00 [Warning] The LINQ expression '"Contains(__p_0)"' could not be translated and will be evaluated locally.

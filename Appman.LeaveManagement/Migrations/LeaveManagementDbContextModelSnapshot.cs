@@ -75,9 +75,17 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<DateTime?>("ApprovedTime");
 
-                    b.Property<string>("AttachedFile");
+                    b.Property<string>("AttachedFile1");
 
-                    b.Property<string>("AttachedFileName");
+                    b.Property<string>("AttachedFile2");
+
+                    b.Property<string>("AttachedFile3");
+
+                    b.Property<string>("AttachedFileName1");
+
+                    b.Property<string>("AttachedFileName2");
+
+                    b.Property<string>("AttachedFileName3");
 
                     b.Property<string>("Comment");
 
@@ -125,6 +133,12 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("LWPHours");
 
                     b.Property<int>("SickHours");
+
+                    b.Property<int>("TotalAnnualHours");
+
+                    b.Property<int>("TotalLWPHours");
+
+                    b.Property<int>("TotalSickHours");
 
                     b.HasKey("StaffId", "Year");
 
