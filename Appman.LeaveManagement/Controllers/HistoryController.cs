@@ -31,7 +31,7 @@ namespace Appman.LeaveManagement.Controllers
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
                .ThenBy(v => v.RequestedDateTime);
             if (leaves == null)
-                return new EmptyResult();
+                return NotFound();
             
             return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
@@ -42,7 +42,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             var leave = _leaveRepo.ViewLeaveInfo(leaveId);
             if (leave == null)
-                return new EmptyResult();
+                return NotFound();
             return Content(JsonConvert.SerializeObject(leave), "application/json");
         }
 
@@ -60,7 +60,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             var list = _leaveRepo.GetHistory(staffId);
             if (list == null)
-                return new EmptyResult();
+                return NotFound();
             
             return Content(JsonConvert.SerializeObject(list), "application/json");
         }

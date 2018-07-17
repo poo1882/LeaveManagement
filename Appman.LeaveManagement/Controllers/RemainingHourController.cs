@@ -21,7 +21,7 @@ namespace Appman.LeaveManagement.Controllers
             _remRepo = new RemainingHourRepository(_dbContext);
         }
 
-        [Route("RemaingHour")]
+        [Route("RemainingHour")]
         [HttpGet]
         public IActionResult RemainingHour([FromQuery]string staffId,string year)
         {
@@ -40,7 +40,7 @@ namespace Appman.LeaveManagement.Controllers
             return Content(JsonConvert.SerializeObject(hours), "application/json");
         }
 
-        [Route("RemainingHour")]
+        [Route("RemainingHours")]
         [HttpGet]
         public IActionResult ViewAllReporting()
         {

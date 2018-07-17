@@ -80,6 +80,8 @@ namespace Appman.LeaveManagement.Repositories
         public Employee GetProfile(string staffId)
         {
             var emp = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
+            if (emp == null)
+                return null;
             if (emp.IsActive == false)
                 return null;
             return emp;
@@ -88,7 +90,7 @@ namespace Appman.LeaveManagement.Repositories
 
         public List<Employee> GetEmployees()
         {
-            List<Employee> result = _dbContext.Employees.Where(x => x.IsActive == true).ToList();
+            List<Employee> result = _dbContext.Employees.Where(x => x.IsActive == true).OrderByDescending(y => y.StaffId).ToList();
             return result;
         }
 

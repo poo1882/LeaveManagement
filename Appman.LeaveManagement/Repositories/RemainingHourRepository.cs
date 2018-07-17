@@ -72,7 +72,11 @@ namespace Appman.LeaveManagement.Repositories
 
         public List<RemainingHour> ViewAllRemainingHour()
         {
-            return _dbContext.RemainingHours.ToList();
+            var result = from remaininglist in _dbContext.RemainingHours
+                         join employeelist in _dbContext.Employees on remaininglist.StaffId equals employeelist.StaffId
+                         where employeelist.IsActive == true
+                         select remaininglist;
+            return result.OrderByDescending(x=>x.StaffId).ToList();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             List<Employee> result = _empRepo.GetEmployees();
             if (result == null)
-                return new EmptyResult();
+                return NotFound();
 
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }

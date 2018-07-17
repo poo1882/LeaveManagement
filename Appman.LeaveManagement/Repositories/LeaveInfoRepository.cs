@@ -83,7 +83,7 @@ namespace Appman.LeaveManagement.Repositories
                          join leaveinfo in _dbContext.LeaveInfos on employeelist.StaffId equals leaveinfo.StaffId
                          where employeelist.IsActive == true
                          select leaveinfo;
-            return _dbContext.LeaveInfos.ToList();
+            return result.OrderByDescending(x => x.LeaveId).ToList();
         }
 
 
@@ -98,8 +98,8 @@ namespace Appman.LeaveManagement.Repositories
         public List<LeaveInfo> GetHistory(string staffId)
         {
             var list = _dbContext.LeaveInfos;
-            var result = list.Where(x => x.StaffId == staffId).ToList();
-            return result;
+            var result = list.Where(x => x.StaffId == staffId).OrderByDescending(x => x.LeaveId);
+            return result.ToList();
         }
 
 
@@ -118,7 +118,7 @@ namespace Appman.LeaveManagement.Repositories
                          join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                          where reportlist.Approver == staffId
                          select leaveinfo;
-            return result.Where(x => x.ApprovalStatus == "Pending").ToList();
+            return result.Where(x => x.ApprovalStatus == "Pending").OrderByDescending(y => y.LeaveId).ToList();
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Appman.LeaveManagement.Repositories
         public int PendingAmount(string staffId)
         {
             var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
-            return leaves.Where(x => x.ApprovalStatus == null).Count();
+            return leaves.Where(x => x.ApprovalStatus.ToLower() == "pending").Count();
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Appman.LeaveManagement.Repositories
         public int ApprovedAmount(string staffId)
         {
             var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
-            return leaves.Where(x => x.ApprovalStatus == "Approved").Count();
+            return leaves.Where(x => x.ApprovalStatus.ToLower() == "approved").Count();
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Appman.LeaveManagement.Repositories
         public int RejectedAmount(string staffId)
         {
             var leaves = _dbContext.LeaveInfos.Where(x => x.StaffId == staffId);
-            return leaves.Where(x => x.ApprovalStatus == "Rejected").Count();
+            return leaves.Where(x => x.ApprovalStatus.ToLower() == "rejected").Count();
         }
 
         /// <summary>

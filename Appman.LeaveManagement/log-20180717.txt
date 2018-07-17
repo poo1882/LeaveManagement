@@ -1,0 +1,417 @@
+2018-07-17 11:06:46.362 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:06:46.362 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:06:46.474 +07:00 [Information] Request finished in 115.5653ms 200 
+2018-07-17 11:06:46.797 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:06:46.824 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:06:46.840 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.4119ms.
+2018-07-17 11:06:46.894 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:06:47.532 +07:00 [Information] Executed ViewResult - view "Index" executed in 656.2607ms.
+2018-07-17 11:06:47.633 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-17 11:06:47.634 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 11:06:47.645 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 735.2194ms
+2018-07-17 11:06:47.673 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/css/site.css  
+2018-07-17 11:06:47.677 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner3.svg  
+2018-07-17 11:06:47.685 +07:00 [Information] Request finished in 82.4289ms 404 
+2018-07-17 11:06:47.692 +07:00 [Information] Request finished in 1342.485ms 200 text/html; charset=utf-8
+2018-07-17 11:06:47.699 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner2.svg  
+2018-07-17 11:06:47.704 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-17 11:06:47.719 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/jquery/dist/jquery.js  
+2018-07-17 11:06:47.720 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner1.svg  
+2018-07-17 11:06:47.745 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-17 11:06:47.753 +07:00 [Information] Sending file. Request path: '"/images/banner3.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner3.svg"'
+2018-07-17 11:06:47.767 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\css\site.css"'
+2018-07-17 11:06:47.810 +07:00 [Information] Sending file. Request path: '"/images/banner1.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner1.svg"'
+2018-07-17 11:06:47.813 +07:00 [Information] Request finished in 178.5396ms 200 text/css
+2018-07-17 11:06:47.826 +07:00 [Information] Request finished in 102.3013ms 200 image/svg+xml
+2018-07-17 11:06:47.827 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\js\bootstrap.js"'
+2018-07-17 11:06:47.831 +07:00 [Information] Request finished in 163.7221ms 200 image/svg+xml
+2018-07-17 11:06:47.846 +07:00 [Information] Sending file. Request path: '"/images/banner2.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner2.svg"'
+2018-07-17 11:06:47.850 +07:00 [Information] Request finished in 136.25ms 200 application/javascript
+2018-07-17 11:06:47.867 +07:00 [Information] Request finished in 155.5096ms 200 image/svg+xml
+2018-07-17 11:06:47.873 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\js\site.js"'
+2018-07-17 11:06:47.881 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\jquery\dist\jquery.js"'
+2018-07-17 11:06:47.978 +07:00 [Information] Request finished in 165.8058ms 200 application/javascript
+2018-07-17 11:06:48.015 +07:00 [Information] Request finished in 173.6753ms 200 application/javascript
+2018-07-17 11:06:48.031 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:06:48.041 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-17 11:06:48.054 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\css\bootstrap.css"'
+2018-07-17 11:06:48.058 +07:00 [Information] Request finished in 17.439ms 301 
+2018-07-17 11:06:48.074 +07:00 [Information] Request finished in 461.9585ms 200 text/css
+2018-07-17 11:06:48.080 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:06:48.218 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"'
+2018-07-17 11:06:48.225 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui.css  
+2018-07-17 11:06:48.232 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-standalone-preset.js  
+2018-07-17 11:06:48.234 +07:00 [Information] Request finished in 198.719ms 200 font/woff2
+2018-07-17 11:06:48.235 +07:00 [Information] Request finished in 65.1827ms 200 text/html
+2018-07-17 11:06:48.250 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-bundle.js  
+2018-07-17 11:06:48.260 +07:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2018-07-17 11:06:48.338 +07:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2018-07-17 11:06:48.349 +07:00 [Information] Request finished in 96.0303ms 200 text/css
+2018-07-17 11:06:48.365 +07:00 [Information] Request finished in 135.0058ms 200 application/javascript
+2018-07-17 11:06:48.416 +07:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2018-07-17 11:06:48.428 +07:00 [Information] Request finished in 181.0206ms 200 application/javascript
+2018-07-17 11:06:49.066 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:06:49.311 +07:00 [Information] Request finished in 226.526ms 200 application/json;charset=utf-8
+2018-07-17 11:06:58.056 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=a  
+2018-07-17 11:06:58.094 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:06:58.137 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["a"]) - Validation state: Valid
+2018-07-17 11:06:58.350 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:06:58.595 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:06:58.630 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__ToLower_0='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:06:58.688 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:06:58.696 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__email_0='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"Employees\" AS \"x\"
+        WHERE lower(\"x\".\"Email\") = @__email_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-17 11:06:58.705 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.EmptyResult" in 563.8788ms.
+2018-07-17 11:06:58.710 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 611.3655ms
+2018-07-17 11:06:58.731 +07:00 [Information] Request finished in 678.7024ms 200 
+2018-07-17 11:07:38.320 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/Employee?staffId=adw  
+2018-07-17 11:07:38.336 +07:00 [Information] Route matched with "{action = \"GetProfile\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)"
+2018-07-17 11:07:38.348 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)" with arguments (["adw"]) - Validation state: Valid
+2018-07-17 11:07:38.367 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:07:38.384 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:07:38.390 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__staffId_0='?' (Size = 3)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-17 11:08:45.735 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:08:45.735 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:08:45.735 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:08:45.826 +07:00 [Information] Request finished in 93.8583ms 200 
+2018-07-17 11:08:45.901 +07:00 [Information] Request finished in 167.3325ms 301 
+2018-07-17 11:08:45.920 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:08:45.967 +07:00 [Information] Request finished in 36.6086ms 200 text/html
+2018-07-17 11:08:46.348 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:08:46.411 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:08:46.429 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9915ms.
+2018-07-17 11:08:46.491 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:08:46.503 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:08:46.894 +07:00 [Information] Request finished in 321.5912ms 200 application/json;charset=utf-8
+2018-07-17 11:08:46.994 +07:00 [Information] Executed ViewResult - view "Index" executed in 531.2504ms.
+2018-07-17 11:08:47.010 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 654.8633ms
+2018-07-17 11:08:47.055 +07:00 [Information] Request finished in 1321.664ms 200 text/html; charset=utf-8
+2018-07-17 11:08:52.779 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/Employee?staffId=adw  
+2018-07-17 11:08:52.811 +07:00 [Information] Route matched with "{action = \"GetProfile\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)"
+2018-07-17 11:08:52.860 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)" with arguments (["adw"]) - Validation state: Valid
+2018-07-17 11:08:53.075 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:08:53.258 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:08:53.283 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__staffId_0='?' (Size = 3)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-17 11:08:53.305 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.EmptyResult" in 440.221ms.
+2018-07-17 11:08:53.310 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)" in 494.6957ms
+2018-07-17 11:08:53.318 +07:00 [Information] Request finished in 544.3584ms 200 
+2018-07-17 11:09:08.991 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=addw  
+2018-07-17 11:09:08.999 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:09:09.011 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["addw"]) - Validation state: Valid
+2018-07-17 11:09:14.761 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:09:14.794 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:09:14.800 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__ToLower_0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:09:27.244 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:09:27.248 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__email_0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"Employees\" AS \"x\"
+        WHERE lower(\"x\".\"Email\") = @__email_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-17 11:09:46.547 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.EmptyResult" in 37528.9121ms.
+2018-07-17 11:09:46.552 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 37548.0879ms
+2018-07-17 11:09:46.574 +07:00 [Information] Request finished in 37578.5585ms 200 
+2018-07-17 11:11:08.987 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:11:08.987 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:11:08.987 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:11:09.090 +07:00 [Information] Request finished in 115.1486ms 200 
+2018-07-17 11:11:09.179 +07:00 [Information] Request finished in 197.2888ms 301 
+2018-07-17 11:11:09.200 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:11:09.279 +07:00 [Information] Request finished in 49.2935ms 200 text/html
+2018-07-17 11:11:09.575 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:11:09.602 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:11:09.620 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.893ms.
+2018-07-17 11:11:09.692 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:11:09.846 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:11:10.215 +07:00 [Information] Request finished in 366.9829ms 200 application/json;charset=utf-8
+2018-07-17 11:11:10.300 +07:00 [Information] Executed ViewResult - view "Index" executed in 579.1396ms.
+2018-07-17 11:11:10.355 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 741.9191ms
+2018-07-17 11:11:10.377 +07:00 [Information] Request finished in 1408.2445ms 200 text/html; charset=utf-8
+2018-07-17 11:11:18.112 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=a  
+2018-07-17 11:11:18.145 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:11:18.195 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["a"]) - Validation state: Valid
+2018-07-17 11:11:18.394 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:11:18.590 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:11:18.615 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__ToLower_0='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:11:18.637 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 488.1657ms
+2018-07-17 11:11:18.712 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot return null from an action method with a return type of 'Microsoft.AspNetCore.Mvc.IActionResult'.
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.EnsureActionResultNotNull(ObjectMethodExecutor executor, IActionResult actionResult)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-07-17 11:11:18.801 +07:00 [Information] Request finished in 686.77ms 500 text/html; charset=utf-8
+2018-07-17 11:12:16.282 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:12:16.282 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:12:16.283 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:12:16.393 +07:00 [Information] Request finished in 97.7353ms 200 
+2018-07-17 11:12:16.490 +07:00 [Information] Request finished in 199.4823ms 301 
+2018-07-17 11:12:16.502 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:12:16.550 +07:00 [Information] Request finished in 46.1368ms 200 text/html
+2018-07-17 11:12:16.877 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:12:16.906 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:12:16.919 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9767ms.
+2018-07-17 11:12:16.985 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:12:17.143 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:12:17.479 +07:00 [Information] Request finished in 337.0167ms 200 application/json;charset=utf-8
+2018-07-17 11:12:17.529 +07:00 [Information] Executed ViewResult - view "Index" executed in 555.1682ms.
+2018-07-17 11:12:17.583 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 659.9363ms
+2018-07-17 11:12:17.686 +07:00 [Information] Request finished in 1326.2088ms 200 text/html; charset=utf-8
+2018-07-17 11:12:23.773 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=a  
+2018-07-17 11:12:23.800 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:12:23.860 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["a"]) - Validation state: Valid
+2018-07-17 11:12:24.045 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:12:24.250 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:12:24.277 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__ToLower_0='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:12:24.297 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 433.0494ms.
+2018-07-17 11:12:24.304 +07:00 [Information] Executing ObjectResult, writing value of type '"null"'.
+2018-07-17 11:12:24.308 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 505.1672ms
+2018-07-17 11:12:24.316 +07:00 [Information] Request finished in 590.2812ms 204 
+2018-07-17 11:12:45.567 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:12:45.567 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:12:45.656 +07:00 [Information] Request finished in 89.6571ms 200 
+2018-07-17 11:12:45.943 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:12:45.964 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:12:45.976 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8685ms.
+2018-07-17 11:12:46.012 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:12:46.363 +07:00 [Information] Executed ViewResult - view "Index" executed in 371.4838ms.
+2018-07-17 11:12:46.383 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 420.4449ms
+2018-07-17 11:12:46.406 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 11:12:46.424 +07:00 [Information] Request finished in 848.4167ms 200 text/html; charset=utf-8
+2018-07-17 11:12:46.434 +07:00 [Information] Request finished in 36.7353ms 404 
+2018-07-17 11:12:48.767 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:12:48.783 +07:00 [Information] Request finished in 23.3793ms 301 
+2018-07-17 11:12:48.786 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:12:48.847 +07:00 [Information] Request finished in 25.8321ms 200 text/html
+2018-07-17 11:12:49.153 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:12:49.336 +07:00 [Information] Request finished in 176.7427ms 200 application/json;charset=utf-8
+2018-07-17 11:12:55.192 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=a  
+2018-07-17 11:12:55.225 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:12:55.269 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["a"]) - Validation state: Valid
+2018-07-17 11:12:55.447 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:12:55.662 +07:00 [Information] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:12:55.690 +07:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__ToLower_0='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:12:55.714 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 441.4084ms.
+2018-07-17 11:12:55.724 +07:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-07-17 11:12:55.730 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 502.4101ms
+2018-07-17 11:12:55.741 +07:00 [Information] Request finished in 559.3387ms 200 application/json; charset=utf-8
+2018-07-17 11:13:51.315 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:13:51.315 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:13:51.315 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:13:51.395 +07:00 [Information] Request finished in 85.8601ms 200 
+2018-07-17 11:13:51.473 +07:00 [Information] Request finished in 151.3352ms 301 
+2018-07-17 11:13:51.476 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:13:51.595 +07:00 [Information] Request finished in 58.5515ms 200 text/html
+2018-07-17 11:13:51.889 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:13:51.930 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:13:51.952 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.932ms.
+2018-07-17 11:13:52.029 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:13:52.050 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:13:52.361 +07:00 [Information] Request finished in 317.6061ms 200 application/json;charset=utf-8
+2018-07-17 11:13:52.473 +07:00 [Information] Executed ViewResult - view "Index" executed in 485.3349ms.
+2018-07-17 11:13:52.495 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 584.3959ms
+2018-07-17 11:13:52.508 +07:00 [Information] Request finished in 1202.9168ms 200 text/html; charset=utf-8
+2018-07-17 11:13:58.077 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=daw  
+2018-07-17 11:13:58.104 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:13:58.149 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["daw"]) - Validation state: Valid
+2018-07-17 11:13:58.328 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:13:58.517 +07:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:13:58.542 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__ToLower_0='?' (Size = 3)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:13:58.563 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 409.4458ms.
+2018-07-17 11:13:58.571 +07:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2018-07-17 11:13:58.578 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 469.0385ms
+2018-07-17 11:13:58.587 +07:00 [Information] Request finished in 512.3544ms 200 application/json; charset=utf-8
+2018-07-17 11:20:15.886 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-17 11:20:15.886 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-17 11:20:15.986 +07:00 [Information] Request finished in 84.6697ms 200 
+2018-07-17 11:20:16.361 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-17 11:20:16.443 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:20:16.458 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8477ms.
+2018-07-17 11:20:16.526 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-17 11:20:16.801 +07:00 [Information] Executed ViewResult - view "Index" executed in 321.5569ms.
+2018-07-17 11:20:16.805 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 440.2892ms
+2018-07-17 11:20:16.828 +07:00 [Information] Request finished in 948.0508ms 200 text/html; charset=utf-8
+2018-07-17 11:20:16.835 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-17 11:20:16.850 +07:00 [Information] Request finished in 8.2611ms 404 
+2018-07-17 11:29:34.170 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-17 11:29:34.184 +07:00 [Information] Request finished in 12.405ms 301 
+2018-07-17 11:29:34.198 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-17 11:29:34.229 +07:00 [Information] Request finished in 17.6431ms 200 text/html
+2018-07-17 11:29:34.604 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-17 11:29:34.779 +07:00 [Information] Request finished in 165.8842ms 200 application/json;charset=utf-8
+2018-07-17 11:29:41.564 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/Employee?staffId=dwadw  
+2018-07-17 11:29:41.598 +07:00 [Information] Route matched with "{action = \"GetProfile\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)"
+2018-07-17 11:29:41.659 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)" with arguments (["dwadw"]) - Validation state: Valid
+2018-07-17 11:29:41.868 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:29:42.071 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:29:42.094 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__staffId_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-17 11:29:42.115 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 451.1741ms.
+2018-07-17 11:29:42.123 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-07-17 11:29:42.127 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetProfile (Appman.LeaveManagement)" in 524.7291ms
+2018-07-17 11:29:42.133 +07:00 [Information] Request finished in 579.4528ms 404 
+2018-07-17 11:29:52.169 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/GetEmployeeId?email=dwa  
+2018-07-17 11:29:52.181 +07:00 [Information] Route matched with "{action = \"GetEmployeeId\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)"
+2018-07-17 11:29:52.190 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" with arguments (["dwa"]) - Validation state: Valid
+2018-07-17 11:29:52.221 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:29:52.253 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:29:52.261 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__ToLower_0='?' (Size = 3)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-17 11:29:52.269 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 72.5091ms.
+2018-07-17 11:29:52.274 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-07-17 11:29:52.279 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetEmployeeId (Appman.LeaveManagement)" in 93.3906ms
+2018-07-17 11:29:52.287 +07:00 [Information] Request finished in 117.1152ms 404 
+2018-07-17 11:29:56.828 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/Employees  
+2018-07-17 11:29:56.836 +07:00 [Information] Route matched with "{action = \"ViewAllEmployee\", controller = \"Employees\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)"
+2018-07-17 11:29:56.841 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:29:56.848 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:29:56.867 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:29:56.874 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1
+ORDER BY \"x\".\"StaffId\" DESC"
+2018-07-17 11:29:56.882 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 36.9949ms.
+2018-07-17 11:29:56.889 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-17 11:29:56.898 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" in 53.6084ms
+2018-07-17 11:29:56.912 +07:00 [Information] Request finished in 75.9062ms 200 application/json
+2018-07-17 11:30:08.801 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/History/Leaves  
+2018-07-17 11:30:08.808 +07:00 [Information] Route matched with "{action = \"ViewLeaves\", controller = \"History\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)"
+2018-07-17 11:30:08.820 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-17 11:30:08.827 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:30:08.862 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:30:08.869 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"leaveinfo\".\"LeaveId\", \"leaveinfo\".\"ApprovalStatus\", \"leaveinfo\".\"ApprovedBy\", \"leaveinfo\".\"ApprovedTime\", \"leaveinfo\".\"AttachedFile\", \"leaveinfo\".\"AttachedFileName\", \"leaveinfo\".\"Comment\", \"leaveinfo\".\"EndDateTime\", \"leaveinfo\".\"HoursEndDate\", \"leaveinfo\".\"HoursStartDate\", \"leaveinfo\".\"RequestedDateTime\", \"leaveinfo\".\"StaffId\", \"leaveinfo\".\"StartDateTime\", \"leaveinfo\".\"Type\"
+FROM \"Employees\" AS \"employeelist\"
+INNER JOIN \"LeaveInfos\" AS \"leaveinfo\" ON \"employeelist\".\"StaffId\" = \"leaveinfo\".\"StaffId\"
+WHERE \"employeelist\".\"IsActive\" = 1
+ORDER BY \"leaveinfo\".\"LeaveId\" DESC"
+2018-07-17 11:30:08.881 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 57.6244ms.
+2018-07-17 11:30:08.886 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-17 11:30:08.892 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)" in 77.6817ms
+2018-07-17 11:30:08.898 +07:00 [Information] Request finished in 97.2021ms 200 application/json
+2018-07-17 11:30:20.781 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/History/Info?leaveId=999  
+2018-07-17 11:30:20.789 +07:00 [Information] Route matched with "{action = \"ViewLeaveInfo\", controller = \"History\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaveInfo (Appman.LeaveManagement)"
+2018-07-17 11:30:20.795 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaveInfo (Appman.LeaveManagement)" with arguments (["999"]) - Validation state: Valid
+2018-07-17 11:30:20.804 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:30:20.823 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:30:20.831 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@__leaveId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"LeaveId\", \"x\".\"ApprovalStatus\", \"x\".\"ApprovedBy\", \"x\".\"ApprovedTime\", \"x\".\"AttachedFile\", \"x\".\"AttachedFileName\", \"x\".\"Comment\", \"x\".\"EndDateTime\", \"x\".\"HoursEndDate\", \"x\".\"HoursStartDate\", \"x\".\"RequestedDateTime\", \"x\".\"StaffId\", \"x\".\"StartDateTime\", \"x\".\"Type\"
+FROM \"LeaveInfos\" AS \"x\"
+WHERE \"x\".\"LeaveId\" = @__leaveId_0
+LIMIT 1"
+2018-07-17 11:30:20.837 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaveInfo (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.NotFoundResult" in 36.3718ms.
+2018-07-17 11:30:20.843 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-07-17 11:30:20.846 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaveInfo (Appman.LeaveManagement)" in 53.8906ms
+2018-07-17 11:30:20.855 +07:00 [Information] Request finished in 69.6279ms 404 
+2018-07-17 11:30:33.709 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/History/History?staffId=00001  
+2018-07-17 11:30:33.721 +07:00 [Information] Route matched with "{action = \"GetHistory\", controller = \"History\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HistoryController.GetHistory (Appman.LeaveManagement)"
+2018-07-17 11:30:33.728 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HistoryController.GetHistory (Appman.LeaveManagement)" with arguments (["00001"]) - Validation state: Valid
+2018-07-17 11:30:33.738 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:30:33.750 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:30:33.757 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__staffId_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"LeaveId\", \"x\".\"ApprovalStatus\", \"x\".\"ApprovedBy\", \"x\".\"ApprovedTime\", \"x\".\"AttachedFile\", \"x\".\"AttachedFileName\", \"x\".\"Comment\", \"x\".\"EndDateTime\", \"x\".\"HoursEndDate\", \"x\".\"HoursStartDate\", \"x\".\"RequestedDateTime\", \"x\".\"StaffId\", \"x\".\"StartDateTime\", \"x\".\"Type\"
+FROM \"LeaveInfos\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+ORDER BY \"x\".\"LeaveId\" DESC"
+2018-07-17 11:30:33.763 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HistoryController.GetHistory (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 31.2266ms.
+2018-07-17 11:30:33.771 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-17 11:30:33.778 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HistoryController.GetHistory (Appman.LeaveManagement)" in 49.308ms
+2018-07-17 11:30:33.784 +07:00 [Information] Request finished in 75.166ms 200 application/json
+2018-07-17 11:30:43.962 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Leaves/RemainingLeaveInfo?staffId=00001  
+2018-07-17 11:30:43.971 +07:00 [Information] Route matched with "{action = \"GetRemaining\", controller = \"Leaves\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.LeavesController.GetRemaining (Appman.LeaveManagement)"
+2018-07-17 11:30:43.978 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.LeavesController.GetRemaining (Appman.LeaveManagement)" with arguments (["00001"]) - Validation state: Valid
+2018-07-17 11:30:43.986 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-17 11:30:44.003 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-17 11:30:44.009 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__staffId_0='?' (Size = 5)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"leaveinfo\".\"LeaveId\", \"leaveinfo\".\"ApprovalStatus\", \"leaveinfo\".\"ApprovedBy\", \"leaveinfo\".\"ApprovedTime\", \"leaveinfo\".\"AttachedFile\", \"leaveinfo\".\"AttachedFileName\", \"leaveinfo\".\"Comment\", \"leaveinfo\".\"EndDateTime\", \"leaveinfo\".\"HoursEndDate\", \"leaveinfo\".\"HoursStartDate\", \"leaveinfo\".\"RequestedDateTime\", \"leaveinfo\".\"StaffId\", \"leaveinfo\".\"StartDateTime\", \"leaveinfo\".\"Type\"
+FROM \"Reportings\" AS \"reportlist\"
+INNER JOIN \"LeaveInfos\" AS \"leaveinfo\" ON \"reportlist\".\"StaffId\" = \"leaveinfo\".\"StaffId\"
+WHERE (\"reportlist\".\"Approver\" = @__staffId_0) AND (\"leaveinfo\".\"ApprovalStatus\" = 'Pending')
+ORDER BY \"leaveinfo\".\"LeaveId\" DESC"
+2018-07-17 11:30:44.013 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.LeavesController.GetRemaining (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 31.779ms.
+2018-07-17 11:30:44.022 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-17 11:30:44.035 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.LeavesController.GetRemaining (Appman.LeaveManagement)" in 51.3739ms
+2018-07-17 11:30:44.042 +07:00 [Information] Request finished in 77.2074ms 200 application/json

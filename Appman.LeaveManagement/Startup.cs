@@ -18,7 +18,7 @@ using Serilog;
 using Serilog.Events;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using Appman.LeaveManagement.Data;
 
 namespace Appman.LeaveManagement
 {
@@ -68,7 +68,17 @@ namespace Appman.LeaveManagement
 
                 //option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
             });
+            services.AddDbContext<ApplicationDbContext>(option =>
+            {
+                option.UseSqlite("Data Source=Application.db");
 
+                //option.UseSqlServer("Server=DESKTOP-LQN5P0D\\SQLEXPRESS; Database=LeaveManagement;Integrated Security=true");
+            });
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -112,6 +122,7 @@ namespace Appman.LeaveManagement
             loggerFactory.AddSerilog();//
             if (env.IsDevelopment())
             {
+                //app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();//
             }
@@ -125,6 +136,7 @@ namespace Appman.LeaveManagement
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseCors("All");
+            app.UseAuthentication();
             //app.UseIdentity();
 
             app.UseSwagger();

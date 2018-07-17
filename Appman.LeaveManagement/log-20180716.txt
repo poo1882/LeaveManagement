@@ -1,0 +1,194 @@
+2018-07-16 11:47:11.825 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 11:47:11.825 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-16 11:47:11.825 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 11:47:11.949 +07:00 [Information] Request finished in 98.9944ms 200 
+2018-07-16 11:47:11.953 +07:00 [Information] Request finished in 132.4345ms 301 
+2018-07-16 11:47:11.990 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-16 11:47:12.018 +07:00 [Information] Request finished in 29.1928ms 200 text/html
+2018-07-16 11:47:12.262 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 11:47:12.287 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 11:47:12.299 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7676ms.
+2018-07-16 11:47:12.334 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 11:47:12.567 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-16 11:47:12.580 +07:00 [Information] Executed ViewResult - view "Index" executed in 253.0315ms.
+2018-07-16 11:47:12.597 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 318.0406ms
+2018-07-16 11:47:12.611 +07:00 [Information] Request finished in 797.0653ms 200 text/html; charset=utf-8
+2018-07-16 11:47:12.945 +07:00 [Information] Request finished in 311.3111ms 200 application/json;charset=utf-8
+2018-07-16 11:47:17.186 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employees/Employees  
+2018-07-16 11:47:17.213 +07:00 [Information] Route matched with "{action = \"ViewAllEmployee\", controller = \"Employees\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)"
+2018-07-16 11:47:17.332 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 11:47:17.514 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-16 11:47:17.790 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-16 11:47:17.820 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"StaffId\", \"x\".\"Email\", \"x\".\"FirstName\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"IsInProbation\", \"x\".\"IsSuperHr\", \"x\".\"LastName\", \"x\".\"Position\", \"x\".\"ProfilePicture\", \"x\".\"Section\", \"x\".\"StartWorkingDate\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-16 11:47:17.901 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 535.298ms.
+2018-07-16 11:47:17.916 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-16 11:47:17.995 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeesController.ViewAllEmployee (Appman.LeaveManagement)" in 704.9871ms
+2018-07-16 11:47:18.017 +07:00 [Information] Request finished in 866.8755ms 200 application/json
+2018-07-16 14:31:49.354 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:31:49.354 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 14:31:49.354 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-16 14:31:49.424 +07:00 [Information] Request finished in 73.1993ms 200 
+2018-07-16 14:31:49.486 +07:00 [Information] Request finished in 138.7799ms 301 
+2018-07-16 14:31:49.490 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-16 14:31:49.531 +07:00 [Information] Request finished in 34.7706ms 200 text/html
+2018-07-16 14:31:49.710 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:31:49.730 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:31:49.739 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.5596ms.
+2018-07-16 14:31:49.759 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:31:49.935 +07:00 [Information] Executed ViewResult - view "Index" executed in 178.4787ms.
+2018-07-16 14:31:49.946 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 225.3154ms
+2018-07-16 14:31:49.960 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-16 14:31:49.963 +07:00 [Information] Request finished in 613.8376ms 200 text/html; charset=utf-8
+2018-07-16 14:31:50.109 +07:00 [Information] Request finished in 156.134ms 200 application/json;charset=utf-8
+2018-07-16 14:31:58.998 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:31:59.009 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:31:59.014 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:31:59.020 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1299ms.
+2018-07-16 14:31:59.029 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:31:59.048 +07:00 [Information] Executed ViewResult - view "Index" executed in 10.5727ms.
+2018-07-16 14:31:59.071 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:31:59.073 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 40.2289ms
+2018-07-16 14:31:59.113 +07:00 [Information] Request finished in 87.0908ms 200 text/html; charset=utf-8
+2018-07-16 14:31:59.114 +07:00 [Information] Request finished in 26.2154ms 404 
+2018-07-16 14:32:04.765 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/login  
+2018-07-16 14:32:04.808 +07:00 [Information] Request finished in 6.4856ms 404 
+2018-07-16 14:33:05.298 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:33:05.298 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 14:33:05.426 +07:00 [Information] Request finished in 105.369ms 200 
+2018-07-16 14:33:05.795 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:33:05.818 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:33:05.828 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.8573ms.
+2018-07-16 14:33:05.873 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:33:06.046 +07:00 [Information] Executed ViewResult - view "Index" executed in 200.4686ms.
+2018-07-16 14:33:06.075 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 251.0335ms
+2018-07-16 14:33:06.095 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:33:06.127 +07:00 [Information] Request finished in 806.8125ms 200 text/html; charset=utf-8
+2018-07-16 14:33:06.129 +07:00 [Information] Request finished in 33.1741ms 404 
+2018-07-16 14:33:06.716 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-16 14:33:06.746 +07:00 [Information] Request finished in 17.139ms 301 
+2018-07-16 14:33:06.751 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-16 14:33:06.790 +07:00 [Information] Request finished in 21.8677ms 200 text/html
+2018-07-16 14:33:07.127 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-16 14:33:07.267 +07:00 [Information] Request finished in 141.6088ms 200 application/json;charset=utf-8
+2018-07-16 14:36:56.171 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 14:36:56.171 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:36:56.294 +07:00 [Information] Request finished in 112.8803ms 200 
+2018-07-16 14:36:56.555 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:36:56.572 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:36:56.580 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.5305ms.
+2018-07-16 14:36:56.603 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:36:56.750 +07:00 [Information] Executed ViewResult - view "Index" executed in 156.0318ms.
+2018-07-16 14:36:56.754 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 195.0582ms
+2018-07-16 14:36:56.780 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:36:56.788 +07:00 [Information] Request finished in 616.7373ms 200 text/html; charset=utf-8
+2018-07-16 14:36:56.791 +07:00 [Information] Request finished in 14.068ms 404 
+2018-07-16 14:36:59.545 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Home/About  
+2018-07-16 14:36:59.552 +07:00 [Information] Route matched with "{action = \"About\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.About (Appman.LeaveManagement)"
+2018-07-16 14:36:59.556 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.About (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:36:59.560 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.About (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.543ms.
+2018-07-16 14:36:59.566 +07:00 [Information] Executing ViewResult, running view "About".
+2018-07-16 14:36:59.580 +07:00 [Information] Executed ViewResult - view "About" executed in 10.995ms.
+2018-07-16 14:36:59.590 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.About (Appman.LeaveManagement)" in 28.369ms
+2018-07-16 14:36:59.595 +07:00 [Information] Request finished in 49.0603ms 200 text/html; charset=utf-8
+2018-07-16 14:37:03.106 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Home/Login  
+2018-07-16 14:37:03.196 +07:00 [Information] Request finished in 10.0134ms 404 
+2018-07-16 14:37:54.721 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/identity/Account/Login  
+2018-07-16 14:37:54.768 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-16 14:37:54.889 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:37:54.900 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-16 14:37:55.026 +07:00 [Information] Executed action "/Account/Login" in 252.1127ms
+2018-07-16 14:37:55.047 +07:00 [Information] Request finished in 348.3891ms 200 text/html; charset=utf-8
+2018-07-16 14:37:55.051 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/lib/jquery-validation/dist/jquery.validate.js  
+2018-07-16 14:37:55.055 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+2018-07-16 14:37:55.077 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"'. Physical path: '"N/A"'
+2018-07-16 14:37:55.077 +07:00 [Information] Sending file. Request path: '"/Identity/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"N/A"'
+2018-07-16 14:37:55.088 +07:00 [Information] Request finished in 33.055ms 200 application/javascript
+2018-07-16 14:37:55.093 +07:00 [Information] Request finished in 28.9564ms 200 application/javascript
+2018-07-16 14:38:03.576 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:38:03.581 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:38:03.585 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:38:03.590 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0168ms.
+2018-07-16 14:38:03.594 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:38:03.610 +07:00 [Information] Executed ViewResult - view "Index" executed in 4.3579ms.
+2018-07-16 14:38:03.619 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:38:03.619 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 29.0592ms
+2018-07-16 14:38:03.631 +07:00 [Information] Request finished in 47.4657ms 200 text/html; charset=utf-8
+2018-07-16 14:38:03.633 +07:00 [Information] Request finished in 11.7872ms 404 
+2018-07-16 14:42:00.780 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:42:00.780 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 14:42:00.856 +07:00 [Information] Request finished in 76.9203ms 200 
+2018-07-16 14:42:01.146 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:42:01.168 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:42:01.176 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7114ms.
+2018-07-16 14:42:01.202 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:42:03.548 +07:00 [Information] Executed ViewResult - view "Index" executed in 2357.1721ms.
+2018-07-16 14:42:03.553 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 2402.5105ms
+2018-07-16 14:42:03.591 +07:00 [Information] Request finished in 2805.4951ms 200 text/html; charset=utf-8
+2018-07-16 14:42:03.598 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:42:03.606 +07:00 [Information] Request finished in 9.4683ms 404 
+2018-07-16 14:45:21.207 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:49979/  0
+2018-07-16 14:45:21.207 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-16 14:45:21.294 +07:00 [Information] Request finished in 83.3801ms 200 
+2018-07-16 14:45:21.563 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-16 14:45:21.584 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-16 14:45:21.591 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6671ms.
+2018-07-16 14:45:21.616 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-16 14:45:21.929 +07:00 [Information] Executed ViewResult - view "Index" executed in 321.4681ms.
+2018-07-16 14:45:21.945 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 366.4804ms
+2018-07-16 14:45:21.970 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-16 14:45:21.971 +07:00 [Information] Request finished in 767.2919ms 200 text/html; charset=utf-8
+2018-07-16 14:45:21.984 +07:00 [Information] Request finished in 24.5118ms 404 
+2018-07-16 14:46:19.540 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-16 14:46:19.582 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-16 14:46:19.615 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:46:19.624 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-16 14:46:19.747 +07:00 [Information] Executed action "/Account/Login" in 147.1088ms
+2018-07-16 14:46:19.764 +07:00 [Information] Request finished in 212.2869ms 200 text/html; charset=utf-8
+2018-07-16 14:46:25.932 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Register  
+2018-07-16 14:46:25.949 +07:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Register"
+2018-07-16 14:46:25.953 +07:00 [Information] Executing handler method "OnGet" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:46:26.014 +07:00 [Information] Executed action "/Account/Register" in 47.4224ms
+2018-07-16 14:46:26.019 +07:00 [Information] Request finished in 85.6897ms 200 text/html; charset=utf-8
+2018-07-16 14:46:27.517 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-16 14:46:27.522 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-16 14:46:27.528 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:46:27.533 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-16 14:46:27.547 +07:00 [Information] Executed action "/Account/Login" in 14.1682ms
+2018-07-16 14:46:27.554 +07:00 [Information] Request finished in 33.1337ms 200 text/html; charset=utf-8
+2018-07-16 14:54:53.787 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-16 14:54:53.798 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-16 14:54:53.840 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-16 14:54:53.846 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-16 14:54:53.855 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-16 14:54:53.859 +07:00 [Information] Executed action "/Account/ExternalLogin" in 57.6389ms
+2018-07-16 14:54:53.867 +07:00 [Information] Request finished in 79.9416ms 302 
+2018-07-16 14:54:56.244 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-16 14:54:56.250 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-16 14:54:56.257 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:54:56.261 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-16 14:54:56.282 +07:00 [Information] Executed action "/Account/Login" in 14.0687ms
+2018-07-16 14:54:56.315 +07:00 [Information] Request finished in 48.922ms 200 text/html; charset=utf-8
+2018-07-16 14:55:04.776 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-16 14:55:04.781 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-16 14:55:04.788 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-16 14:55:04.791 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-16 14:55:04.795 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-16 14:55:04.799 +07:00 [Information] Executed action "/Account/ExternalLogin" in 14.9819ms
+2018-07-16 14:55:04.806 +07:00 [Information] Request finished in 28.9977ms 302 
+2018-07-16 14:55:06.501 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/Identity/Account/Login  
+2018-07-16 14:55:06.506 +07:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/Login"
+2018-07-16 14:55:06.512 +07:00 [Information] Executing handler method "OnGetAsync" with arguments ([""]) - ModelState is Valid
+2018-07-16 14:55:06.517 +07:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2018-07-16 14:55:06.532 +07:00 [Information] Executed action "/Account/Login" in 16.594ms
+2018-07-16 14:55:06.543 +07:00 [Information] Request finished in 36.7283ms 200 text/html; charset=utf-8
+2018-07-16 14:57:58.440 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44331/Identity/Account/ExternalLogin?returnUrl=%2F application/x-www-form-urlencoded 198
+2018-07-16 14:57:58.447 +07:00 [Information] Route matched with "{page = \"/Account/ExternalLogin\", area = \"Identity\", action = \"\", controller = \"\"}". Executing action "/Account/ExternalLogin"
+2018-07-16 14:57:58.452 +07:00 [Information] Executing handler method "OnPost" with arguments (["Google", "/"]) - ModelState is Invalid
+2018-07-16 14:57:58.456 +07:00 [Information] Executing ChallengeResult with authentication schemes (["Google"]).
+2018-07-16 14:57:58.460 +07:00 [Information] AuthenticationScheme: "Google" was challenged.
+2018-07-16 14:57:58.464 +07:00 [Information] Executed action "/Account/ExternalLogin" in 13.2878ms
+2018-07-16 14:57:58.474 +07:00 [Information] Request finished in 28.7748ms 302 

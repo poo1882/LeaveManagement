@@ -46,7 +46,7 @@ namespace Appman.LeaveManagement.Controllers
                 emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email, info);
                 return Ok();
             }
-            return new EmptyResult();
+            return NotFound();
             
         }
 
@@ -56,7 +56,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             var leave = _leaveRepo.GetRemaining(staffId);
             if (leave == null)
-                return new EmptyResult();
+                return NotFound();
             return Content(JsonConvert.SerializeObject(leave), "application/json");
         }
 
@@ -69,7 +69,7 @@ namespace Appman.LeaveManagement.Controllers
             {
                 return Ok();
             }
-            return new EmptyResult();            
+            return NotFound();            
                 
         }
 

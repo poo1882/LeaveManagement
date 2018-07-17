@@ -23,7 +23,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             if(_repRepo.AddApprover(reporting))
                 return Created("", reporting);
-            return new EmptyResult();
+            return NotFound();
 
         }
 
@@ -33,7 +33,7 @@ namespace Appman.LeaveManagement.Controllers
         {
             if (_repRepo.RemoveApprover(reporting))
                 return Ok();
-            return new EmptyResult();
+            return NotFound();
         }
 
         [Route("Reporting")]
