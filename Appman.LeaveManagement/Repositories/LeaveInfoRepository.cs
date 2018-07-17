@@ -39,39 +39,49 @@ namespace Appman.LeaveManagement.Repositories
             return emp;
         }
 
-        
-
         public bool CreateLeaveInfo(LeaveInfo info)
         {
             info.ApprovalStatus = "Pending";
             info.ApprovedBy = null;
             RemainingHourRepository remain = new RemainingHourRepository(_dbContext);
             int totalHours = 0;
+            int totalHoursFirstDay = 0;
+            int totalHoursLastDay = 0;
+            totalHoursFirstDay = _dbContext.LeaveInfos.Where(x => x.StaffId == info.StaffId && x.StartDateTime == info.StartDateTime).Sum(x => x.HoursStartDate);
+            totalHoursFirstDay = _dbContext.LeaveInfos.Where(x => x.StaffId == info.StaffId && x.EndDateTime == info.EndDateTime).Sum(x => x.HoursEndDate);
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
-                if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate)
+                if (totalHoursFirstDay - info.HoursStartDate > 0)
                 {
-                    _dbContext.LeaveInfos.Add(info);
-                    _dbContext.SaveChanges();
-                    totalHours = info.HoursStartDate;
-                    remain.DeductRemainHour(info.StaffId,info.Type,totalHours);
-                    return true;
+                    if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate)
+                    {
+                        _dbContext.LeaveInfos.Add(info);
+                        _dbContext.SaveChanges();
+                        totalHours = info.HoursStartDate;
+                        remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
+                        return true;
+                    }
+                    return false;
                 }
-                return false;
+                else return false;
             }
             else
             {
-                int totalDays = (info.EndDateTime - info.StartDateTime).Days;
-                totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
-                if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
+                if (totalHoursFirstDay - info.HoursStartDate > 0 && totalHoursLastDay - info.HoursEndDate > 0)
                 {
-                    //UpdateRemainHour(info.StaffId, info.Type, totalHours);
-                    _dbContext.LeaveInfos.Add(info);
-                    _dbContext.SaveChanges();
-                    remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
-                    return true;
+                    int totalDays = (info.EndDateTime - info.StartDateTime).Days;
+                    totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                    if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
+                    {
+                        //UpdateRemainHour(info.StaffId, info.Type, totalHours);
+                        _dbContext.LeaveInfos.Add(info);
+                        _dbContext.SaveChanges();
+                        remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
+                        return true;
+                    }
+                    return false;
                 }
-                return false;
+                else return false;
             }
             
 
