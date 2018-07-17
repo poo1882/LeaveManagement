@@ -59,10 +59,13 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetHistory([FromQuery]string staffId)
         {
             var list = _leaveRepo.GetHistory(staffId);
+            var ordered = list
+               .OrderByDescending(v => v.ApprovalStatus == "Pending")
+               .ThenBy(v => v.RequestedDateTime);
             if (list == null)
                 return NotFound();
             
-            return Content(JsonConvert.SerializeObject(list), "application/json");
+            return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
 
         [Route("History")]
