@@ -55,7 +55,7 @@ namespace Appman.LeaveManagement.Controllers
         }
 
         [Route("ClearReportings")]
-        [HttpGet]
+        [HttpDelete]
         public IActionResult ClearReportings()
         {
             _repRepo.ClearReportings();
