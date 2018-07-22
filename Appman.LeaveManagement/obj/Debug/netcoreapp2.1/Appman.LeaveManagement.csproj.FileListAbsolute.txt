@@ -106,7 +106,5 @@ C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagemen
 C:\Users\Appman_Laptop_56\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.pdb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Appman.LeaveManagement.csprojAssemblyReference.cache
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\Application.db
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Debug\netcoreapp2.1\LeaveManagement.db
+C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

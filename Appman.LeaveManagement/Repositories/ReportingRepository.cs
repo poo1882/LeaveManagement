@@ -138,6 +138,26 @@ namespace Appman.LeaveManagement.Repositories
                 StaffId = "00009",
                 Approver = "00008"
             });
+            AddApprover(new Reporting
+            {
+                StaffId = "00001",
+                Approver = "00003"
+            });
+            AddApprover(new Reporting
+            {
+                StaffId = "00002",
+                Approver = "00009"
+            });
+            AddApprover(new Reporting
+            {
+                StaffId = "00004",
+                Approver = "00001"
+            });
+            AddApprover(new Reporting
+            {
+                StaffId = "00006",
+                Approver = "00007"
+            });
             return true;
         }
 

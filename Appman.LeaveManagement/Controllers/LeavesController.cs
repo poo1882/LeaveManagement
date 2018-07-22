@@ -16,11 +16,13 @@ namespace Appman.LeaveManagement.Controllers
     {
         private readonly LeaveInfoRepository _leaveRepo;
         private readonly LeaveManagementDbContext _dbContext;
+        private readonly EmployeeRepository _empRepo;
 
         public LeavesController(LeaveManagementDbContext leaveInfo)
         {
             _dbContext = leaveInfo;
             _leaveRepo = new LeaveInfoRepository(_dbContext);
+            _empRepo = new EmployeeRepository(_dbContext);
         }
         
         //[Route("Leaves")]
@@ -78,8 +80,8 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ApproveViaEmail([FromQuery] string refNo)
         {
             Approbation approbation = _dbContext.Approbations.FirstOrDefault(x => x.ApprobationGuid.ToString() == refNo);
-            if(approbation == null)
-                return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
+            //if(approbation == null)
+            //    return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
             int leaveId = approbation.LeaveId;
             string approverId = approbation.ApproverId;
             string status = approbation.Status;
@@ -93,7 +95,12 @@ namespace Appman.LeaveManagement.Controllers
             }
                 
             else
-                return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
+            {
+                LeaveInfo leave = _leaveRepo.ViewLeaveInfo(leaveId);
+                string approverName = _empRepo.GetName(leave.ApprovedBy);
+                return Ok("Sorry, this leaving form has been already approved/rejected by "+approverName+".");
+            }
+                
         }
 
     }

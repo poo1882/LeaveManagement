@@ -104,6 +104,13 @@ namespace Appman.LeaveManagement.Repositories
             return "Normal";
         }
 
+        public string GetName(string staffId)
+        {
+            var employee = GetProfile(staffId);
+            return employee.FirstName +" "+ employee.LastName;
+
+        }
+
 
         public void ClearEmployees()
         {

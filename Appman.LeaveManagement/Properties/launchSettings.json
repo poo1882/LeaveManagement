@@ -7,7 +7,7 @@
       "sslPort": 0
     },
     "iisExpress": {
-      "applicationUrl": "http://localhost:49979",
+      "applicationUrl": "http://localhost:50528",
       "sslPort": 44331
     }
   },
@@ -17,7 +17,7 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_HTTPS_PORT": "44331",
-        "ASPNETCORE_ENVIRONMENT": "Staging"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "Appman.LeaveManagement": {

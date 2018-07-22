@@ -19,6 +19,7 @@ namespace Appman.LeaveManagement.Controllers
         private readonly LeaveInfoRepository _leaveRepo;
         private readonly EmployeeRepository _empRepo;
         private readonly RemainingHourRepository _remRepo;
+        private readonly ReportingRepository _repRepo;
 
         public FileController(LeaveManagementDbContext dbContext)
         {
@@ -26,11 +27,12 @@ namespace Appman.LeaveManagement.Controllers
             _leaveRepo = new LeaveInfoRepository(_dbContext);
             _empRepo = new EmployeeRepository(_dbContext);
             _remRepo = new RemainingHourRepository(_dbContext);
+            _repRepo = new ReportingRepository(_dbContext);
         }
 
-        [Route("File")]
+        [Route("Statistic")]
         [HttpGet]
-        public FileResult DownloadReport(string year)
+        public FileResult Statistics(string year)
         {
             var listData = _empRepo.GetEmployees().OrderBy(x=>x.StaffId);
             var sb = new StringBuilder();
@@ -53,7 +55,39 @@ namespace Appman.LeaveManagement.Controllers
                     + remainingHour.LWPHours.ToString());
             }
 
-            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "export.csv");
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "stats.csv");
+        }
+
+        [Route("PendingLeaves")]
+        [HttpGet]
+        public FileResult PendingLeaves()
+        {
+            var listData = _leaveRepo.GetHistory().Where(x => x.ApprovalStatus.ToLower() == "pending").OrderBy(x => x.LeaveId);
+            var sb = new StringBuilder();
+            sb.AppendLine("LeaveID," + "StaffID," + "Approver1," + "Approver2,"+"RequestedDate");
+            int approverAmount = 2;
+            foreach (var data in listData)
+            {
+                List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
+
+                sb.Append(data.LeaveId + "," + data.StaffId + ",");
+
+                for (int i = 0; i < approverAmount; i++)
+                {
+                    if(reportings[i] != null)
+                    {
+                        string approverName = _empRepo.GetName(reportings[i].Approver);
+                        sb.Append(approverName);
+                        if (i != approverAmount - 1)
+                            sb.Append(",");
+                    }
+                    
+                }
+                sb.Append(","+data.RequestedDateTime);
+                sb.AppendLine();
+            }
+
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "pendingLeaves.csv");
         }
     }
 }

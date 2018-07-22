@@ -58,7 +58,10 @@ namespace Appman.LeaveManagement.Repositories
                         _dbContext.LeaveInfos.Add(info);
                         _dbContext.SaveChanges();
                         totalHours = info.HoursStartDate;
-                        remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
+                        if (info.Type.ToLower()[0] == 'l')
+                            remain.AddRemainHour(info.StaffId, info.Type, totalHours);
+                        else
+                            remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
                         return true;
                     }
                     return false;
@@ -76,7 +79,10 @@ namespace Appman.LeaveManagement.Repositories
                         //UpdateRemainHour(info.StaffId, info.Type, totalHours);
                         _dbContext.LeaveInfos.Add(info);
                         _dbContext.SaveChanges();
-                        remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
+                        if (info.Type.ToLower()[0] == 'l')
+                            remain.AddRemainHour(info.StaffId, info.Type, totalHours);
+                        else
+                            remain.DeductRemainHour(info.StaffId, info.Type, totalHours);
                         return true;
                     }
                     return false;
@@ -109,7 +115,7 @@ namespace Appman.LeaveManagement.Repositories
         {
             var list = _dbContext.LeaveInfos;
             var result = list.Where(x => x.StaffId == staffId).OrderByDescending(x => x.LeaveId);
-            return result.ToList();
+            return result.OrderByDescending(x => x.LeaveId).ToList();
         }
 
 
@@ -149,7 +155,7 @@ namespace Appman.LeaveManagement.Repositories
             if (leave == null)
                 return false;
 
-            if (leave.ApprovalStatus != "Pending")
+            if (leave.ApprovalStatus.ToLower() != "pending")
                     return false;
             bool isInReport = _dbContext.Reportings.Any(x => x.Approver == approverId && x.StaffId == leave.StaffId);
             //bool isInReport = reportings.Contains(report);
@@ -175,15 +181,17 @@ namespace Appman.LeaveManagement.Repositories
                     int totalDays = (info.EndDateTime - info.StartDateTime).Days;
                     totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
                 }
-                    
-                remaining.AddRemainHour(leave.StaffId, leave.Type,totalHours);
+                if (leave.Type.ToLower()[0] == 'l')
+                    remaining.DeductRemainHour(leave.StaffId, leave.Type, totalHours);
+                else
+                    remaining.AddRemainHour(leave.StaffId, leave.Type,totalHours);
             }
-            var approbationsLeft = _dbContext.Approbations;
-            foreach (var item in approbationsLeft)
-            {
-                if (item.LeaveId == leaveId)
-                    approbationsLeft.Remove(item);
-            }
+            //var approbationsLeft = _dbContext.Approbations;
+            //foreach (var item in approbationsLeft)
+            //{
+            //    if (item.LeaveId == leaveId)
+            //        approbationsLeft.Remove(item);
+            //}
             _dbContext.SaveChanges();
             return true;
         }

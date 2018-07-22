@@ -1,0 +1,32 @@
+2018-07-20 12:35:25.204 +07:00 [Warning] The LINQ expression '"Contains(__p_0)"' could not be translated and will be evaluated locally.
+2018-07-20 12:43:50.558 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Appman.LeaveManagement.Controllers.FileController.PendingLeaves() in C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\Controllers\FileController.cs:line 77
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2018-07-20 12:56:04.666 +07:00 [Warning] The LINQ expression '"Contains(__p_0)"' could not be translated and will be evaluated locally.
+2018-07-20 14:32:47.784 +07:00 [Warning] The LINQ expression '"where ([x].ApprobationGuid.ToString() == __refNo_0)"' could not be translated and will be evaluated locally.
+2018-07-20 14:32:47.842 +07:00 [Warning] The LINQ expression '"FirstOrDefault()"' could not be translated and will be evaluated locally.
+2018-07-20 15:50:31.535 +07:00 [Warning] The LINQ expression '"where ([x].ApprobationGuid.ToString() == __refNo_0)"' could not be translated and will be evaluated locally.
+2018-07-20 15:50:31.576 +07:00 [Warning] The LINQ expression '"FirstOrDefault()"' could not be translated and will be evaluated locally.

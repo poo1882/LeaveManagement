@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="CsvExport" Version="1.0.1" />
     <PackageReference Include="CsvHelper" Version="7.1.1" />
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.1.0" />
@@ -33,10 +34,10 @@
 
   <ItemGroup>
     <None Update="Application.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="LeaveManagement.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

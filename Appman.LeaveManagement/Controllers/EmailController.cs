@@ -28,7 +28,7 @@ namespace Appman.LeaveManagement.Repositories
         public bool SendRequestMailToApprover(List<Approbation> approbations, LeaveInfo leaveInfo)
         {
             int i = 0;
-            string api = "https://appmanleavemanagement.azurewebsites.net/api/Leaves/ApproveViaEmail?";
+            string api = "https://appmanleavemanagement20180718055046.azurewebsites.net/api/Leaves/ApproveViaEmail?";
             var sb = new StringBuilder();
             string url = "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/11070664_902255393167706_2830773750406557759_n.png?_nc_fx=fbkk1-3&_nc_cat=0&oh=7721fcafb6bbd5d172efbbfd88c9544f&oe=5BE284C3";
             string style = "width: 100px; height: 100px;";
@@ -105,7 +105,7 @@ namespace Appman.LeaveManagement.Repositories
         {
             MailMessage msg = new MailMessage
             {
-                From = new MailAddress("Supornthip.s@appman.co.th")
+                From = new MailAddress("supornthip.s@appman.co.th")
             };
             msg.To.Add(receiverMail);
             msg.Subject = "Hello world! " + DateTime.Now.ToString();
@@ -118,7 +118,7 @@ namespace Appman.LeaveManagement.Repositories
             client.Port = 587;
             client.EnableSsl = true;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Credentials = new NetworkCredential("Supornthip.s@appman.co.th", "appMan2004zZ");
+            client.Credentials = new NetworkCredential("supornthip.s@appman.co.th", "appMan2004zZ");
             client.Timeout = 20000;
             try
             {

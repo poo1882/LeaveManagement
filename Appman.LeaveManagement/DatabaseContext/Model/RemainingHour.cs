@@ -24,7 +24,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
             TotalLWPHours = defaultHours;
             AnnualHours = defaultHours;
             SickHours = defaultHours;
-            LWPHours = defaultHours;
+            LWPHours = 0;
             Year = year;
             StaffId = staffId;
         }

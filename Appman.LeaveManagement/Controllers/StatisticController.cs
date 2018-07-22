@@ -47,6 +47,7 @@ namespace Appman.LeaveManagement.Controllers
                     result.Add(stat);
                 }
             }
+            result.OrderBy(x => x.StaffId);
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
@@ -66,6 +67,7 @@ namespace Appman.LeaveManagement.Controllers
             {
                 Leaves = _leaveRepo.GetHistory(staffId)
             };
+            
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
