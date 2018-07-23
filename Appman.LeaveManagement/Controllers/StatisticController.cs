@@ -18,6 +18,7 @@ namespace Appman.LeaveManagement.Controllers
         private readonly EmployeeRepository _empRepo;
         private readonly LeaveInfoRepository _leaveRepo;
         private readonly RemainingHourRepository _remRepo;
+        private readonly MdRoleRepository _mdRoleRepo;
 
         public StatisticController(LeaveManagementDbContext leaveManagementDbContext)
         {
@@ -25,6 +26,7 @@ namespace Appman.LeaveManagement.Controllers
             _empRepo = new EmployeeRepository(_dbContext);
             _leaveRepo = new LeaveInfoRepository(_dbContext);
             _remRepo = new RemainingHourRepository(_dbContext);
+            _mdRoleRepo = new MdRoleRepository(_dbContext);
         }
 
 
@@ -43,7 +45,7 @@ namespace Appman.LeaveManagement.Controllers
             {
                 if(item.IsActive == true)
                 {
-                    Statistic stat = new Statistic(item.StaffId, _empRepo, _leaveRepo);
+                    Statistic stat = new Statistic(item.StaffId, _empRepo, _leaveRepo,_mdRoleRepo);
                     result.Add(stat);
                 }
             }
@@ -63,7 +65,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpGet]
         public IActionResult GetLeaveStatistic([FromQuery]string staffId)
         {
-            OneStatistic result = new OneStatistic(staffId, _empRepo, _remRepo)
+            OneStatistic result = new OneStatistic(staffId, _empRepo, _remRepo,_mdRoleRepo)
             {
                 Leaves = _leaveRepo.GetHistory(staffId)
             };

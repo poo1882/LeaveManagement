@@ -18,14 +18,15 @@ namespace Appman.LeaveManagement.Models
         public int Approve { get; set; }
         public int Reject { get; set; }
 
-        public Statistic(string staffId, EmployeeRepository _empRepo, LeaveInfoRepository _leaveRepo)
+        public Statistic(string staffId, EmployeeRepository _empRepo, LeaveInfoRepository _leaveRepo,MdRoleRepository _mdRoleRepo)
         {
             var employee = _empRepo.GetProfile(staffId);
-            FirstName = employee.FirstName;
-            LastName = employee.LastName;
+            var role = _mdRoleRepo.GetRole(employee.RoleCode);
+            FirstName = employee.FirstNameTH;
+            LastName = employee.LastNameTH;
             StaffId = employee.StaffId;
-            Position = employee.Position;
-            Section = employee.Section;
+            Position = role.Position;
+            Section = role.Department;
             Pending = _leaveRepo.PendingAmount(staffId);
             Approve = _leaveRepo.ApprovedAmount(staffId);
             Reject = _leaveRepo.RejectedAmount(staffId);

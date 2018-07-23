@@ -20,5 +20,10 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext.MdGenders.Add(mdGender);
             _dbContext.SaveChanges();
         }
+
+        public MdGender GetGender(string genderCode)
+        {
+            return _dbContext.MdGenders.FirstOrDefault(x => x.GenderCode == genderCode);
+        }
     }
 }

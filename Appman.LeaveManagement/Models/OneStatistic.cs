@@ -17,24 +17,26 @@ namespace Appman.LeaveManagement.Models
         //public DateTime EndDateTime;
         //public string Approver;
 
-        public string FirstName;
-        public string LastName;
+        public string FirstNameTH;
+        public string LastNameTH;
         public string StaffId;
-        public string Section;
+        public string Department;
         public string Position;
         public int AnnualHours;
         public int SickHours;
         public int LWPHours;
         public List<LeaveInfo> Leaves;
 
-        public OneStatistic(string staffId, EmployeeRepository _empRepo, RemainingHourRepository _remRepo)
+        public OneStatistic(string staffId, EmployeeRepository _empRepo, RemainingHourRepository _remRepo,MdRoleRepository _mdRoleRepo)
         {
+            
             Employee emp = _empRepo.GetProfile(staffId);
-            FirstName = emp.FirstNameTH;
-            LastName = emp.LastNameTH;
+            MdRole role = _mdRoleRepo.GetRole(emp.RoleCode);
+            FirstNameTH = emp.FirstNameTH;
+            LastNameTH = emp.LastNameTH;
             StaffId = emp.StaffId;
-            Section = emp.Section;
-            Position = emp.Position;
+            Department = role.Department;
+            Position = role.Position;
             AnnualHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "Annual");
             SickHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "Sick");
             LWPHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "LWP");
