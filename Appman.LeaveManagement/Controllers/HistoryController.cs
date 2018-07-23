@@ -61,6 +61,8 @@ namespace Appman.LeaveManagement.Controllers
             var list = _leaveRepo.GetHistory(staffId);
             var ordered = list
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
+               .ThenBy(v => v.RequestedDateTime)
+               .ThenByDescending(v => v.ApprovalStatus == "Approved")
                .ThenBy(v => v.RequestedDateTime);
             if (list == null)
                 return NotFound();
