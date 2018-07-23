@@ -24,7 +24,7 @@ namespace Appman.LeaveManagement.Controllers
             _leaveRepo = new LeaveInfoRepository(_dbContext);
             _empRepo = new EmployeeRepository(_dbContext);
         }
-        
+
         //[Route("Leaves")]
         //[HttpGet]
         //public IActionResult ViewLeaves()
@@ -44,12 +44,12 @@ namespace Appman.LeaveManagement.Controllers
                 approbations = _leaveRepo.CreateApprobationSet(info);
                 _leaveRepo.AddApprobation(approbations);
                 EmailController emailSender = new EmailController(_dbContext);
-                emailSender.SendRequestMailToApprover(approbations,info);
+                emailSender.SendRequestMailToApprover(approbations, info);
                 emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email, info);
                 return Ok();
             }
             return NotFound();
-            
+
         }
 
         [Route("RemainingLeaveInfo")] // ดูใบที่รอการอนุมัติ
@@ -65,14 +65,14 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("SetStatus")]
         [HttpPut]
-        public IActionResult SetStatus([FromQuery]string status,int leaveId,string approverId)
+        public IActionResult SetStatus([FromQuery]string status, int leaveId, string approverId)
         {
-            if(_leaveRepo.SetStatus(status, leaveId, approverId))
+            if (_leaveRepo.SetStatus(status, leaveId, approverId))
             {
                 return Ok();
             }
-            return NotFound();            
-                
+            return NotFound();
+
         }
 
         [Route("ApproveViaEmail")]
@@ -80,27 +80,28 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult ApproveViaEmail([FromQuery] string refNo)
         {
             Approbation approbation = _dbContext.Approbations.FirstOrDefault(x => x.ApprobationGuid.ToString() == refNo);
-            //if(approbation == null)
-            //    return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
-            int leaveId = approbation.LeaveId;
+
+            if (approbation == null)
+                return Ok("Sorry, this leaving form has been already approved/rejected by another approver.");
+            var leaveInfo = _leaveRepo.ViewLeaveInfo(approbation.LeaveId);
             string approverId = approbation.ApproverId;
             string status = approbation.Status;
-            if (_leaveRepo.SetStatus(status, leaveId, approverId))
+            if (_leaveRepo.SetStatus(status, leaveInfo.LeaveId, approverId))
             {
                 EmailController emailSender = new EmailController(_dbContext);
-                emailSender.SendResultToOwner(_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).StaffId,leaveId,approverId,status);
-                if(status.ToLower()[0] == 'a')
+                emailSender.SendResultToOwner(approverId, status, leaveInfo);
+                if (status.ToLower()[0] == 'a')
                     return Ok("Approved successfully");
                 return Ok("Rejected successfully");
             }
-                
+
             else
             {
-                LeaveInfo leave = _leaveRepo.ViewLeaveInfo(leaveId);
+                LeaveInfo leave = _leaveRepo.ViewLeaveInfo(leaveInfo.LeaveId);
                 string approverName = _empRepo.GetName(leave.ApprovedBy);
-                return Ok("Sorry, this leaving form has been already approved/rejected by "+approverName+".");
+                return Ok("Sorry, this leaving form has been already approved/rejected by " + approverName + ".");
             }
-                
+
         }
 
     }

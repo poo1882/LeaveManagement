@@ -21,7 +21,6 @@ namespace Appman.LeaveManagement.Controllers
         /// <param name="leaveManagementDbContext">the targeted database context</param>
         public ApprobationController(LeaveManagementDbContext leaveManagementDbContext)
         {
-
             _dbContext = leaveManagementDbContext;
             _appRepo = new ApprobationRepository(_dbContext);
         }

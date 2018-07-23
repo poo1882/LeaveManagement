@@ -31,12 +31,11 @@ namespace Appman.LeaveManagement.Controllers
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
                .ThenByDescending(v => v.ApprovalStatus == "Approved")
                .ThenByDescending(v => v.ApprovalStatus == "Rejected")
-               .ThenBy(v => v.LeaveId)
-               .ThenByDescending(v => v.ApprovedTime);
-               
+               .ThenByDescending(v => v.ApprovedTime)
+               .ThenBy(v => v.LeaveId);
             if (leaves == null)
                 return NotFound();
-            
+
             return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
 
@@ -72,7 +71,7 @@ namespace Appman.LeaveManagement.Controllers
 
             if (list == null)
                 return NotFound();
-            
+
             return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
 
