@@ -18,11 +18,15 @@ namespace Appman.LeaveManagement.Repositories
     {
         private readonly LeaveManagementDbContext _dbContext;
         private readonly LeaveInfoRepository _leaveRepo;
+        private readonly ReportingRepository _repRepo;
+        private readonly EmployeeRepository _empRepo;
 
         public EmailController (LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
             _leaveRepo = new LeaveInfoRepository(_dbContext);
+            _repRepo = new ReportingRepository(_dbContext);
+            _empRepo = new EmployeeRepository(_dbContext);
 
         }
         public bool SendRequestMailToApprover(List<Approbation> approbations, LeaveInfo leaveInfo)
@@ -138,9 +142,19 @@ namespace Appman.LeaveManagement.Repositories
         public void SendResultToOwner(string staffId,int leaveId,string approverId,string status)
         {
             Employee approver = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId);
+            var approvers = _repRepo.GetApprover(staffId);
             string staffEmail = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).Email;
-            string body = "Your leaving form #" + String.Format("LEA{0:D5} ", leaveId) + "has been already " + status.ToLower() + " by " + approver.FirstName + " " + approver.LastName+".";
+            string name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).FirstName;
+            string lastname = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).LastName;
+            string body = "Leaving form #" + "Sent leave application form by" + name + " " + lastname
+               + String.Format("LEA{0:D5} ", leaveId) + "has been already " + status.ToLower() + " by "
+               + approver.FirstName + " " + approver.LastName + ".";
+            foreach (var item in approvers)
+            {
+                   SendMail(_empRepo.GetEmail(item.Approver), body);
+            }           
             SendMail(staffEmail, body);
+          
         }
     }
 }

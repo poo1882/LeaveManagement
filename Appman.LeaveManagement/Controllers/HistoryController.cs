@@ -31,8 +31,9 @@ namespace Appman.LeaveManagement.Controllers
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
                .ThenByDescending(v => v.ApprovalStatus == "Approved")
                .ThenByDescending(v => v.ApprovalStatus == "Rejected")
-               .ThenByDescending(v => v.ApprovedTime)
-               .ThenBy(v => v.LeaveId);
+               .ThenBy(v => v.LeaveId)
+               .ThenByDescending(v => v.ApprovedTime);
+               
             if (leaves == null)
                 return NotFound();
             
