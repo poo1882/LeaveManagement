@@ -33,4 +33,3 @@ C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Rel
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\obj\Release\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
-C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\bin\Release\netcoreapp2.1\LeaveManagement.db
