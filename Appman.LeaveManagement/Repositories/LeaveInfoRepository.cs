@@ -99,7 +99,7 @@ namespace Appman.LeaveManagement.Repositories
                          join leaveinfo in _dbContext.LeaveInfos on employeelist.StaffId equals leaveinfo.StaffId
                          where employeelist.IsActive == true
                          select leaveinfo;
-            return result.OrderByDescending(x => x.LeaveId).ToList();
+            return result.OrderBy(x => x.StaffId).ToList();
         }
 
 
@@ -115,7 +115,7 @@ namespace Appman.LeaveManagement.Repositories
         {
             var list = _dbContext.LeaveInfos;
             var result = list.Where(x => x.StaffId == staffId).OrderByDescending(x => x.LeaveId);
-            return result.OrderByDescending(x => x.LeaveId).ToList();
+            return result.OrderBy(x => x.LeaveId).ToList();
         }
 
 

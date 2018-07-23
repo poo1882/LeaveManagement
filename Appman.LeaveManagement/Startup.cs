@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +18,7 @@ using Serilog.Events;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Appman.LeaveManagement.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace Appman.LeaveManagement
 {
@@ -47,8 +47,7 @@ namespace Appman.LeaveManagement
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
-
+            
 
 
             services.AddAuthentication().AddGoogle(googleOptions =>
@@ -79,6 +78,8 @@ namespace Appman.LeaveManagement
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+
+
 
             services.ConfigureApplicationCookie(options =>
             {

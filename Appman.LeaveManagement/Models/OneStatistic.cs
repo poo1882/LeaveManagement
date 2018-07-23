@@ -39,6 +39,7 @@ namespace Appman.LeaveManagement.Models
             SickHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "Sick");
             LWPHours = _remRepo.ViewHour(staffId, DateTime.Now.Year.ToString(), "LWP");
             
+            
         }
 
         //public OneStatistic(int LeaveId, LeaveInfoRepository _leaveRepo, EmployeeRepository _empRepo)
