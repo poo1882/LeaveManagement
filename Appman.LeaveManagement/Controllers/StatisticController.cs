@@ -39,7 +39,7 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetStatistics()
         {
             List<Statistic> result = new List<Statistic>();
-            foreach (var item in _dbContext.Employees)
+            foreach (var item in _dbContext.Employees.OrderBy(x=>x.StaffId))
             {
                 if(item.IsActive == true)
                 {
@@ -47,7 +47,7 @@ namespace Appman.LeaveManagement.Controllers
                     result.Add(stat);
                 }
             }
-            result.OrderBy(x => x.StaffId);
+            
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 

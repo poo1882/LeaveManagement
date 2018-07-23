@@ -58,3 +58,144 @@
 2018-07-22 22:49:46.764 +07:00 [Information] Request finished in 218.0939ms 200 application/javascript
 2018-07-22 22:49:47.408 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
 2018-07-22 22:49:47.665 +07:00 [Information] Request finished in 258.0643ms 200 application/json;charset=utf-8
+2018-07-22 22:55:10.359 +07:00 [Fatal] No storage mechanism for clients specified. Use the 'AddInMemoryClients' extension method to register a development version.
+2018-07-22 22:55:43.046 +07:00 [Fatal] No storage mechanism for clients specified. Use the 'AddInMemoryClients' extension method to register a development version.
+2018-07-22 22:55:43.140 +07:00 [Fatal] Application startup exception
+System.InvalidOperationException: No storage mechanism for clients specified. Use the 'AddInMemoryClients' extension method to register a development version.
+   at Microsoft.AspNetCore.Builder.IdentityServerApplicationBuilderExtensions.TestService(IServiceProvider serviceProvider, Type service, ILogger logger, String message, Boolean doThrow) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Configuration\IdentityServerApplicationBuilderExtensions.cs:line 136
+   at Microsoft.AspNetCore.Builder.IdentityServerApplicationBuilderExtensions.Validate(IApplicationBuilder app) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Configuration\IdentityServerApplicationBuilderExtensions.cs:line 58
+   at Microsoft.AspNetCore.Builder.IdentityServerApplicationBuilderExtensions.UseIdentityServer(IApplicationBuilder app) in C:\local\identity\server4\IdentityServer4\src\IdentityServer4\Configuration\IdentityServerApplicationBuilderExtensions.cs:line 29
+   at Appman.LeaveManagement.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) in C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\Startup.cs:line 144
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISSetupFilter.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-07-22 22:55:43.258 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-22 22:55:43.276 +07:00 [Information] Request finished in 19.8485ms 500 text/html; charset=utf-8
+2018-07-22 22:58:52.251 +07:00 [Fatal] No storage mechanism for clients specified. Use the 'AddInMemoryClients' extension method to register a development version.
+2018-07-22 23:08:16.980 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-22 23:08:16.980 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-22 23:08:17.123 +07:00 [Information] Request finished in 80.6349ms 200 
+2018-07-22 23:08:17.351 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-22 23:08:17.372 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-22 23:08:17.382 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7742ms.
+2018-07-22 23:08:17.411 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-22 23:08:17.611 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 253.6154ms
+2018-07-22 23:08:17.689 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at AspNetCore.Views_Shared__Layout.<ExecuteAsync>b__45_1() in C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\Views\Shared\_Layout.cshtml:line 37
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCore.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-07-22 23:08:17.783 +07:00 [Information] Request finished in 799.0656ms 500 text/html; charset=utf-8
+2018-07-22 23:09:24.118 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-22 23:09:24.118 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-22 23:09:24.254 +07:00 [Information] Request finished in 93.9886ms 200 
+2018-07-22 23:09:24.627 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-22 23:09:24.662 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-22 23:09:24.687 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9555ms.
+2018-07-22 23:09:24.737 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-22 23:09:25.064 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 429.1505ms
+2018-07-22 23:09:25.162 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'Microsoft.AspNetCore.Identity.UserManager`1[Microsoft.AspNetCore.Identity.IdentityUser]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.<>c__DisplayClass8_0.<CreateActivateInfo>b__1(ViewContext context)
+   at Microsoft.Extensions.Internal.PropertyActivator`1.Activate(Object instance, TContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPageActivator.Activate(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.RenderPartialCoreAsync(String partialViewName, Object model, ViewDataDictionary viewData, TextWriter writer)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.PartialAsync(String partialViewName, Object model, ViewDataDictionary viewData)
+   at AspNetCore.Views_Shared__Layout.<ExecuteAsync>b__45_1() in C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\Views\Shared\_Layout.cshtml:line 37
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCore.Views_Shared__Layout.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-07-22 23:09:25.274 +07:00 [Information] Request finished in 1135.1817ms 500 text/html; charset=utf-8
+2018-07-22 23:10:30.618 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-22 23:10:30.618 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-22 23:10:30.819 +07:00 [Information] Request finished in 125.1647ms 200 
+2018-07-22 23:10:31.331 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-22 23:10:31.380 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-22 23:10:31.397 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0934ms.
+2018-07-22 23:10:31.435 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-22 23:10:31.775 +07:00 [Information] Executed ViewResult - view "Index" executed in 360.5876ms.
+2018-07-22 23:10:31.815 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 444.1612ms
+2018-07-22 23:10:31.996 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-22 23:10:32.010 +07:00 [Information] Request finished in 1229.3371ms 200 text/html; charset=utf-8
+2018-07-22 23:10:32.051 +07:00 [Information] Request finished in 177.7372ms 404 
+2018-07-22 23:10:35.326 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-22 23:10:35.339 +07:00 [Information] Request finished in 8.2333ms 301 
+2018-07-22 23:10:35.342 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-22 23:10:35.368 +07:00 [Information] Request finished in 19.4592ms 200 text/html
+2018-07-22 23:10:35.763 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-22 23:10:35.968 +07:00 [Information] Request finished in 201.9964ms 200 application/json;charset=utf-8
