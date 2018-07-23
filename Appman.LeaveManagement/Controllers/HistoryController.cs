@@ -29,11 +29,10 @@ namespace Appman.LeaveManagement.Controllers
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
             var ordered = leaves
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
-               .ThenBy(v => v.LeaveId)
                .ThenByDescending(v => v.ApprovalStatus == "Approved")
-               .ThenBy(v => v.ApprovedTime)
                .ThenByDescending(v => v.ApprovalStatus == "Rejected")
-               .ThenBy(v => v.ApprovedTime);
+               .ThenBy(v => v.ApprovedTime)
+               .ThenBy(v => v.LeaveId);
             if (leaves == null)
                 return NotFound();
             
@@ -65,12 +64,11 @@ namespace Appman.LeaveManagement.Controllers
             var list = _leaveRepo.GetHistory(staffId);
             var ordered = list
                .OrderByDescending(v => v.ApprovalStatus == "Pending")
-               .ThenBy(v => v.LeaveId)
                .ThenByDescending(v => v.ApprovalStatus == "Approved")
-               .ThenBy(v => v.ApprovedTime)
                .ThenByDescending(v => v.ApprovalStatus == "Rejected")
-               .ThenBy(v => v.ApprovedTime);
-                
+               .ThenBy(v => v.ApprovedTime)
+               .ThenBy(v => v.LeaveId);
+
             if (list == null)
                 return NotFound();
             
