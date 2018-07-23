@@ -42,8 +42,8 @@ namespace Appman.LeaveManagement.Controllers
                 RemainingHour remainingHour = _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == data.StaffId && x.Year == year);
 
                 sb.AppendLine(data.StaffId + ","
-                    + data.FirstName + ","
-                    + data.LastName + ","
+                    + data.FirstNameTH + ","
+                    + data.LastNameTH + ","
                     + remainingHour.TotalAnnualHours.ToString() + ","
                     + (remainingHour.TotalAnnualHours - remainingHour.AnnualHours).ToString() + ","
                     +remainingHour.AnnualHours.ToString() + ","

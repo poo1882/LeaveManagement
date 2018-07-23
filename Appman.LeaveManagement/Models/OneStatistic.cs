@@ -30,8 +30,8 @@ namespace Appman.LeaveManagement.Models
         public OneStatistic(string staffId, EmployeeRepository _empRepo, RemainingHourRepository _remRepo)
         {
             Employee emp = _empRepo.GetProfile(staffId);
-            FirstName = emp.FirstName;
-            LastName = emp.LastName;
+            FirstName = emp.FirstNameTH;
+            LastName = emp.LastNameTH;
             StaffId = emp.StaffId;
             Section = emp.Section;
             Position = emp.Position;

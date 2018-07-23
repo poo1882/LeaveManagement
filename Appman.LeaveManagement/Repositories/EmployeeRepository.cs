@@ -10,7 +10,7 @@ namespace Appman.LeaveManagement.Repositories
     public class EmployeeRepository
     {
         LeaveManagementDbContext _dbContext;
-        
+
         public EmployeeRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -97,7 +97,7 @@ namespace Appman.LeaveManagement.Repositories
         public string GetRole(string staffId)
         {
             Employee employee = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
-            if (employee.IsSuperHr)
+            if (employee.IsAdmin)
                 return "Admin";
             if (_dbContext.Reportings.Any(x => x.Approver == staffId))
                 return "Approver";
@@ -107,7 +107,7 @@ namespace Appman.LeaveManagement.Repositories
         public string GetName(string staffId)
         {
             var employee = GetProfile(staffId);
-            return employee.FirstName +" "+ employee.LastName;
+            return employee.FirstNameTH + " " + employee.LastNameTH;
 
         }
 
@@ -115,6 +115,7 @@ namespace Appman.LeaveManagement.Repositories
         {
             return _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).Email;
         }
+
 
         public void ClearEmployees()
         {
@@ -126,7 +127,7 @@ namespace Appman.LeaveManagement.Repositories
             var reportings = _dbContext.Reportings;
             foreach (var item in _dbContext.Reportings)
             {
-                reportings.Remove(item);   
+                reportings.Remove(item);
             }
             var remainingHours = _dbContext.RemainingHours;
             foreach (var item in remainingHours)
@@ -145,36 +146,28 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00007",
-                FirstName = "Gun",
-                LastName = "Sirapob",
+                FirstNameTH = "Gun",
+                LastNameTH = "Sirapob",
                 Email = "sirapobmech@gmail.com",
                 ProfilePicture = null,
-                Position = "Frontend",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Frontend",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "01",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
-            
+
             RemainingHour remain = new RemainingHour(100, "00007", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
                 StaffId = "00008",
-                FirstName = "Knack",
-                LastName = "Kasidis",
+                FirstNameTH = "Knack",
+                LastNameTH = "Kasidis",
                 Email = "kasidis.sr@mail.kmutt.ac.th",
                 ProfilePicture = null,
-                Position = "Business Analyst",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Non-Developer",
-                IsInProbation = false,
-                GenderCode = "01",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00008", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -182,17 +175,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00006",
-                FirstName = "Poo",
-                LastName = "Siriwimon",
+                FirstNameTH = "Poo",
+                LastNameTH = "Siriwimon",
                 Email = "poo_poo1882@hotmail.com",
                 ProfilePicture = null,
-                Position = "Backend",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "02",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00006", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -200,17 +189,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00005",
-                FirstName = "Jenny",
-                LastName = "Supornthip",
+                FirstNameTH = "Jenny",
+                LastNameTH = "Supornthip",
                 Email = "supornthip.s@appman.co.th",
                 ProfilePicture = null,
-                Position = "Mobile",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "02",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00005", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -218,17 +203,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00001",
-                FirstName = "Tangkwa",
-                LastName = "Puttachart",
+                FirstNameTH = "Tangkwa",
+                LastNameTH = "Puttachart",
                 Email = "psrisuwankum@gmail.com",
                 ProfilePicture = null,
-                Position = "Frontend",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "02",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00001", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -236,17 +217,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00002",
-                FirstName = "Jill",
-                LastName = "Titinan",
+                FirstNameTH = "Jill",
+                LastNameTH = "Titinan",
                 Email = "jilltitinan@gmail.com",
                 ProfilePicture = null,
-                Position = "Backend",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "02",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00002", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -254,17 +231,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00003",
-                FirstName = "Got",
-                LastName = "Supakit",
+                FirstNameTH = "Got",
+                LastNameTH = "Supakit",
                 Email = "supakit.dha@hotmail.com",
                 ProfilePicture = null,
-                Position = "QA",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Non-Developer",
-                IsInProbation = false,
-                GenderCode = "01",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00003", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -272,17 +245,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00004",
-                FirstName = "Stamp",
-                LastName = "Notphattri",
+                FirstNameTH = "Stamp",
+                LastNameTH = "Notphattri",
                 Email = "notphattri.stamp@hotmail.com",
                 ProfilePicture = null,
-                Position = "UX/UI",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Non-Developer",
-                IsInProbation = false,
-                GenderCode = "02",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00004", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
@@ -290,17 +259,13 @@ namespace Appman.LeaveManagement.Repositories
             AddEmployee(new Employee
             {
                 StaffId = "00009",
-                FirstName = "Puen",
-                LastName = "Nuttasit",
+                FirstNameTH = "Puen",
+                LastNameTH = "Nuttasit",
                 Email = "nuttasit10@gmail.com",
                 ProfilePicture = null,
-                Position = "Frontend",
-                StartWorkingDate = new DateTime(2018, 6, 4, 9, 30, 0),
+                RoleCode = "Business Analyst",
                 IsActive = true,
-                Section = "Developer",
-                IsInProbation = false,
-                GenderCode = "01",
-                IsSuperHr = false
+                GenderCode = "G01",
             });
             remain = new RemainingHour(100, "00009", DateTime.Now.Year.ToString());
             remRepo.GenerateHours(remain);
