@@ -68,9 +68,16 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult SetStatus([FromQuery]string status, int leaveId, string approverId)
         {
             if (_leaveRepo.SetStatus(status, leaveId, approverId))
-            {
                 return Ok();
-            }
+            return NotFound();
+        }
+
+        [Route("SetExisting")]
+        [HttpPut]
+        public IActionResult SetExisting([FromQuery]int leaveId, string commentByAdmin)
+        {
+            if (_leaveRepo.SetExisting(leaveId, commentByAdmin))
+                return Ok();
             return NotFound();
 
         }

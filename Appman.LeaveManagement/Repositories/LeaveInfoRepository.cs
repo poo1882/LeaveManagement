@@ -90,9 +90,35 @@ namespace Appman.LeaveManagement.Repositories
                     return false;
                 }
                 else return false;
+            }          
+
+        }
+
+        public bool SetExisting(int leaveId, string commentByAdmin)
+        {
+            var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
+            if (leave == null)
+                return false;
+            leave.IsExisting = false;
+            leave.CommentByAdmin = commentByAdmin;
+            if (leave.ApprovalStatus.ToLower() != "rejected")
+            {
+                RemainingHourRepository remaining = new RemainingHourRepository(_dbContext);
+                if (leave.StartDateTime.ToString() == leave.EndDateTime.ToString())
+                    totalHours = leave.HoursStartDate;
+                else
+                {
+                    int totalDays = (leave.EndDateTime - leave.StartDateTime).Days;
+                    totalHours = (totalDays - 1) * 8 + leave.HoursStartDate + leave.HoursEndDate;
+                }
+                if (leave.Type.ToLower()[0] == 'l')
+                    remaining.DeductRemainHour(leave.StaffId, leave.Type, totalHours);
+                else
+                    remaining.AddRemainHour(leave.StaffId, leave.Type, totalHours);
             }
             
-
+            _dbContext.SaveChanges();
+            return true;
         }
 
         public List<LeaveInfo> GetHistory()
@@ -116,7 +142,7 @@ namespace Appman.LeaveManagement.Repositories
         public List<LeaveInfo> GetHistory(string staffId)
         {
             var list = _dbContext.LeaveInfos;
-            var result = list.Where(x => x.StaffId == staffId).OrderByDescending(x => x.LeaveId);
+            var result = list.Where(x => x.StaffId == staffId).OrderByDescending(x => x.LeaveId).Where(x => x.RequestedDateTime.Year == DateTime.Now.Year);
             return result.OrderBy(x => x.LeaveId).ToList();
         }
 

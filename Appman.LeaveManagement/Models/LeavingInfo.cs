@@ -12,6 +12,6 @@ namespace Appman.LeaveManagement.Models
         public string LastName { get; set; }
         public int SickHoursLeft { get; set; }
         public int AnnualHoursLeft { get; set; }
-        public int LWPHoursLeft { get; set; }
+        public int LWPHoursLeft { get; set; }        
     }
 }

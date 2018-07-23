@@ -27,5 +27,7 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public string AttachedFile3 { get; set; }
         public string AttachedFileName3 { get; set; }
         public DateTime RequestedDateTime { get; set; }
+        public bool IsExisting { get; set; }
+        public string CommentByAdmin { get; set; }
     }
 }
