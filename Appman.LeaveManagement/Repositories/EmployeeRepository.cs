@@ -111,6 +111,10 @@ namespace Appman.LeaveManagement.Repositories
 
         }
 
+        public string GetEmail(string staffId)
+        {
+            return _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).Email;
+        }
 
         public void ClearEmployees()
         {
@@ -155,7 +159,7 @@ namespace Appman.LeaveManagement.Repositories
             });
             
             RemainingHour remain = new RemainingHour(100, "00007", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -173,7 +177,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00008", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -191,7 +195,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00006", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -209,7 +213,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00005", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -227,7 +231,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00001", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -245,7 +249,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00002", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -263,7 +267,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00003", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -281,7 +285,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00004", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
 
             AddEmployee(new Employee
             {
@@ -299,7 +303,7 @@ namespace Appman.LeaveManagement.Repositories
                 IsSuperHr = false
             });
             remain = new RemainingHour(100, "00009", DateTime.Now.Year.ToString());
-            remRepo.generateHours(remain);
+            remRepo.GenerateHours(remain);
             return true;
         }
     }

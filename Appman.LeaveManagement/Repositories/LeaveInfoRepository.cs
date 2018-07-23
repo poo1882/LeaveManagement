@@ -43,6 +43,8 @@ namespace Appman.LeaveManagement.Repositories
         {
             info.ApprovalStatus = "Pending";
             info.ApprovedBy = null;
+            info.ApprovedTime = DateTime.UtcNow;
+            info.RequestedDateTime = DateTime.UtcNow;
             RemainingHourRepository remain = new RemainingHourRepository(_dbContext);
             int totalHours = 0;
             int totalHoursFirstDay = 0;
@@ -53,7 +55,7 @@ namespace Appman.LeaveManagement.Repositories
             {
                 if (totalHoursFirstDay + info.HoursStartDate <= 8)
                 {
-                    if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate)
+                    if (info.Type.ToLower()[0] == 'l' || remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate )
                     {
                         _dbContext.LeaveInfos.Add(info);
                         _dbContext.SaveChanges();
@@ -74,7 +76,7 @@ namespace Appman.LeaveManagement.Repositories
                 {
                     int totalDays = (info.EndDateTime - info.StartDateTime).Days;
                     totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
-                    if (remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
+                    if (info.Type.ToLower()[0] == 'l' ||  remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
                     {
                         //UpdateRemainHour(info.StaffId, info.Type, totalHours);
                         _dbContext.LeaveInfos.Add(info);

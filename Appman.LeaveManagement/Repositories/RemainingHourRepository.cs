@@ -63,7 +63,7 @@ namespace Appman.LeaveManagement.Repositories
             }
         }
 
-        public void generateHours(RemainingHour remaining)
+        public void GenerateHours(RemainingHour remaining)
         {
             _dbContext.RemainingHours.Add(remaining);
             _dbContext.SaveChanges();

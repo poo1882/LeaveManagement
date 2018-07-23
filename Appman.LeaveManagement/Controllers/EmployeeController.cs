@@ -45,7 +45,7 @@ namespace Appman.LeaveManagement.Controllers
             if (_empRepo.AddEmployee(employee))
             {
                 RemainingHour remain = new RemainingHour(100, employee.StaffId, DateTime.Now.Year.ToString());
-                _remRepo.generateHours(remain);
+                _remRepo.GenerateHours(remain);
                 return Ok(employee.StaffId);
             }
             return NotFound();
