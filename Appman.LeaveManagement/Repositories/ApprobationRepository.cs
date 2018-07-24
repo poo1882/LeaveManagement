@@ -20,5 +20,15 @@ namespace Appman.LeaveManagement.Repositories
             var result = _dbContext.Approbations.ToList();
             return result;
         }
+
+        public void ClearApprobations()
+        {
+            var approbations = _dbContext.Approbations;
+            foreach (var item in approbations)
+            {
+                approbations.Remove(item);
+            }
+            _dbContext.SaveChanges();
+        }
     }
 }

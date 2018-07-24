@@ -32,5 +32,13 @@ namespace Appman.LeaveManagement.Controllers
             var result = _appRepo.ViewAllApprobations();
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
+
+        [Route("Approbations")]
+        [HttpDelete]
+        public IActionResult ClearApprobations()
+        {
+            _appRepo.ClearApprobations();
+            return Ok();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -59,105 +60,24 @@ namespace Appman.LeaveManagement.Repositories
             return _dbContext.Reportings.ToList();
         }
 
-        public bool InitializeReportings(string password)
+        public bool InitReportings(string password)
         {
             if (password != "init")
                 return false;
-            AddApprover(new Reporting
+            var lines = File.ReadAllLines("C:\\Users\\poo1882\\Desktop\\reportings.csv").Select(a => a.Split(','));
+            foreach (var item in lines)
             {
-                StaffId = "00007",
-                Approver = "00006"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00007",
-                Approver = "00005"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00008",
-                Approver = "00007"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00008",
-                Approver = "00004"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00001",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00003",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00004",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00005",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00006",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00007",
-                Approver = "00002"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00002",
-                Approver = "00006"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00005",
-                Approver = "00004"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00003",
-                Approver = "00004"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00009",
-                Approver = "00005"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00009",
-                Approver = "00008"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00001",
-                Approver = "00003"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00002",
-                Approver = "00009"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00004",
-                Approver = "00001"
-            });
-            AddApprover(new Reporting
-            {
-                StaffId = "00006",
-                Approver = "00007"
-            });
+
+                Reporting reporting = new Reporting
+                {
+                    StaffId = item[0],
+                    Approver = item[1]
+                };
+                
+                _dbContext.Reportings.Add(reporting);
+            }
+
+            _dbContext.SaveChanges();
             return true;
         }
 

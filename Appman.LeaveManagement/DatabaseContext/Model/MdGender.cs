@@ -10,7 +10,9 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
     {
         [Key]
         public string GenderCode { get; set; }
-        public string TH { get; set; }
-        public string EN { get; set; }
+        public string GenderTH { get; set; }
+        public string GenderEN { get; set; }
+        public string TitleTH { get; set; }
+        public string TitleEN { get; set; }
     }
 }

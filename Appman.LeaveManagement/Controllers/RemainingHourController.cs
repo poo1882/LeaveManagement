@@ -41,13 +41,31 @@ namespace Appman.LeaveManagement.Controllers
         }
 
         [Route("RemainingHours")]
-        [HttpGet]
-        public IActionResult ViewAllReporting()
+        [HttpPut]
+        public IActionResult InitRemainingHours(string password)
         {
-            var result = _remRepo.ViewAllRemainingHour();
+            if (!_remRepo.InitRemainingHours(password))
+                return NotFound();
+            return Ok();
+        }
+
+        [Route("RemainingHours")]
+        [HttpGet]
+        public IActionResult GetRemainingHours()
+        {
+            var result = _remRepo.GetRemainingHours();
+            if (result == null)
+                return NotFound();
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
-        
+
+        [Route("RemainingHours")]
+        [HttpDelete]
+        public IActionResult ClearRemainingHours()
+        {
+            _remRepo.ClearRemainingHours();
+            return Ok();
+        }
 
 
     }

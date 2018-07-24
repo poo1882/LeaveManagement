@@ -44,17 +44,17 @@ namespace Appman.LeaveManagement.Controllers
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
-        [Route("InitializeReportings")]
-        [HttpGet]
-        public IActionResult InitializeReportings([FromQuery] string password)
+        [Route("Reportings")]
+        [HttpPut]
+        public IActionResult InitReportings([FromQuery] string password)
         {
 
-            if (!_repRepo.InitializeReportings(password))
+            if (!_repRepo.InitReportings(password))
                 return Ok("Duplicated initialization was rejected.");
             return Ok("Initialize reportings successfully.");
         }
 
-        [Route("ClearReportings")]
+        [Route("Reportings")]
         [HttpDelete]
         public IActionResult ClearReportings()
         {

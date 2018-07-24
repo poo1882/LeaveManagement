@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,10 +11,12 @@ namespace Appman.LeaveManagement.Repositories
     public class EmployeeRepository
     {
         LeaveManagementDbContext _dbContext;
+        private readonly MdRoleRepository _mdRoleRepository;
 
         public EmployeeRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
+            _mdRoleRepository = new MdRoleRepository(_dbContext);
         }
 
         /// <summary>
@@ -96,8 +99,9 @@ namespace Appman.LeaveManagement.Repositories
 
         public string GetRole(string staffId)
         {
+            var role = _mdRoleRepository.GetRole(staffId);
             Employee employee = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
-            if (employee.IsAdmin)
+            if (role.IsAdmin)
                 return "Admin";
             if (_dbContext.Reportings.Any(x => x.Approver == staffId))
                 return "Approver";
@@ -124,151 +128,61 @@ namespace Appman.LeaveManagement.Repositories
             {
                 employees.Remove(item);
             }
-            var reportings = _dbContext.Reportings;
-            foreach (var item in _dbContext.Reportings)
-            {
-                reportings.Remove(item);
-            }
-            var remainingHours = _dbContext.RemainingHours;
-            foreach (var item in remainingHours)
-            {
-                remainingHours.Remove(item);
-            }
-
             _dbContext.SaveChanges();
         }
 
         public bool InitializeEmployees(string password)
         {
+            
+            //RemainingHourRepository remRepo = new RemainingHourRepository(_dbContext);
+            //AddEmployee(new Employee
+            //{
+            //    StaffId = "00007",
+            //    FirstNameTH = "Gun",
+            //    LastNameTH = "Sirapob",
+            //    Email = "sirapobmech@gmail.com",
+            //    ProfilePicture = null,
+            //    RoleCode = "Frontend",
+            //    IsActive = true,
+            //    GenderCode = "G01",
+            //});
+
+            //RemainingHour remain = new RemainingHour(100, "00007", DateTime.Now.Year.ToString());
+            //remRepo.GenerateHours(remain);
+
             if (password != "init")
                 return false;
-            RemainingHourRepository remRepo = new RemainingHourRepository(_dbContext);
-            AddEmployee(new Employee
+            var lines = File.ReadAllLines("C:\\Users\\poo1882\\Desktop\\employees.csv").Select(a => a.Split(','));
+            foreach (var item in lines)
             {
-                StaffId = "00007",
-                FirstNameTH = "Gun",
-                LastNameTH = "Sirapob",
-                Email = "sirapobmech@gmail.com",
-                ProfilePicture = null,
-                RoleCode = "Frontend",
-                IsActive = true,
-                GenderCode = "G01",
-            });
+                for (int i = 0; i < item.Length; i++)
+                {
+                    if (item[i] == null)
+                        item[i] = "";
+                }
 
-            RemainingHour remain = new RemainingHour(100, "00007", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
+                Employee employee = new Employee
+                {
+                    StaffId = item[0],
+                    FirstNameTH = item[1],
+                    LastNameTH = item[2],
+                    FirstNameEN = item[3],
+                    LastNameEN = item[4],
+                    Nickname = item[5],
+                    Email = item[6],
+                    GenderCode = item[7],
+                    RoleCode = item[8],
+                    ProfilePicture = item[9],
+                };
 
-            AddEmployee(new Employee
-            {
-                StaffId = "00008",
-                FirstNameTH = "Knack",
-                LastNameTH = "Kasidis",
-                Email = "kasidis.sr@mail.kmutt.ac.th",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00008", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
+                if (item[10].ToLower() == "true")
+                    employee.IsActive = true;
+                else
+                    employee.IsActive = false;
+                _dbContext.Employees.Add(employee);
+            }
 
-            AddEmployee(new Employee
-            {
-                StaffId = "00006",
-                FirstNameTH = "Poo",
-                LastNameTH = "Siriwimon",
-                Email = "poo_poo1882@hotmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00006", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00005",
-                FirstNameTH = "Jenny",
-                LastNameTH = "Supornthip",
-                Email = "supornthip.s@appman.co.th",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00005", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00001",
-                FirstNameTH = "Tangkwa",
-                LastNameTH = "Puttachart",
-                Email = "psrisuwankum@gmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00001", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00002",
-                FirstNameTH = "Jill",
-                LastNameTH = "Titinan",
-                Email = "jilltitinan@gmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00002", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00003",
-                FirstNameTH = "Got",
-                LastNameTH = "Supakit",
-                Email = "supakit.dha@hotmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00003", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00004",
-                FirstNameTH = "Stamp",
-                LastNameTH = "Notphattri",
-                Email = "notphattri.stamp@hotmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00004", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
-
-            AddEmployee(new Employee
-            {
-                StaffId = "00009",
-                FirstNameTH = "Puen",
-                LastNameTH = "Nuttasit",
-                Email = "nuttasit10@gmail.com",
-                ProfilePicture = null,
-                RoleCode = "Business Analyst",
-                IsActive = true,
-                GenderCode = "G01",
-            });
-            remain = new RemainingHour(100, "00009", DateTime.Now.Year.ToString());
-            remRepo.GenerateHours(remain);
+            _dbContext.SaveChanges();
             return true;
         }
     }

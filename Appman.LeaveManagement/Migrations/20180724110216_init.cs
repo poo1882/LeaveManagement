@@ -25,22 +25,23 @@ namespace Appman.LeaveManagement.Migrations
                 name: "Employees",
                 columns: table => new
                 {
-                    StaffId = table.Column<string>(nullable: false),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
+                    EmployeeNumber = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    StaffId = table.Column<string>(nullable: true),
+                    FirstNameTH = table.Column<string>(nullable: true),
+                    LastNameTH = table.Column<string>(nullable: true),
+                    FirstNameEN = table.Column<string>(nullable: true),
+                    LastNameEN = table.Column<string>(nullable: true),
+                    Nickname = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    ProfilePicture = table.Column<string>(nullable: true),
-                    Position = table.Column<string>(nullable: true),
-                    StartWorkingDate = table.Column<DateTime>(nullable: false),
-                    IsActive = table.Column<bool>(nullable: false),
-                    Section = table.Column<string>(nullable: true),
-                    IsInProbation = table.Column<bool>(nullable: false),
                     GenderCode = table.Column<string>(nullable: true),
-                    IsSuperHr = table.Column<bool>(nullable: false)
+                    RoleCode = table.Column<string>(nullable: true),
+                    ProfilePicture = table.Column<string>(nullable: true),
+                    IsActive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.StaffId);
+                    table.PrimaryKey("PK_Employees", x => x.EmployeeNumber);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,7 +66,9 @@ namespace Appman.LeaveManagement.Migrations
                     AttachedFileName2 = table.Column<string>(nullable: true),
                     AttachedFile3 = table.Column<string>(nullable: true),
                     AttachedFileName3 = table.Column<string>(nullable: true),
-                    RequestedDateTime = table.Column<DateTime>(nullable: false)
+                    RequestedDateTime = table.Column<DateTime>(nullable: false),
+                    IsExisting = table.Column<bool>(nullable: false),
+                    CommentByAdmin = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,12 +80,30 @@ namespace Appman.LeaveManagement.Migrations
                 columns: table => new
                 {
                     GenderCode = table.Column<string>(nullable: false),
-                    TH = table.Column<string>(nullable: true),
-                    EN = table.Column<string>(nullable: true)
+                    GenderTH = table.Column<string>(nullable: true),
+                    GenderEN = table.Column<string>(nullable: true),
+                    TitleTH = table.Column<string>(nullable: true),
+                    TitleEN = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MdGenders", x => x.GenderCode);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MdRoles",
+                columns: table => new
+                {
+                    RoleCode = table.Column<string>(nullable: false),
+                    Position = table.Column<string>(nullable: true),
+                    Department = table.Column<string>(nullable: true),
+                    Abbreviation = table.Column<string>(nullable: true),
+                    IsAdmin = table.Column<bool>(nullable: false),
+                    IsInProbation = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MdRoles", x => x.RoleCode);
                 });
 
             migrationBuilder.CreateTable(
@@ -95,8 +116,7 @@ namespace Appman.LeaveManagement.Migrations
                     SickHours = table.Column<int>(nullable: false),
                     LWPHours = table.Column<int>(nullable: false),
                     TotalAnnualHours = table.Column<int>(nullable: false),
-                    TotalSickHours = table.Column<int>(nullable: false),
-                    TotalLWPHours = table.Column<int>(nullable: false)
+                    TotalSickHours = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -129,6 +149,9 @@ namespace Appman.LeaveManagement.Migrations
 
             migrationBuilder.DropTable(
                 name: "MdGenders");
+
+            migrationBuilder.DropTable(
+                name: "MdRoles");
 
             migrationBuilder.DropTable(
                 name: "RemainingHours");

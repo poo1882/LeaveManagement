@@ -2,6 +2,7 @@
 using Appman.LeaveManagement.DatabaseContext.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -68,14 +69,40 @@ namespace Appman.LeaveManagement.Repositories
             _dbContext.RemainingHours.Add(remaining);
             _dbContext.SaveChanges();
         }
+        
 
-        public List<RemainingHour> ViewAllRemainingHour()
+        public bool InitRemainingHours(string password)
+        {
+            if (password != "init")
+                return false;
+            var lines = File.ReadAllLines("C:\\Users\\poo1882\\Desktop\\remainingHours.csv").Select(a => a.Split(','));
+            foreach (var item in lines)
+            {
+                RemainingHour remainingHour = new RemainingHour(item[0], item[1], Convert.ToInt32(item[2]), Convert.ToInt32(item[3]));
+                _dbContext.RemainingHours.Add(remainingHour);
+            }
+
+            _dbContext.SaveChanges();
+            return true;
+        }
+
+        public List<RemainingHour> GetRemainingHours()
         {
             var result = from remaininglist in _dbContext.RemainingHours
                          join employeelist in _dbContext.Employees on remaininglist.StaffId equals employeelist.StaffId
                          where employeelist.IsActive == true
                          select remaininglist;
-            return result.OrderByDescending(x=>x.StaffId).ToList();
+            return result.OrderByDescending(x => x.StaffId).ToList();
+        }
+
+        public void ClearRemainingHours()
+        {
+            var remainingHours = _dbContext.RemainingHours;
+            foreach (var item in remainingHours)
+            {
+                remainingHours.Remove(item);
+            }
+            _dbContext.SaveChanges();
         }
     }
 }

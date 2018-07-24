@@ -16,11 +16,13 @@ namespace Appman.LeaveManagement.Repositories
         LeaveManagementDbContext _dbContext;
         private readonly EmployeeRepository _empRepo;
         private readonly ReportingRepository _repRepo;
+        private readonly MdRoleRepository _mdRoleRepo;
         public LeaveInfoRepository(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
             _empRepo = new EmployeeRepository(_dbContext);
             _repRepo = new ReportingRepository(_dbContext);
+            _mdRoleRepo = new MdRoleRepository(_dbContext);
         }
 
         /// <summary>
@@ -41,10 +43,16 @@ namespace Appman.LeaveManagement.Repositories
 
         public bool CreateLeaveInfo(LeaveInfo info)
         {
+            if (DateTime.UtcNow.Day == 31 && DateTime.UtcNow.Month == 12)
+                return false;
             info.ApprovalStatus = "Pending";
             info.ApprovedBy = null;
-            info.ApprovedTime = DateTime.UtcNow;
+            info.ApprovedTime = null;
             info.RequestedDateTime = DateTime.UtcNow;
+            info.IsExisting = true;
+            var thisYear = DateTime.UtcNow.Year;
+            if (info.RequestedDateTime.Year != thisYear || info.StartDateTime.Year != thisYear || info.EndDateTime.Year != thisYear)
+                return false;
             RemainingHourRepository remain = new RemainingHourRepository(_dbContext);
             int totalHours = 0;
             int totalHoursFirstDay = 0;
@@ -179,7 +187,7 @@ namespace Appman.LeaveManagement.Repositories
             var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
             //var approver = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId);
             Reporting report = new Reporting { StaffId=leave.StaffId, Approver=approverId};
-
+            var approverRole = _mdRoleRepo.GetRole(approverId);
             if (leave == null)
                 return false;
 
@@ -187,14 +195,14 @@ namespace Appman.LeaveManagement.Repositories
                     return false;
             bool isInReport = _dbContext.Reportings.Any(x => x.Approver == approverId && x.StaffId == leave.StaffId);
             //bool isInReport = reportings.Contains(report);
-            if (!isInReport && _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).IsSuperHr == false)
+            if (!isInReport && approverRole.IsAdmin == false)
                     return false;
             
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstName;
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedTime = DateTime.Now;
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovalStatus = status;
 
-            var approveBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstName;
+            var approveBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstNameTH;
             leave.ApprovedTime = DateTime.Now;
             leave.ApprovedBy = approverId;
             leave.ApprovalStatus = status;
