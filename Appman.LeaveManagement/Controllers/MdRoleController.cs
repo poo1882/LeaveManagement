@@ -26,7 +26,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult InitRoles(string password)
         {
-            if (!_mdRoleRepo.InitRoles(password))
+            if (!_mdRoleRepo.InitRoles(password.ToLower()))
                 return NotFound();
             return Ok();
         }

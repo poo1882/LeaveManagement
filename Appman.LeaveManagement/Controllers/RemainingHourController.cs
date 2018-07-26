@@ -23,8 +23,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("RemainingHour")]
         [HttpGet]
-        public IActionResult RemainingHour([FromQuery]string staffId,string year)
+        public IActionResult RemainingHour([FromQuery]string staffId)
         {
+            string year = DateTime.UtcNow.Year.ToString();
             var sickHour = _remRepo.ViewHour(staffId, year, "sick");
             var annualHour = _remRepo.ViewHour(staffId, year, "annual");
             var lwpHour = _remRepo.ViewHour(staffId, year, "lwp");
@@ -44,7 +45,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult InitRemainingHours(string password)
         {
-            if (!_remRepo.InitRemainingHours(password))
+            if (!_remRepo.InitRemainingHours(password.ToLower()))
                 return NotFound();
             return Ok();
         }

@@ -102,7 +102,7 @@ namespace Appman.LeaveManagement.Repositories
 
         }
 
-        public bool SetExisting(int leaveId, string commentByAdmin)
+        public bool SetDeleted(int leaveId, string commentByAdmin)
         {
             var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
             if (leave == null)

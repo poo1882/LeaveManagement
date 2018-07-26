@@ -49,7 +49,7 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult InitReportings([FromQuery] string password)
         {
 
-            if (!_repRepo.InitReportings(password))
+            if (!_repRepo.InitReportings(password.ToLower()))
                 return Ok("Duplicated initialization was rejected.");
             return Ok("Initialize reportings successfully.");
         }

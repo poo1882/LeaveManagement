@@ -1,0 +1,1236 @@
+2018-07-26 10:45:22.451 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-26 10:45:22.451 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-26 10:45:22.574 +07:00 [Information] Request finished in 129.4748ms 200 
+2018-07-26 10:45:22.931 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-26 10:45:22.976 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 10:45:22.994 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9823ms.
+2018-07-26 10:45:23.043 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-26 10:45:23.695 +07:00 [Information] Executed ViewResult - view "Index" executed in 681.49ms.
+2018-07-26 10:45:23.783 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 763.734ms
+2018-07-26 10:45:23.794 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-26 10:45:23.850 +07:00 [Information] Request finished in 23.2307ms 404 
+2018-07-26 10:45:23.852 +07:00 [Information] Request finished in 1373.4327ms 200 text/html; charset=utf-8
+2018-07-26 10:45:27.070 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-26 10:45:27.112 +07:00 [Information] Request finished in 17.701ms 301 
+2018-07-26 10:45:27.121 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-26 10:45:27.171 +07:00 [Information] Request finished in 31.9575ms 200 text/html
+2018-07-26 10:45:27.679 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-26 10:45:28.011 +07:00 [Information] Request finished in 310.7529ms 200 application/json;charset=utf-8
+2018-07-26 10:45:47.646 +07:00 [Information] Request starting HTTP/1.1 DELETE http://localhost:44331/api/MdRole/MdRoles  0
+2018-07-26 10:45:47.654 +07:00 [Information] Policy execution successful.
+2018-07-26 10:45:47.667 +07:00 [Information] Route matched with "{action = \"ClearRoles\", controller = \"MdRole\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.MdRoleController.ClearRoles (Appman.LeaveManagement)"
+2018-07-26 10:45:47.674 +07:00 [Information] Policy execution successful.
+2018-07-26 10:45:47.699 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.MdRoleController.ClearRoles (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 10:45:47.911 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-26 10:45:48.089 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-26 10:45:48.106 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"m\".\"RoleCode\", \"m\".\"Abbreviation\", \"m\".\"Department\", \"m\".\"IsAdmin\", \"m\".\"IsInProbation\", \"m\".\"Position\"
+FROM \"MdRoles\" AS \"m\""
+2018-07-26 10:45:48.168 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-26 10:45:48.210 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.215 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.220 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.226 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.235 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.241 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.256 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.263 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.271 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.279 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.286 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.294 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.300 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.306 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.314 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.319 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.323 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.331 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.335 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.342 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.347 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.352 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.359 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.363 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.367 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.372 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.377 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.382 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.387 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.394 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.398 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.404 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.410 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.416 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.420 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.426 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.431 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.437 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.444 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.457 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.483 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.489 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.500 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.505 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.513 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.519 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.527 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.534 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.540 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.547 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.552 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.558 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.565 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.571 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.581 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.589 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.602 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.610 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.619 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.628 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.635 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.644 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.652 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.674 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.695 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.703 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.712 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.719 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.726 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.735 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.754 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.762 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.770 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.777 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.783 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.789 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.796 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.802 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.812 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.818 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.823 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.830 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.836 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.843 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.849 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.855 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.865 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.871 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.878 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.894 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.906 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.927 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.934 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.947 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.954 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.963 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.969 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.975 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.981 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.987 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:48.994 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.000 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.006 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.020 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.032 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.053 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.079 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.087 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.105 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.113 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.120 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.129 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.135 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.144 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.151 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.157 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.164 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.169 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.175 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.182 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.190 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.196 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.214 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.222 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.233 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.239 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.263 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.274 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.283 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.290 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.298 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.310 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.333 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.382 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.431 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.445 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.453 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.470 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.480 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.487 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.497 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.504 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.516 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.528 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.550 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.565 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.572 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.579 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.586 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.598 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.604 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.613 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.619 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.626 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.632 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.639 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.646 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.655 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.668 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM \"MdRoles\"
+WHERE \"RoleCode\" = @p0;
+SELECT changes();"
+2018-07-26 10:45:49.698 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.MdRoleController.ClearRoles (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 1986.339ms.
+2018-07-26 10:45:49.718 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-07-26 10:45:49.729 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.MdRoleController.ClearRoles (Appman.LeaveManagement)" in 2051.0837ms
+2018-07-26 10:45:49.750 +07:00 [Information] Request finished in 2091.5164ms 200 
+2018-07-26 10:45:57.402 +07:00 [Information] Request starting HTTP/1.1 PUT http://localhost:44331/api/MdRole/MdRoles?password=init  0
+2018-07-26 10:45:57.410 +07:00 [Information] Policy execution successful.
+2018-07-26 10:45:57.445 +07:00 [Information] Route matched with "{action = \"InitRoles\", controller = \"MdRole\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.MdRoleController.InitRoles (Appman.LeaveManagement)"
+2018-07-26 10:45:57.450 +07:00 [Information] Policy execution successful.
+2018-07-26 10:45:57.489 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.MdRoleController.InitRoles (Appman.LeaveManagement)" with arguments (["init"]) - Validation state: Valid
+2018-07-26 10:45:57.500 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-26 10:45:57.513 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-26 10:45:57.621 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.633 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.639 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.644 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.649 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.654 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.659 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.665 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.673 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 43)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.679 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 43)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.683 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 43)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.687 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 43)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.691 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 39)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.696 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 39)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.699 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 39)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.703 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 39)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.708 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.712 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.716 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.720 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.725 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.729 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.733 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.738 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 7), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.744 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 7), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.748 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 7), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.753 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 7), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.759 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.763 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.767 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.772 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.781 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.789 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.796 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.803 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.815 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.820 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.828 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.834 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.838 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.844 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.848 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.853 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.858 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.864 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 36)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.876 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 36)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.882 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 36)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.887 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.893 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 36)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.900 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.905 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.911 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.917 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 33)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.923 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 33)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.928 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 33)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.932 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 33)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.937 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.942 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.947 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.953 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.961 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.965 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.970 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.975 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.979 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.984 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.988 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.995 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:57.999 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.004 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.020 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.028 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.033 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.037 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.046 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.051 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 19)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.059 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?', @p3='?', @p4='?', @p5='?' (Size = 34)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.065 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.070 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.078 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.085 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.099 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.106 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.113 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.118 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.131 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.136 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 31)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.141 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.146 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 41)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.151 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 41)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.158 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 41)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.163 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.169 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.175 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.180 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 8)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.186 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.190 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 41)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.202 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.231 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.240 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.246 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.252 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.261 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 30)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.266 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.270 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.276 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.281 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.285 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.297 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.303 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.309 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.313 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 16)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.318 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 16)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.323 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 16)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.327 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 16)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.332 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 18)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.337 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.343 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 3)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.349 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.355 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.365 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 26)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.388 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 26)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.394 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 26)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.406 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 10)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.414 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 10)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.421 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 10)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.433 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 10)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.438 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 6), @p3='?', @p4='?', @p5='?' (Size = 26)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.445 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.449 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.458 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.465 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.470 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.476 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.483 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.489 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.497 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.503 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 22)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.510 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.520 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.537 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.550 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.561 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.566 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.572 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.578 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.584 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 20)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.589 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.594 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 27)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.599 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 27)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.607 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 27)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.616 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 11)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.621 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 11)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.628 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 11)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.634 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 2), @p2='?' (Size = 2), @p3='?', @p4='?', @p5='?' (Size = 11)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.640 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 9), @p3='?', @p4='?', @p5='?' (Size = 29)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.645 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 8), @p3='?', @p4='?', @p5='?' (Size = 27)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.652 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@p0='?' (Size = 4), @p1='?' (Size = 3), @p2='?' (Size = 3), @p3='?', @p4='?', @p5='?' (Size = 10)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"MdRoles\" (\"RoleCode\", \"Abbreviation\", \"Department\", \"IsAdmin\", \"IsInProbation\", \"Position\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);"
+2018-07-26 10:45:58.682 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.MdRoleController.InitRoles (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 1180.3089ms.
+2018-07-26 10:45:58.711 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-07-26 10:45:58.718 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.MdRoleController.InitRoles (Appman.LeaveManagement)" in 1266.0892ms
+2018-07-26 10:45:58.929 +07:00 [Information] Request finished in 1324.036ms 200 
+2018-07-26 10:46:11.464 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/History/Leaves  
+2018-07-26 10:46:11.481 +07:00 [Information] Route matched with "{action = \"ViewLeaves\", controller = \"History\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)"
+2018-07-26 10:46:11.488 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 10:46:11.502 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-26 10:46:11.566 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-26 10:46:11.573 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"leaveinfo\".\"LeaveId\", \"leaveinfo\".\"ApprovalStatus\", \"leaveinfo\".\"ApprovedBy\", \"leaveinfo\".\"ApprovedTime\", \"leaveinfo\".\"AttachedFile1\", \"leaveinfo\".\"AttachedFile2\", \"leaveinfo\".\"AttachedFile3\", \"leaveinfo\".\"AttachedFileName1\", \"leaveinfo\".\"AttachedFileName2\", \"leaveinfo\".\"AttachedFileName3\", \"leaveinfo\".\"Comment\", \"leaveinfo\".\"CommentByAdmin\", \"leaveinfo\".\"EndDateTime\", \"leaveinfo\".\"HoursEndDate\", \"leaveinfo\".\"HoursStartDate\", \"leaveinfo\".\"IsExisting\", \"leaveinfo\".\"RequestedDateTime\", \"leaveinfo\".\"StaffId\", \"leaveinfo\".\"StartDateTime\", \"leaveinfo\".\"Type\"
+FROM \"Employees\" AS \"employeelist\"
+INNER JOIN \"LeaveInfos\" AS \"leaveinfo\" ON \"employeelist\".\"StaffId\" = \"leaveinfo\".\"StaffId\"
+WHERE \"employeelist\".\"IsActive\" = 1
+ORDER BY \"leaveinfo\".\"StaffId\""
+2018-07-26 10:46:11.589 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 97.6654ms.
+2018-07-26 10:46:11.594 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-26 10:46:11.601 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HistoryController.ViewLeaves (Appman.LeaveManagement)" in 112.9486ms
+2018-07-26 10:46:11.611 +07:00 [Information] Request finished in 144.1184ms 200 application/json
+2018-07-26 15:57:34.239 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-26 15:57:34.239 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-26 15:57:34.330 +07:00 [Information] Request finished in 91.4808ms 200 
+2018-07-26 15:57:34.603 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-26 15:57:34.624 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 15:57:34.634 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9055ms.
+2018-07-26 15:57:34.658 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-26 15:57:34.949 +07:00 [Information] Executed ViewResult - view "Index" executed in 302.0243ms.
+2018-07-26 15:57:34.953 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 346.4146ms
+2018-07-26 15:57:34.983 +07:00 [Information] Request finished in 739.9898ms 200 text/html; charset=utf-8
+2018-07-26 15:57:34.988 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner2.svg  
+2018-07-26 15:57:34.996 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner3.svg  
+2018-07-26 15:57:34.998 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-26 15:57:35.000 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-26 15:57:35.002 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/jquery/dist/jquery.js  
+2018-07-26 15:57:35.029 +07:00 [Information] Request finished in 19.2956ms 404 
+2018-07-26 15:57:35.042 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/css/site.css  
+2018-07-26 15:57:35.059 +07:00 [Information] Sending file. Request path: '"/images/banner3.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner3.svg"'
+2018-07-26 15:57:35.062 +07:00 [Information] Sending file. Request path: '"/images/banner2.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner2.svg"'
+2018-07-26 15:57:35.068 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\css\site.css"'
+2018-07-26 15:57:35.073 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-26 15:57:35.074 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-26 15:57:35.084 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner1.svg  
+2018-07-26 15:57:35.091 +07:00 [Information] Request finished in 93.4438ms 200 image/svg+xml
+2018-07-26 15:57:35.113 +07:00 [Information] Request finished in 105.0448ms 200 image/svg+xml
+2018-07-26 15:57:35.144 +07:00 [Information] Request finished in 44.7355ms 200 text/css
+2018-07-26 15:57:35.157 +07:00 [Information] Sending file. Request path: '"/images/banner1.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner1.svg"'
+2018-07-26 15:57:35.170 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\js\site.js"'
+2018-07-26 15:57:35.179 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\js\bootstrap.js"'
+2018-07-26 15:57:35.185 +07:00 [Information] Request finished in 82.1192ms 200 image/svg+xml
+2018-07-26 15:57:35.201 +07:00 [Information] Request finished in 116.8592ms 200 application/javascript
+2018-07-26 15:57:35.203 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\jquery\dist\jquery.js"'
+2018-07-26 15:57:35.215 +07:00 [Information] Request finished in 104.931ms 200 application/javascript
+2018-07-26 15:57:35.216 +07:00 [Information] Request finished in 221.3782ms 200 application/javascript
+2018-07-26 15:57:35.242 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\css\bootstrap.css"'
+2018-07-26 15:57:35.249 +07:00 [Information] Request finished in 253.5641ms 200 text/css
+2018-07-26 15:57:35.301 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-26 15:57:35.318 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"'
+2018-07-26 15:57:35.323 +07:00 [Information] Request finished in 24.9395ms 200 font/woff2
+2018-07-26 16:34:40.357 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-26 16:34:40.357 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-26 16:34:40.503 +07:00 [Information] Request finished in 97.7051ms 200 
+2018-07-26 16:34:40.802 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-26 16:34:40.819 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 16:34:40.828 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7121ms.
+2018-07-26 16:34:40.856 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-26 16:34:41.159 +07:00 [Information] Executed ViewResult - view "Index" executed in 316.6616ms.
+2018-07-26 16:34:41.185 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 357.4563ms
+2018-07-26 16:34:41.240 +07:00 [Information] Request finished in 859.5338ms 200 text/html; charset=utf-8
+2018-07-26 16:34:41.242 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-26 16:34:41.297 +07:00 [Information] Request finished in 33.4322ms 404 
+2018-07-26 16:37:18.213 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-26 16:37:18.213 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-26 16:37:18.309 +07:00 [Information] Request finished in 84.5307ms 200 
+2018-07-26 16:37:18.649 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-26 16:37:18.672 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-26 16:37:18.682 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0415ms.
+2018-07-26 16:37:18.708 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-26 16:37:18.979 +07:00 [Information] Executed ViewResult - view "Index" executed in 281.4404ms.
+2018-07-26 16:37:18.998 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 330.1076ms
+2018-07-26 16:37:19.040 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-26 16:37:19.040 +07:00 [Information] Request finished in 815.8427ms 200 text/html; charset=utf-8
+2018-07-26 16:37:19.105 +07:00 [Information] Request finished in 42.164ms 404 

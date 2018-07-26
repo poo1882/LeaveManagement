@@ -57,7 +57,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult InitializeEmployee([FromQuery] string password)
         {
-            if (!_empRepo.InitializeEmployees(password))
+            if (!_empRepo.InitializeEmployees(password.ToLower()))
                 return Ok("Duplicated initialization was rejected.");
             return Ok("Initialize employees successfully.");
         }

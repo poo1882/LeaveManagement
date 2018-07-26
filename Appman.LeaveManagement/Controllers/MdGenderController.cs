@@ -53,7 +53,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult InitMdGenders(string password)
         {
-            if (!_mdGenderRepo.InitMdGenders(password))
+            if (!_mdGenderRepo.InitMdGenders(password.ToLower()))
                 return NotFound();
             return Ok();
         }

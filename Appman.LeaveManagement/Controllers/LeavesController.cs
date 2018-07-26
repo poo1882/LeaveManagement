@@ -67,16 +67,30 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult SetStatus([FromQuery]string status, int leaveId, string approverId)
         {
-            if (_leaveRepo.SetStatus(status, leaveId, approverId))
-                return Ok();
-            return NotFound();
+            if (status.ToLower() != "approved" || status.ToLower() != "rejected")
+                return NotFound();
+            if (_leaveRepo.SetStatus(status.ToLower(),leaveId, approverId))
+            {
+                EmailController emailSender = new EmailController(_dbContext);
+                emailSender.SendResultToOwner(approverId, status,_leaveRepo.ViewLeaveInfo(leaveId));
+                if (status.ToLower()[0] == 'a')
+                    return Ok("Approved successfully");
+                return Ok("Rejected successfully");
+            }
+
+            else
+            {
+                LeaveInfo leave = _leaveRepo.ViewLeaveInfo(leaveId);
+                string approverName = _empRepo.GetName(leave.ApprovedBy);
+                return Ok("Sorry, this leaving form has been already approved/rejected by " + approverName + ".");
+            }
         }
 
         [Route("SetExisting")]
         [HttpPut]
-        public IActionResult SetExisting([FromQuery]int leaveId, string commentByAdmin)
+        public IActionResult SetToDeleted([FromQuery]int leaveId, string commentByAdmin)
         {
-            if (_leaveRepo.SetExisting(leaveId, commentByAdmin))
+            if (_leaveRepo.SetDeleted(leaveId, commentByAdmin))
                 return Ok();
             return NotFound();
 
