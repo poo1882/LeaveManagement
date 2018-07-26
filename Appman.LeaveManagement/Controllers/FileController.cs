@@ -30,33 +30,33 @@ namespace Appman.LeaveManagement.Controllers
             _repRepo = new ReportingRepository(_dbContext);
         }
 
-        [Route("Statistic")]
-        [HttpGet]
-        public FileResult Statistics(string year)
-        {
-            var listData = _empRepo.GetEmployees().OrderBy(x=>x.StaffId);
-            var sb = new StringBuilder();
-            sb.AppendLine("StaffID," + "FirstName," + "LastName," + "Annual," + "USED,"+"LEFT,"+"Sick,"+"USED,"+"LEFT," + "LWP,"+"USED,"+"LEFT");
-            foreach (var data in listData)
-            {
-                RemainingHour remainingHour = _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == data.StaffId && x.Year == year);
+        //[Route("Statistic")]
+        //[HttpGet]
+        //public FileResult Statistics(string year)
+        //{
+        //    var listData = _empRepo.GetEmployees().OrderBy(x=>x.StaffId);
+        //    var sb = new StringBuilder();
+        //    sb.AppendLine("StaffID," + "FirstName," + "LastName," + "Annual," + "USED,"+"LEFT,"+"Sick,"+"USED,"+"LEFT," + "LWP,"+"USED,"+"LEFT");
+        //    foreach (var data in listData)
+        //    {
+        //        RemainingHour remainingHour = _dbContext.RemainingHours.FirstOrDefault(x => x.StaffId == data.StaffId && x.Year == year);
 
-                sb.AppendLine(data.StaffId + ","
-                    + data.FirstNameTH + ","
-                    + data.LastNameTH + ","
-                    + remainingHour.TotalAnnualHours.ToString() + ","
-                    + (remainingHour.TotalAnnualHours - remainingHour.AnnualHours).ToString() + ","
-                    +remainingHour.AnnualHours.ToString() + ","
-                    + remainingHour.TotalSickHours.ToString() + ","
-                    + (remainingHour.TotalSickHours - remainingHour.SickHours).ToString() + ","
-                    + remainingHour.SickHours.ToString() + ","
-                    + remainingHour.TotalLWPHours.ToString() + ","
-                    + (remainingHour.TotalLWPHours - remainingHour.LWPHours).ToString() + ","
-                    + remainingHour.LWPHours.ToString());
-            }
+        //        sb.AppendLine(data.StaffId + ","
+        //            + data.FirstNameTH + ","
+        //            + data.LastNameTH + ","
+        //            + remainingHour.TotalAnnualHours.ToString() + ","
+        //            + (remainingHour.TotalAnnualHours - remainingHour.AnnualHours).ToString() + ","
+        //            +remainingHour.AnnualHours.ToString() + ","
+        //            + remainingHour.TotalSickHours.ToString() + ","
+        //            + (remainingHour.TotalSickHours - remainingHour.SickHours).ToString() + ","
+        //            + remainingHour.SickHours.ToString() + ","
+        //            + remainingHour.TotalLWPHours.ToString() + ","
+        //            + (remainingHour.TotalLWPHours - remainingHour.LWPHours).ToString() + ","
+        //            + remainingHour.LWPHours.ToString());
+        //    }
 
-            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "stats.csv");
-        }
+        //    return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "stats.csv");
+        //}
 
         [Route("PendingLeaves")]
         [HttpGet]

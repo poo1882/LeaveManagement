@@ -13,7 +13,7 @@ namespace Appman.LeaveManagement.Models
         public string LastName { get; set; }
         public string StaffId { get; set; }
         public string Position { get; set; }
-        public string Section { get; set; }
+        public string Department { get; set; }
         public int Pending { get; set; }
         public int Approve { get; set; }
         public int Reject { get; set; }
@@ -25,8 +25,8 @@ namespace Appman.LeaveManagement.Models
             FirstName = employee.FirstNameTH;
             LastName = employee.LastNameTH;
             StaffId = employee.StaffId;
-            Position = role.Position;
-            Section = role.Department;
+            Position = _mdRoleRepo.GetRole(employee.RoleCode).Position;
+            Department = _mdRoleRepo.GetRole(employee.RoleCode).Department;
             Pending = _leaveRepo.PendingAmount(staffId);
             Approve = _leaveRepo.ApprovedAmount(staffId);
             Reject = _leaveRepo.RejectedAmount(staffId);

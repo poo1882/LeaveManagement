@@ -15,18 +15,18 @@ namespace Appman.LeaveManagement.DatabaseContext.Model
         public int LWPHours { get; set; }
         public int TotalAnnualHours { get; set; }
         public int TotalSickHours { get; set; }
-        public int TotalLWPHours { get; set; }
 
-        public RemainingHour(int defaultHours, string staffId, string year)
+        
+
+        public RemainingHour(string staffId, string year, int totalAnnualHours,int totalSickHours)
         {
-            TotalAnnualHours = defaultHours;
-            TotalSickHours = defaultHours;
-            TotalLWPHours = defaultHours;
-            AnnualHours = defaultHours;
-            SickHours = defaultHours;
-            LWPHours = 0;
-            Year = year;
             StaffId = staffId;
+            Year = year;
+            TotalAnnualHours = totalAnnualHours;
+            TotalSickHours = totalSickHours;
+            AnnualHours = TotalSickHours;
+            SickHours = TotalSickHours;
+            LWPHours = 0;
         }
 
         public RemainingHour()

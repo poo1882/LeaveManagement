@@ -19,6 +19,17 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Appman.LeaveManagement.Data;
 using Microsoft.AspNetCore.Identity;
+using System;
+using System.Threading.Tasks;
+using System.Security.Claims;
+
+using Owin;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.AspNet.Identity;
+
+[assembly: OwinStartupAttribute(typeof(Appman.LeaveManagement.Startup))]
 
 namespace Appman.LeaveManagement
 {
@@ -48,7 +59,6 @@ namespace Appman.LeaveManagement
             });
 
             
-
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {

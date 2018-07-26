@@ -53,11 +53,11 @@ namespace Appman.LeaveManagement.Controllers
             return Ok("Employees data has been deleted.");
         }
 
-        [Route("InitializeEmployees")]
-        [HttpGet]
+        [Route("Employees")]
+        [HttpPut]
         public IActionResult InitializeEmployee([FromQuery] string password)
         {
-            if (!_empRepo.InitializeEmployees(password))
+            if (!_empRepo.InitializeEmployees(password.ToLower()))
                 return Ok("Duplicated initialization was rejected.");
             return Ok("Initialize employees successfully.");
         }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Appman.LeaveManagement.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20180723082155_init")]
+    [Migration("20180724110216_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,32 +36,32 @@ namespace Appman.LeaveManagement.Migrations
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.Employee", b =>
                 {
-                    b.Property<string>("StaffId")
+                    b.Property<int>("EmployeeNumber")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstNameEN");
+
+                    b.Property<string>("FirstNameTH");
 
                     b.Property<string>("GenderCode");
 
                     b.Property<bool>("IsActive");
 
-                    b.Property<bool>("IsInProbation");
+                    b.Property<string>("LastNameEN");
 
-                    b.Property<bool>("IsSuperHr");
+                    b.Property<string>("LastNameTH");
 
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Position");
+                    b.Property<string>("Nickname");
 
                     b.Property<string>("ProfilePicture");
 
-                    b.Property<string>("Section");
+                    b.Property<string>("RoleCode");
 
-                    b.Property<DateTime>("StartWorkingDate");
+                    b.Property<string>("StaffId");
 
-                    b.HasKey("StaffId");
+                    b.HasKey("EmployeeNumber");
 
                     b.ToTable("Employees");
                 });
@@ -91,11 +91,15 @@ namespace Appman.LeaveManagement.Migrations
 
                     b.Property<string>("Comment");
 
+                    b.Property<string>("CommentByAdmin");
+
                     b.Property<DateTime>("EndDateTime");
 
                     b.Property<int>("HoursEndDate");
 
                     b.Property<int>("HoursStartDate");
+
+                    b.Property<bool>("IsExisting");
 
                     b.Property<DateTime>("RequestedDateTime");
 
@@ -115,13 +119,37 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<string>("GenderCode")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("EN");
+                    b.Property<string>("GenderEN");
 
-                    b.Property<string>("TH");
+                    b.Property<string>("GenderTH");
+
+                    b.Property<string>("TitleEN");
+
+                    b.Property<string>("TitleTH");
 
                     b.HasKey("GenderCode");
 
                     b.ToTable("MdGenders");
+                });
+
+            modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.MdRole", b =>
+                {
+                    b.Property<string>("RoleCode")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Abbreviation");
+
+                    b.Property<string>("Department");
+
+                    b.Property<bool>("IsAdmin");
+
+                    b.Property<bool>("IsInProbation");
+
+                    b.Property<string>("Position");
+
+                    b.HasKey("RoleCode");
+
+                    b.ToTable("MdRoles");
                 });
 
             modelBuilder.Entity("Appman.LeaveManagement.DatabaseContext.Model.RemainingHour", b =>
@@ -137,8 +165,6 @@ namespace Appman.LeaveManagement.Migrations
                     b.Property<int>("SickHours");
 
                     b.Property<int>("TotalAnnualHours");
-
-                    b.Property<int>("TotalLWPHours");
 
                     b.Property<int>("TotalSickHours");
 

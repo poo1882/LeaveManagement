@@ -23,8 +23,9 @@ namespace Appman.LeaveManagement.Controllers
 
         [Route("RemainingHour")]
         [HttpGet]
-        public IActionResult RemainingHour([FromQuery]string staffId,string year)
+        public IActionResult RemainingHour([FromQuery]string staffId)
         {
+            string year = DateTime.UtcNow.Year.ToString();
             var sickHour = _remRepo.ViewHour(staffId, year, "sick");
             var annualHour = _remRepo.ViewHour(staffId, year, "annual");
             var lwpHour = _remRepo.ViewHour(staffId, year, "lwp");
@@ -41,13 +42,31 @@ namespace Appman.LeaveManagement.Controllers
         }
 
         [Route("RemainingHours")]
-        [HttpGet]
-        public IActionResult ViewAllReporting()
+        [HttpPut]
+        public IActionResult InitRemainingHours(string password)
         {
-            var result = _remRepo.ViewAllRemainingHour();
+            if (!_remRepo.InitRemainingHours(password.ToLower()))
+                return NotFound();
+            return Ok();
+        }
+
+        [Route("RemainingHours")]
+        [HttpGet]
+        public IActionResult GetRemainingHours()
+        {
+            var result = _remRepo.GetRemainingHours();
+            if (result == null)
+                return NotFound();
             return Content(JsonConvert.SerializeObject(result), "application/json");
         }
-        
+
+        [Route("RemainingHours")]
+        [HttpDelete]
+        public IActionResult ClearRemainingHours()
+        {
+            _remRepo.ClearRemainingHours();
+            return Ok();
+        }
 
 
     }
