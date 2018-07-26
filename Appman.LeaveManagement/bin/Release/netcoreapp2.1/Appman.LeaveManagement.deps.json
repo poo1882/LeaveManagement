@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "1217d81a92fc52a5157cb4e7583277cd02369c99"
+    "signature": "54c8fb940b03d2016be7d8226b103a57cb7189b5"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,8 @@
         "dependencies": {
           "CsvExport": "1.0.1",
           "CsvHelper": "7.1.1",
+          "Microsoft.AspNet.Identity.EntityFramework": "2.2.2",
+          "Microsoft.AspNet.Identity.Owin": "2.2.2",
           "Microsoft.AspNet.WebApi.Cors": "5.2.4",
           "Microsoft.AspNetCore.App": "2.1.0",
           "Microsoft.AspNetCore.Authentication.Google": "2.1.0",
@@ -34,7 +36,10 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.1.0",
           "Microsoft.EntityFrameworkCore.Tools.DotNet": "2.0.3",
           "Microsoft.NETCore.App": "2.1.0",
+          "Microsoft.Owin": "4.0.0",
           "Microsoft.Owin.Host.SystemWeb": "4.0.0",
+          "Microsoft.Owin.Security.Cookies": "4.0.0",
+          "Microsoft.Owin.Security.Google": "4.0.0",
           "Microsoft.Owin.Security.OAuth": "4.0.0",
           "Microsoft.VisualStudio.Web.BrowserLink": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.0",
@@ -70,6 +75,22 @@
           "lib/netstandard2.0/CsvHelper.dll": {}
         }
       },
+      "EntityFramework/6.1.0": {
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.1.30225.0"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.1.30225.0"
+          }
+        },
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Microsoft.AspNet.Cors/5.2.4": {
         "runtime": {
           "lib/net45/System.Web.Cors.dll": {
@@ -79,6 +100,49 @@
         },
         "compile": {
           "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.EntityFramework/2.2.2": {
+        "dependencies": {
+          "EntityFramework": "6.1.0",
+          "Microsoft.AspNet.Identity.Core": "2.2.2"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.2": {
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Microsoft.Owin.Security.Cookies": "4.0.0",
+          "Microsoft.Owin.Security.OAuth": "4.0.0"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Core/5.2.4": {
@@ -602,6 +666,39 @@
         },
         "compile": {
           "lib/net451/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/4.0.0": {
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Google/4.0.0": {
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Newtonsoft.Json": "11.0.2",
+          "Owin": "1.0.0"
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Google.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.4677.103"
+          }
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Google.dll": {}
         }
       },
       "Microsoft.Owin.Security.OAuth/4.0.0": {
@@ -4473,12 +4570,40 @@
       "path": "csvhelper/7.1.1",
       "hashPath": "csvhelper.7.1.1.nupkg.sha512"
     },
+    "EntityFramework/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
+      "path": "entityframework/6.1.0",
+      "hashPath": "entityframework.6.1.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.Cors/5.2.4": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-aM03kkW5g8hJt99urM1SlTP4xwhp6U1hJYCEgINO5gHMZxG+ejZh+JATbhp+eyd6Sp6B6IAWPv7xWjLXOEU4AA==",
       "path": "microsoft.aspnet.cors/5.2.4",
       "hashPath": "microsoft.aspnet.cors.5.2.4.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "path": "microsoft.aspnet.identity.core/2.2.2",
+      "hashPath": "microsoft.aspnet.identity.core.2.2.2.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Identity.EntityFramework/2.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FrAMpqx39BgedraJ/Oo+G2DqAB9UpsADAEs2xbGhwMPoa5Y5QRio0rCrxXuS4uGE2NLDoOdiNpNXS2vyy2/AmA==",
+      "path": "microsoft.aspnet.identity.entityframework/2.2.2",
+      "hashPath": "microsoft.aspnet.identity.entityframework.2.2.2.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Identity.Owin/2.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WnnEaF0CA/wlyJeKT6cABfkJgAGUcCI2Htw+1/uswd5zCAc4jP43DyuB6MV/pqwrydxf5OV2KyXjeOuME656bg==",
+      "path": "microsoft.aspnet.identity.owin/2.2.2",
+      "hashPath": "microsoft.aspnet.identity.owin.2.2.2.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Core/5.2.4": {
       "type": "package",
@@ -4633,6 +4758,20 @@
       "sha512": "sha512-utXSauY1N+toBsOkrSTN/YL3XknbwVTWIQHo4V7IKTcTiay2r9to0yJK4HluqC5KDuUwkjWdVOru/6j/2JjDnw==",
       "path": "microsoft.owin.security/4.0.0",
       "hashPath": "microsoft.owin.security.4.0.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Cookies/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HsSJra7A5S36GHrf5W9gflkULNyTTS3qc+kJYE22DJQ1Ap1M0k0vMwZUzea7J3SEcl7+KeET7dX0qzZn43rt4w==",
+      "path": "microsoft.owin.security.cookies/4.0.0",
+      "hashPath": "microsoft.owin.security.cookies.4.0.0.nupkg.sha512"
+    },
+    "Microsoft.Owin.Security.Google/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SNBbdzm/pmV+mlcbDoDuXlmqBmOkSG0ltTnwaP2ltA4qwSBGNwvpf/0qXZUt8FwZKqjiNLIM+wEAr4suYqvlCw==",
+      "path": "microsoft.owin.security.google/4.0.0",
+      "hashPath": "microsoft.owin.security.google.4.0.0.nupkg.sha512"
     },
     "Microsoft.Owin.Security.OAuth/4.0.0": {
       "type": "package",

@@ -46,6 +46,8 @@ namespace Appman.LeaveManagement.Repositories
             if (DateTime.UtcNow.Day == 31 && DateTime.UtcNow.Month == 12)
                 return false;
             info.ApprovalStatus = "Pending";
+
+
             info.ApprovedBy = null;
             info.ApprovedTime = null;
             info.RequestedDateTime = DateTime.UtcNow;

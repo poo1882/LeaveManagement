@@ -14410,6 +14410,8 @@
       "Microsoft.AspNet.WebApi.Cors >= 5.2.4",
       "Microsoft.AspNetCore.App >= 2.1.0",
       "Microsoft.AspNetCore.Authentication.Google >= 2.1.0",
+      "Microsoft.AspNetCore.Identity >= 2.1.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.1.0",
       "Microsoft.EntityFrameworkCore >= 2.1.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.0",
@@ -14501,6 +14503,14 @@
             "autoReferenced": true
           },
           "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.AspNetCore.Identity": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[2.1.0, )"
           },
