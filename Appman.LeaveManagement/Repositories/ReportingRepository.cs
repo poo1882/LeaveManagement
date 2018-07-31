@@ -26,8 +26,6 @@ namespace Appman.LeaveManagement.Repositories
         /// </returns>
         public bool AddApprover(Reporting reporting)
         {
-            if (_dbContext.Reportings.Contains(reporting))
-                return false;
             _dbContext.Reportings.Add(reporting);
             _dbContext.SaveChanges();
             return true;
@@ -43,8 +41,6 @@ namespace Appman.LeaveManagement.Repositories
         /// </returns>
         public bool RemoveApprover(Reporting reporting)
         {
-            if (!_dbContext.Reportings.Contains(reporting))
-                return false;
             _dbContext.Reportings.Remove(reporting);
             _dbContext.SaveChanges();
             return true;

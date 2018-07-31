@@ -58,36 +58,65 @@ namespace Appman.LeaveManagement.Controllers
         //    return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "stats.csv");
         //}
 
-        [Route("PendingLeaves")]
+        [Route("LeavesByMonth")]
         [HttpGet]
-        public FileResult PendingLeaves()
+        public FileResult LeavesByMonth(int month,int year)
         {
-            var listData = _leaveRepo.GetHistory().Where(x => x.ApprovalStatus.ToLower() == "pending").OrderBy(x => x.LeaveId);
+            var listData = _leaveRepo.GetHistory().Where(x =>x.StartDateTime.Month == month && x.StartDateTime.Year == year).OrderBy(x => x.LeaveId);
             var sb = new StringBuilder();
-            sb.AppendLine("LeaveID," + "StaffID," + "Approver1," + "Approver2,"+"RequestedDate");
-            int approverAmount = 2;
+            sb.AppendLine("Leave ID," + "Name," + "Type," + "Status,"+"Start,"+"End,"+"Total");
             foreach (var data in listData)
             {
-                List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
+                //List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
+                int totalHours = _leaveRepo.GetTotalHours(data.LeaveId);
+                sb.Append(data.LeaveId + "," + _empRepo.GetName(data.StaffId) + ","+data.Type+","+data.ApprovalStatus+","+data.StartDateTime+","+data.EndDateTime+","+totalHours+"hrs.");
 
-                sb.Append(data.LeaveId + "," + data.StaffId + ",");
-
-                for (int i = 0; i < approverAmount; i++)
-                {
-                    if(reportings[i] != null)
-                    {
-                        string approverName = _empRepo.GetName(reportings[i].Approver);
-                        sb.Append(approverName);
-                        if (i != approverAmount - 1)
-                            sb.Append(",");
-                    }
+                //for (int i = 0; i < approverAmount; i++)
+                //{
+                //    if(reportings[i] != null)
+                //    {
+                //        string approverName = _empRepo.GetName(reportings[i].Approver);
+                //        sb.Append(approverName);
+                //        if (i != approverAmount - 1)
+                //            sb.Append(",");
+                //    }
                     
-                }
-                sb.Append(","+data.RequestedDateTime);
+                //}
                 sb.AppendLine();
             }
+            string fileName = "LeavesMonth" + String.Format("{0:D2}", month) + "Year" + year.ToString();
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", fileName+".csv");
+        }
 
-            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "pendingLeaves.csv");
+        [Route("LeavesByYear")]
+        [HttpGet]
+        public FileResult LeavesByYear(int year)
+        {
+            var listData = _leaveRepo.GetHistory().Where(x => x.StartDateTime.Year == year).OrderBy(x => x.LeaveId);
+            var sb = new StringBuilder();
+            sb.AppendLine("Leave ID," + "Name," + "Type," + "Status," + "Start," + "End," + "Total");
+            foreach (var data in listData)
+            {
+                //List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
+                int totalHours = _leaveRepo.GetTotalHours(data.LeaveId);
+                sb.Append(data.LeaveId + "," + _empRepo.GetName(data.StaffId) + "," + data.Type + "," + data.ApprovalStatus + "," + data.StartDateTime + "," + data.EndDateTime + "," + totalHours + "hrs.");
+
+                //for (int i = 0; i < approverAmount; i++)
+                //{
+                //    if(reportings[i] != null)
+                //    {
+                //        string approverName = _empRepo.GetName(reportings[i].Approver);
+                //        sb.Append(approverName);
+                //        if (i != approverAmount - 1)
+                //            sb.Append(",");
+                //    }
+
+                //}
+                sb.AppendLine();
+            }
+            string fileName = "LeavesYear" + year.ToString();
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", fileName+".csv");
+
         }
     }
 }

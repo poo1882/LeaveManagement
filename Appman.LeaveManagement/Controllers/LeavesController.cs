@@ -86,7 +86,7 @@ namespace Appman.LeaveManagement.Controllers
             }
         }
 
-        [Route("SetExisting")]
+        [Route("DeleteByAdmin")]
         [HttpPut]
         public IActionResult SetToDeleted([FromQuery]int leaveId, string commentByAdmin)
         {

@@ -99,8 +99,9 @@ namespace Appman.LeaveManagement.Repositories
 
         public string GetRole(string staffId)
         {
-            var role = _mdRoleRepository.GetRole(staffId);
             Employee employee = _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId);
+            var role = _mdRoleRepository.GetRole(employee.RoleCode);
+            
             if (role.IsAdmin)
                 return "Admin";
             if (_dbContext.Reportings.Any(x => x.Approver == staffId))

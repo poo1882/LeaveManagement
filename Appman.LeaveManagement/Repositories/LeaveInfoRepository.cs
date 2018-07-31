@@ -167,12 +167,13 @@ namespace Appman.LeaveManagement.Repositories
         /// </returns>
         public List<LeaveInfo> GetRemaining(string staffId)
         {
-
+            if (_empRepo.GetRole(staffId).ToLower() == "admin")
+                return _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
             var result = from reportlist in _dbContext.Reportings
                          join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                          where reportlist.Approver == staffId
                          select leaveinfo;
-            return result.Where(x => x.ApprovalStatus == "Pending").OrderByDescending(y => y.LeaveId).ToList();
+            return result.Where(x => x.ApprovalStatus.ToLower() == "Pending").OrderByDescending(y => y.LeaveId).ToList();
         }
 
         /// <summary>
@@ -224,12 +225,12 @@ namespace Appman.LeaveManagement.Repositories
                 else
                     remaining.AddRemainHour(leave.StaffId, leave.Type,totalHours);
             }
-            //var approbationsLeft = _dbContext.Approbations;
-            //foreach (var item in approbationsLeft)
-            //{
-            //    if (item.LeaveId == leaveId)
-            //        approbationsLeft.Remove(item);
-            //}
+            var approbationsLeft = _dbContext.Approbations;
+            foreach (var item in approbationsLeft)
+            {
+                if (item.LeaveId == leaveId)
+                    approbationsLeft.Remove(item);
+            }
             _dbContext.SaveChanges();
             return true;
         }
@@ -402,6 +403,19 @@ namespace Appman.LeaveManagement.Repositories
                 leaves.Remove(item);
             }
             _dbContext.SaveChanges();
+        }
+
+        public int GetTotalHours(int leaveId)
+        {
+            LeaveInfo info = ViewLeaveInfo(leaveId);
+            if (info.StartDateTime.ToString() == info.EndDateTime.ToString())
+                totalHours = info.HoursStartDate;
+            else
+            {
+                int totalDays = (info.EndDateTime - info.StartDateTime).Days;
+                totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+            }
+            return totalHours;
         }
     }
 }
