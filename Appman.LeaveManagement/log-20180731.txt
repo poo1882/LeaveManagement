@@ -4587,3 +4587,79 @@ FROM \"Reportings\" AS \"r\""
 2018-07-31 16:17:51.478 +07:00 [Information] Request finished in 198.435ms 200 application/javascript
 2018-07-31 16:17:51.939 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
 2018-07-31 16:17:52.115 +07:00 [Information] Request finished in 181.5267ms 200 application/json;charset=utf-8
+2018-07-31 18:27:10.961 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-31 18:27:10.961 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-31 18:27:10.961 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-31 18:27:11.028 +07:00 [Information] Request finished in 69.6319ms 200 
+2018-07-31 18:27:11.094 +07:00 [Information] Request finished in 139.5226ms 301 
+2018-07-31 18:27:11.109 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-31 18:27:11.141 +07:00 [Information] Request finished in 38.4598ms 200 text/html
+2018-07-31 18:27:11.366 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-31 18:27:11.413 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-31 18:27:11.432 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0368ms.
+2018-07-31 18:27:11.465 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-31 18:27:11.598 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-31 18:27:11.862 +07:00 [Information] Executed ViewResult - view "Index" executed in 413.039ms.
+2018-07-31 18:27:11.867 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 496.4331ms
+2018-07-31 18:27:11.876 +07:00 [Information] Request finished in 924.1198ms 200 text/html; charset=utf-8
+2018-07-31 18:27:11.887 +07:00 [Information] Request finished in 295.0657ms 200 application/json;charset=utf-8
+2018-07-31 18:27:22.799 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/api/Employee/Header?email=poo_poo1882%40hotmail.com  
+2018-07-31 18:27:22.828 +07:00 [Information] Route matched with "{action = \"GetHeader\", controller = \"Employee\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.EmployeeController.GetHeader (Appman.LeaveManagement)"
+2018-07-31 18:27:22.907 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.EmployeeController.GetHeader (Appman.LeaveManagement)" with arguments (["poo_poo1882@hotmail.com"]) - Validation state: Valid
+2018-07-31 18:27:23.091 +07:00 [Information] Entity Framework Core "2.1.0-rtm-30799" initialized '"LeaveManagementDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-31 18:27:23.301 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.325 +07:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@__ToLower_0='?' (Size = 23)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"EmployeeNumber\", \"x\".\"Email\", \"x\".\"FirstNameEN\", \"x\".\"FirstNameTH\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"LastNameEN\", \"x\".\"LastNameTH\", \"x\".\"Nickname\", \"x\".\"ProfilePicture\", \"x\".\"RoleCode\", \"x\".\"StaffId\"
+FROM \"Employees\" AS \"x\"
+WHERE lower(\"x\".\"Email\") = @__ToLower_0
+LIMIT 1"
+2018-07-31 18:27:23.389 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.393 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__staffId_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"EmployeeNumber\", \"x\".\"Email\", \"x\".\"FirstNameEN\", \"x\".\"FirstNameTH\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"LastNameEN\", \"x\".\"LastNameTH\", \"x\".\"Nickname\", \"x\".\"ProfilePicture\", \"x\".\"RoleCode\", \"x\".\"StaffId\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-31 18:27:23.414 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.419 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__roleCode_0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"RoleCode\", \"x\".\"Abbreviation\", \"x\".\"Department\", \"x\".\"IsAdmin\", \"x\".\"IsInProbation\", \"x\".\"Position\"
+FROM \"MdRoles\" AS \"x\"
+WHERE \"x\".\"RoleCode\" = @__roleCode_0
+LIMIT 1"
+2018-07-31 18:27:23.441 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.445 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__staffId_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"EmployeeNumber\", \"x\".\"Email\", \"x\".\"FirstNameEN\", \"x\".\"FirstNameTH\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"LastNameEN\", \"x\".\"LastNameTH\", \"x\".\"Nickname\", \"x\".\"ProfilePicture\", \"x\".\"RoleCode\", \"x\".\"StaffId\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-31 18:27:23.451 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.460 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__staffId_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"EmployeeNumber\", \"x\".\"Email\", \"x\".\"FirstNameEN\", \"x\".\"FirstNameTH\", \"x\".\"GenderCode\", \"x\".\"IsActive\", \"x\".\"LastNameEN\", \"x\".\"LastNameTH\", \"x\".\"Nickname\", \"x\".\"ProfilePicture\", \"x\".\"RoleCode\", \"x\".\"StaffId\"
+FROM \"Employees\" AS \"x\"
+WHERE \"x\".\"StaffId\" = @__staffId_0
+LIMIT 1"
+2018-07-31 18:27:23.466 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.474 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__roleCode_0='?' (Size = 4)"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"RoleCode\", \"x\".\"Abbreviation\", \"x\".\"Department\", \"x\".\"IsAdmin\", \"x\".\"IsInProbation\", \"x\".\"Position\"
+FROM \"MdRoles\" AS \"x\"
+WHERE \"x\".\"RoleCode\" = @__roleCode_0
+LIMIT 1"
+2018-07-31 18:27:23.509 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-31 18:27:23.515 +07:00 [Information] Executed DbCommand ("0"ms) [Parameters=["@__staffId_0='?' (Size = 6)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"Reportings\" AS \"x\"
+        WHERE \"x\".\"Approver\" = @__staffId_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-07-31 18:27:23.525 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.EmployeeController.GetHeader (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ContentResult" in 612.3201ms.
+2018-07-31 18:27:23.531 +07:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2018-07-31 18:27:23.543 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.EmployeeController.GetHeader (Appman.LeaveManagement)" in 703.5269ms
+2018-07-31 18:27:23.551 +07:00 [Information] Request finished in 750.8756ms 200 application/json

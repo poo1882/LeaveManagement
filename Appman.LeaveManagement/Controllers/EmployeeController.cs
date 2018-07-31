@@ -1,5 +1,6 @@
 ﻿using Appman.LeaveManagement.DatabaseContext;
 using Appman.LeaveManagement.DatabaseContext.Model;
+using Appman.LeaveManagement.Models;
 using Appman.LeaveManagement.Repositories;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,7 @@ namespace Appman.LeaveManagement.Controllers
         private readonly EmployeeRepository _empRepo;
         private readonly LeaveManagementDbContext _dbContext;
         private readonly RemainingHourRepository _remRepo;
+        private readonly MdRoleRepository _mdRoleRepo;
 
         /// <summary>
         ///     Initialize EmployeeController with a specific database context
@@ -28,6 +30,7 @@ namespace Appman.LeaveManagement.Controllers
             _dbContext = leaveManagementDbContext;
             _empRepo = new EmployeeRepository(_dbContext);
             _remRepo = new RemainingHourRepository(_dbContext);
+            _mdRoleRepo = new MdRoleRepository(_dbContext);
         }
 
         /// <summary>
@@ -119,6 +122,23 @@ namespace Appman.LeaveManagement.Controllers
         public IActionResult GetRole([FromQuery] string staffId)
         {
             return Content(JsonConvert.SerializeObject(_empRepo.GetRole(staffId)),"application/json");
+        }
+
+        [Route("Header")]
+        [HttpGet]
+        public IActionResult GetHeader ([FromQuery] string email)
+        {
+            string staffId = _dbContext.Employees.FirstOrDefault(x => x.Email.ToLower() == email.ToLower()).StaffId;
+            Header result = new Header();
+            var emp = _empRepo.GetProfile(staffId);
+            var roleSet = _mdRoleRepo.GetRole(emp.RoleCode);
+            result.ProfilePicture = emp.ProfilePicture;
+            result.Name = _empRepo.GetName(staffId);
+            result.Position = roleSet.Position;
+            result.Department = roleSet.Department;
+            result.StaffID = staffId;
+            result.Role = _empRepo.GetRole(staffId);
+            return Content(JsonConvert.SerializeObject(result), "application/json");
         }
 
     }

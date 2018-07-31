@@ -17,8 +17,8 @@ namespace Appman.LeaveManagement.Models
         //public DateTime EndDateTime;
         //public string Approver;
 
-        public string FirstNameTH;
-        public string LastNameTH;
+        public string FirstNameEN;
+        public string LastNameEN;
         public string StaffId;
         public string Department;
         public string Position;
@@ -32,8 +32,8 @@ namespace Appman.LeaveManagement.Models
             
             Employee emp = _empRepo.GetProfile(staffId);
             MdRole role = _mdRoleRepo.GetRole(emp.RoleCode);
-            FirstNameTH = emp.FirstNameTH;
-            LastNameTH = emp.LastNameTH;
+            FirstNameEN = emp.FirstNameEN;
+            LastNameEN = emp.LastNameEN;
             StaffId = emp.StaffId;
             Department = role.Department;
             Position = role.Position;

@@ -9,8 +9,8 @@ namespace Appman.LeaveManagement.Models
 {
     public class Statistic
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstNameEN { get; set; }
+        public string LastNameEN { get; set; }
         public string StaffId { get; set; }
         public string Position { get; set; }
         public string Department { get; set; }
@@ -22,8 +22,8 @@ namespace Appman.LeaveManagement.Models
         {
             var employee = _empRepo.GetProfile(staffId);
             var role = _mdRoleRepo.GetRole(employee.RoleCode);
-            FirstName = employee.FirstNameTH;
-            LastName = employee.LastNameTH;
+            FirstNameEN = employee.FirstNameEN;
+            LastNameEN = employee.LastNameEN;
             StaffId = employee.StaffId;
             Position = _mdRoleRepo.GetRole(employee.RoleCode).Position;
             Department = _mdRoleRepo.GetRole(employee.RoleCode).Department;
