@@ -112,7 +112,7 @@ namespace Appman.LeaveManagement.Repositories
         public string GetName(string staffId)
         {
             var employee = GetProfile(staffId);
-            return employee.FirstNameTH + " " + employee.LastNameTH;
+            return employee.FirstNameEN + " " + employee.LastNameEN;
 
         }
 

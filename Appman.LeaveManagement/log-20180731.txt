@@ -4521,3 +4521,69 @@ FROM \"Reportings\" AS \"r\""
 2018-07-31 12:31:26.982 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
 2018-07-31 12:31:27.097 +07:00 [Information] Request finished in 21.6783ms 404 
 2018-07-31 12:31:27.098 +07:00 [Information] Request finished in 1040.9424ms 200 text/html; charset=utf-8
+2018-07-31 15:36:41.409 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-31 15:36:41.409 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-31 15:36:41.513 +07:00 [Information] Request finished in 93.5034ms 200 
+2018-07-31 15:36:41.795 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-31 15:36:41.814 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-31 15:36:41.834 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.7977ms.
+2018-07-31 15:36:41.866 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-31 15:36:42.158 +07:00 [Information] Executed ViewResult - view "Index" executed in 305.5934ms.
+2018-07-31 15:36:42.173 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 363.1253ms
+2018-07-31 15:36:42.179 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-31 15:36:42.259 +07:00 [Information] Request finished in 6.8097ms 404 
+2018-07-31 15:36:42.273 +07:00 [Information] Request finished in 804.3177ms 200 text/html; charset=utf-8
+2018-07-31 16:17:29.136 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:50528/  0
+2018-07-31 16:17:29.136 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/  
+2018-07-31 16:17:29.214 +07:00 [Information] Request finished in 72.0352ms 200 
+2018-07-31 16:17:29.552 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)"
+2018-07-31 16:17:29.578 +07:00 [Information] Executing action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" - Validation state: Valid
+2018-07-31 16:17:29.590 +07:00 [Information] Executed action method "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9512ms.
+2018-07-31 16:17:29.625 +07:00 [Information] Executing ViewResult, running view "Index".
+2018-07-31 16:17:29.937 +07:00 [Information] Executed ViewResult - view "Index" executed in 332.5429ms.
+2018-07-31 16:17:29.942 +07:00 [Information] Executed action "Appman.LeaveManagement.Controllers.HomeController.Index (Appman.LeaveManagement)" in 384.3766ms
+2018-07-31 16:17:29.995 +07:00 [Information] Request finished in 833.6754ms 200 text/html; charset=utf-8
+2018-07-31 16:17:29.997 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/css/bootstrap.css  
+2018-07-31 16:17:30.007 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner4.svg  
+2018-07-31 16:17:30.012 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner3.svg  
+2018-07-31 16:17:30.029 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/css/site.css  
+2018-07-31 16:17:30.044 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner2.svg  
+2018-07-31 16:17:30.049 +07:00 [Information] Request finished in 16.3363ms 404 
+2018-07-31 16:17:30.094 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/js/bootstrap.js  
+2018-07-31 16:17:30.097 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2018-07-31 16:17:30.099 +07:00 [Information] Sending file. Request path: '"/images/banner3.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner3.svg"'
+2018-07-31 16:17:30.116 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/images/banner1.svg  
+2018-07-31 16:17:30.119 +07:00 [Information] Sending file. Request path: '"/images/banner2.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner2.svg"'
+2018-07-31 16:17:30.133 +07:00 [Information] Request finished in 114.8037ms 200 image/svg+xml
+2018-07-31 16:17:30.142 +07:00 [Information] Request finished in 131.0954ms 200 image/svg+xml
+2018-07-31 16:17:30.162 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\css\site.css"'
+2018-07-31 16:17:30.173 +07:00 [Information] Sending file. Request path: '"/images/banner1.svg"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\images\banner1.svg"'
+2018-07-31 16:17:30.175 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\js\bootstrap.js"'
+2018-07-31 16:17:30.183 +07:00 [Information] Request finished in 120.4942ms 200 application/javascript
+2018-07-31 16:17:30.186 +07:00 [Information] Request finished in 75.9003ms 200 image/svg+xml
+2018-07-31 16:17:30.207 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\css\bootstrap.css"'
+2018-07-31 16:17:30.261 +07:00 [Information] Request finished in 219.6697ms 200 text/css
+2018-07-31 16:17:30.265 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+2018-07-31 16:17:30.299 +07:00 [Information] Request finished in 165.0627ms 200 text/css
+2018-07-31 16:17:30.312 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\js\site.js"'
+2018-07-31 16:17:30.333 +07:00 [Information] Sending file. Request path: '"/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2"'
+2018-07-31 16:17:30.340 +07:00 [Information] Request finished in 228.683ms 200 application/javascript
+2018-07-31 16:17:30.348 +07:00 [Information] Request finished in 103.848ms 200 font/woff2
+2018-07-31 16:17:30.349 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/lib/jquery/dist/jquery.js  
+2018-07-31 16:17:30.367 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\poo1882\Documents\GitHub\LeaveManagement\Appman.LeaveManagement\wwwroot\lib\jquery\dist\jquery.js"'
+2018-07-31 16:17:30.377 +07:00 [Information] Request finished in 289.6391ms 200 application/javascript
+2018-07-31 16:17:51.207 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger  
+2018-07-31 16:17:51.227 +07:00 [Information] Request finished in 14.1226ms 301 
+2018-07-31 16:17:51.246 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/index.html  
+2018-07-31 16:17:51.282 +07:00 [Information] Request finished in 16.7689ms 200 text/html
+2018-07-31 16:17:51.295 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui.css  
+2018-07-31 16:17:51.307 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-standalone-preset.js  
+2018-07-31 16:17:51.308 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/swagger-ui-bundle.js  
+2018-07-31 16:17:51.428 +07:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2018-07-31 16:17:51.434 +07:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2018-07-31 16:17:51.454 +07:00 [Information] Request finished in 178.123ms 200 text/css
+2018-07-31 16:17:51.456 +07:00 [Information] Request finished in 168.2971ms 200 application/javascript
+2018-07-31 16:17:51.473 +07:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2018-07-31 16:17:51.478 +07:00 [Information] Request finished in 198.435ms 200 application/javascript
+2018-07-31 16:17:51.939 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44331/swagger/v1/swagger.json  
+2018-07-31 16:17:52.115 +07:00 [Information] Request finished in 181.5267ms 200 application/json;charset=utf-8

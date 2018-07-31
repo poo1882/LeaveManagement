@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Appman.LeaveManagement.Controllers
 {
+    [Route("/api/[Controller]")]
     public class FileController : Controller
     {
         private readonly LeaveManagementDbContext _dbContext;
@@ -21,6 +22,7 @@ namespace Appman.LeaveManagement.Controllers
         private readonly RemainingHourRepository _remRepo;
         private readonly ReportingRepository _repRepo;
 
+        
         public FileController(LeaveManagementDbContext dbContext)
         {
             _dbContext = dbContext;
