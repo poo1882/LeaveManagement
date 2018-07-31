@@ -168,7 +168,16 @@ namespace Appman.LeaveManagement.Repositories
         public List<LeaveInfo> GetRemaining(string staffId)
         {
             if (_empRepo.GetRole(staffId).ToLower() == "admin")
-                return _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
+            {
+                var listData = _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
+                foreach (var item in listData)
+                {
+                    if (item.StaffId == staffId)
+                        listData.Remove(item);
+                }
+                return listData;
+            }
+                 
             var result = from reportlist in _dbContext.Reportings
                          join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                          where reportlist.Approver == staffId
