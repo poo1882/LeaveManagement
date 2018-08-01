@@ -103,10 +103,10 @@ namespace Appman.LeaveManagement.Repositories
             var role = _mdRoleRepository.GetRole(employee.RoleCode);
             
             if (role.IsAdmin)
-                return "Admin";
+                return "admin";
             if (_dbContext.Reportings.Any(x => x.Approver == staffId))
-                return "Approver";
-            return "Normal";
+                return "approver";
+            return "normal";
         }
 
         public string GetName(string staffId)

@@ -67,7 +67,7 @@ namespace Appman.LeaveManagement.Controllers
         [HttpPut]
         public IActionResult SetStatus([FromQuery]string status, int leaveId, string approverId)
         {
-            if (status.ToLower() != "approved" || status.ToLower() != "rejected")
+            if (status.ToLower() != "approved" && status.ToLower() != "rejected")
                 return NotFound();
             if (_leaveRepo.SetStatus(status.ToLower(),leaveId, approverId))
             {

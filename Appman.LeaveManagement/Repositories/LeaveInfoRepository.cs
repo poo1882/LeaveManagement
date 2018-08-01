@@ -169,13 +169,14 @@ namespace Appman.LeaveManagement.Repositories
         {
             if (_empRepo.GetRole(staffId).ToLower() == "admin")
             {
-                var result = _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
-                foreach (var item in result)
-                {
-                    if (item.StaffId == staffId)
-                        result.Remove(item);
-                }
-                return result;
+                return _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending" && x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
+                //var result = 
+                //foreach (var item in result)
+                //{
+                //    if (item.StaffId == staffId)
+                //        result.Remove(item);
+                //}
+                //return result;
             }
             else
             {
@@ -201,7 +202,7 @@ namespace Appman.LeaveManagement.Repositories
             var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
             //var approver = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId);
             Reporting report = new Reporting { StaffId=leave.StaffId, Approver=approverId};
-            var approverRole = _mdRoleRepo.GetRole(approverId);
+            var approverRole = _empRepo.GetRole(approverId);
             if (leave == null)
                 return false;
 
@@ -209,17 +210,16 @@ namespace Appman.LeaveManagement.Repositories
                     return false;
             bool isInReport = _dbContext.Reportings.Any(x => x.Approver == approverId && x.StaffId == leave.StaffId);
             //bool isInReport = reportings.Contains(report);
-            if (!isInReport && approverRole.IsAdmin == false)
+            if (!isInReport && approverRole.ToLower() != "admin")
                     return false;
             
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstName;
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovedTime = DateTime.Now;
             //_dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId).ApprovalStatus = status;
-
-            var approveBy = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId).FirstNameTH;
+            
             leave.ApprovedTime = DateTime.Now;
             leave.ApprovedBy = approverId;
-            leave.ApprovalStatus = status;
+            leave.ApprovalStatus = status.ToLower();
             if(status.ToLower() == "rejected")
             {
                 var info = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);

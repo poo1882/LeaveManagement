@@ -55,7 +55,11 @@ namespace Appman.LeaveManagement.Repositories
                     {
                         sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
                     }
-                    sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
+                    sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+                    if (leaveInfo.Comment.Length > 0)
+                    {
+                        sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);
+                    }
                     if (leaveInfo.AttachedFile1.Length > 0)
                     {
                         sb.AppendFormat("See the attached file in website <br><br></div>");
@@ -93,7 +97,11 @@ namespace Appman.LeaveManagement.Repositories
             {
                 sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
             }
-            sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
+            sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+            if (leaveInfo.Comment.Length > 0)
+            {
+                sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);
+            }
             if (leaveInfo.AttachedFile1.Length > 0 )
             {
                 sb.AppendFormat("See the attached file in website <br><br></div>");
@@ -146,8 +154,8 @@ namespace Appman.LeaveManagement.Repositories
             Employee approver = _dbContext.Employees.FirstOrDefault(x => x.StaffId == approverId);
             var approvers = _repRepo.GetApprover(leaveInfo.StaffId);
             string staffEmail = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).Email;
-            string firstname = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameTH;
-            string lastname = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameTH;
+            string firstname = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameEN;
+            string lastname = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameEN;
             string subject = "Leaving application form #" + String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " has already been " + status.ToLower() + " ";
             string body = String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " sent leave application form by" + firstname + " " + lastname
                + "has been already " + status.ToLower() + " by "
@@ -163,7 +171,11 @@ namespace Appman.LeaveManagement.Repositories
             {
                 sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
             }
-            sb.AppendFormat("รูปแบบการลา : {0}<br><br> Comment : {1} <br><br>", leaveInfo.Type, leaveInfo.Comment);
+            sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+            if (leaveInfo.Comment.Length > 0)
+            {
+                sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);
+            }
             if (leaveInfo.AttachedFile1.Length > 0)
             {
                 sb.AppendFormat("See the attached file in website <br><br></div>");
