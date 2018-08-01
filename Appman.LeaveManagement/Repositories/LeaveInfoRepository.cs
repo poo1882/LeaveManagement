@@ -169,20 +169,22 @@ namespace Appman.LeaveManagement.Repositories
         {
             if (_empRepo.GetRole(staffId).ToLower() == "admin")
             {
-                var listData = _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
-                foreach (var item in listData)
+                var result = _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
+                foreach (var item in result)
                 {
                     if (item.StaffId == staffId)
-                        listData.Remove(item);
+                        result.Remove(item);
                 }
-                return listData;
+                return result;
             }
-                 
-            var result = from reportlist in _dbContext.Reportings
-                         join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
-                         where reportlist.Approver == staffId
-                         select leaveinfo;
-            return result.Where(x => x.ApprovalStatus.ToLower() == "Pending").OrderByDescending(y => y.LeaveId).ToList();
+            else
+            {
+                var result = from reportlist in _dbContext.Reportings
+                             join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
+                             where reportlist.Approver == staffId
+                             select leaveinfo;
+                return result.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
+            }
         }
 
         /// <summary>
