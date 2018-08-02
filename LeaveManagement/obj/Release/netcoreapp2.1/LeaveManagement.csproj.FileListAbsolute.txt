@@ -90,3 +90,5 @@ C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\obj\Release\ne
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\obj\Release\netcoreapp2.1\LeaveManagement.dll
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\obj\Release\netcoreapp2.1\LeaveManagement.pdb
 C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\obj\Release\netcoreapp2.1\LeaveManagement.csproj.CopyComplete
+C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\bin\Release\netcoreapp2.1\Application.db
+C:\Users\poo1882\Documents\GitHub\LeaveManagement\LeaveManagement\bin\Release\netcoreapp2.1\LeaveManagement.db

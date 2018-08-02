@@ -191,5 +191,32 @@ namespace LeaveManagement.Repositories
             _dbContext.SaveChanges();
             return true;
         }
+
+        public bool GetNotification(string staffId)
+        {
+            return _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).IsNotified;
+        }
+        
+
+        public void RemoveNotification(string staffId)
+        {
+            _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).IsNotified = false;
+            _dbContext.SaveChanges();
+        }
+
+        public void SendNotification(string staffId)
+        {
+            _dbContext.Employees.FirstOrDefault(x => x.StaffId == staffId).IsNotified = true;
+            _dbContext.SaveChanges();
+        }
+
+        public void SendNotifications(List<Approbation> approbations)
+        {
+            foreach (var item in approbations)
+            {
+                _dbContext.Employees.FirstOrDefault(x => x.StaffId == item.ApproverId).IsNotified = true;
+            }
+            _dbContext.SaveChanges();
+        }
     }
 }

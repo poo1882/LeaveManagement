@@ -50,12 +50,12 @@ namespace LeaveManagement.Repositories
                     link.AppendFormat("refNo=" + item.ApprobationGuid.ToString());
                     sb = new StringBuilder();
                     sb.Append("<body style='margin: 0px;'> ");
-                    sb.AppendFormat("<div>เลขที่ใบลา : {0}<br><br>Staff Id : {1}<br><br> ชื่อ : {2} {3} <br><br> วันที่ลา : {4}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime);
+                    sb.AppendFormat("<div>Leaving application form No. : {0}<br><br>Staff Id : {1}<br><br> Name : {2} {3} <br><br> Start Date : {4}<br><br> Hours Start Date: {5}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime, leaveInfo.HoursStartDate);
                     if (leaveInfo.StartDateTime != leaveInfo.EndDateTime)
                     {
-                        sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
+                        sb.AppendFormat("End Date : {0}<br><br> Hours End Date : {1}<br><br>", leaveInfo.EndDateTime, leaveInfo.HoursEndDate);
                     }
-                    sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+                    sb.AppendFormat("Type : {0}<br><br>", leaveInfo.Type);
                     if (leaveInfo.Comment.Length > 0)
                     {
                         sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);
@@ -92,12 +92,12 @@ namespace LeaveManagement.Repositories
             string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
             string subject = "Your Leaving application form #" + String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " has been created ";
-            sb.AppendFormat("<div>เลขที่ใบลา : {0}<br><br>Staff Id : {1}<br><br> ชื่อ : {2} {3} <br><br> วันที่ลา : {4}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime);
+            sb.AppendFormat("<div>Leaving application form No. : {0}<br><br>Staff Id : {1}<br><br> Name : {2} {3} <br><br> Start Date : {4}<br><br> Hours Start Date : {5}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime, leaveInfo.HoursStartDate);
             if (leaveInfo.StartDateTime != leaveInfo.EndDateTime)
             {
-                sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
+                sb.AppendFormat("End Date : {0}<br><br> Hours End Date : {1}<br><br>", leaveInfo.EndDateTime, leaveInfo.HoursEndDate); 
             }
-            sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+            sb.AppendFormat("Type : {0}<br><br>", leaveInfo.Type);
             if (leaveInfo.Comment.Length > 0)
             {
                 sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);
@@ -161,17 +161,17 @@ namespace LeaveManagement.Repositories
                + "has been already " + status.ToLower() + " by "
                + approver.FirstNameTH + " " + approver.LastNameTH + ".";
             var sb = new StringBuilder();
-            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameTH;
-            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameTH;
+            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameEN;
+            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameEN;
             string url = "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/11070664_902255393167706_2830773750406557759_n.png?_nc_fx=fbkk1-3&_nc_cat=0&oh=7721fcafb6bbd5d172efbbfd88c9544f&oe=5BE284C3";
             string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
-            sb.AppendFormat("<div>เลขที่ใบลา : {0}<br><br>Staff Id : {1}<br><br> ชื่อ : {2} {3} <br><br> วันที่ลา : {4}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime);
+            sb.AppendFormat("<div>Leaving application form No. : {0}<br><br>Staff Id : {1}<br><br> Name : {2} {3} <br><br> Start Date : {4}<br><br> Hours Start Date : {5}<br><br>", value, leaveInfo.StaffId, name, lastName, leaveInfo.StartDateTime, leaveInfo.HoursStartDate);
             if (leaveInfo.StartDateTime != leaveInfo.EndDateTime)
             {
-                sb.AppendFormat("ถึงวันที่ : {0}<br><br>", leaveInfo.EndDateTime);
+                sb.AppendFormat("End Date : {0}<br><br> Hours End Date : {1}<br><br>", leaveInfo.EndDateTime, leaveInfo.HoursEndDate);
             }
-            sb.AppendFormat("รูปแบบการลา : {0}<br><br>", leaveInfo.Type);
+            sb.AppendFormat("Type : {0}<br><br>", leaveInfo.Type);
             if (leaveInfo.Comment.Length > 0)
             {
                 sb.AppendFormat("Comment : {0} <br><br>", leaveInfo.Comment);

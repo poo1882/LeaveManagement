@@ -114,7 +114,7 @@ namespace LeaveManagement.Controllers
             if (emp != null)
                 return Content(JsonConvert.SerializeObject(emp.StaffId), "application/json");
             else
-                return NotFound();
+                return Content(JsonConvert.SerializeObject(""), "application/json");
         }
 
         [Route("Role")]

@@ -43,6 +43,7 @@ namespace LeaveManagement.Controllers
                 List<Approbation> approbations = new List<Approbation>();
                 approbations = _leaveRepo.CreateApprobationSet(info);
                 _leaveRepo.AddApprobation(approbations);
+                _empRepo.SendNotifications(approbations);
                 EmailController emailSender = new EmailController(_dbContext);
                 emailSender.SendRequestMailToApprover(approbations, info);
                 emailSender.SendRequestMailToOwner(_dbContext.Employees.FirstOrDefault(x => x.StaffId == info.StaffId).Email, info);
@@ -56,10 +57,17 @@ namespace LeaveManagement.Controllers
         [HttpGet]
         public IActionResult GetRemaining([FromQuery]string staffId)
         {
-            var leave = _leaveRepo.GetRemaining(staffId);
-            if (leave == null)
+            var leaves = _leaveRepo.GetRemaining(staffId);
+            if (leaves == null)
                 return NotFound();
-            return Content(JsonConvert.SerializeObject(leave), "application/json");
+            var ordered = leaves
+               .OrderByDescending(v => v.ApprovalStatus.ToLower() == "pending")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "approved")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "rejected")
+               .ThenByDescending(v => v.ApprovedTime)
+               .ThenBy(v => v.LeaveId);
+
+            return Content(JsonConvert.SerializeObject(ordered), "application/json");
         }
 
 

@@ -45,8 +45,11 @@ namespace LeaveManagement.Repositories
         {
             if (DateTime.UtcNow.Day == 31 && DateTime.UtcNow.Month == 12)
                 return false;
+            
             info.ApprovalStatus = "Pending";
-
+            if (info.HoursStartDate < 0 || info.HoursEndDate < 0)
+                return false;
+            
 
             info.ApprovedBy = null;
             info.ApprovedTime = null;
@@ -63,6 +66,7 @@ namespace LeaveManagement.Repositories
             totalHoursFirstDay = _dbContext.LeaveInfos.Where(x => x.StaffId == info.StaffId && x.EndDateTime == info.EndDateTime).Sum(x => x.HoursEndDate);
             if (info.EndDateTime.ToString() == info.StartDateTime.ToString())
             {
+
                 if (totalHoursFirstDay + info.HoursStartDate <= 8)
                 {
                     if (info.Type.ToLower()[0] == 'l' || remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= info.HoursStartDate )
@@ -169,7 +173,8 @@ namespace LeaveManagement.Repositories
         {
             if (_empRepo.GetRole(staffId).ToLower() == "admin")
             {
-                return _dbContext.LeaveInfos.Where(x => x.ApprovalStatus.ToLower() == "pending" && x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
+                var result = _dbContext.LeaveInfos.Where(x => x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
+                return result;
                 //var result = 
                 //foreach (var item in result)
                 //{
@@ -184,7 +189,7 @@ namespace LeaveManagement.Repositories
                              join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                              where reportlist.Approver == staffId
                              select leaveinfo;
-                return result.Where(x => x.ApprovalStatus.ToLower() == "pending").OrderByDescending(y => y.LeaveId).ToList();
+                return result.Where(x => x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
             }
         }
 
@@ -243,6 +248,7 @@ namespace LeaveManagement.Repositories
                     approbationsLeft.Remove(item);
             }
             _dbContext.SaveChanges();
+            _empRepo.SendNotification(leave.StaffId);
             return true;
         }
 
