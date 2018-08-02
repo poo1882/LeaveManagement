@@ -172,7 +172,7 @@ namespace LeaveManagement.Repositories
         {
             if (_empRepo.GetRole(staffId).ToLower() == "admin")
             {
-                var result = _dbContext.LeaveInfos.Where(x => x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
+                var result = _dbContext.LeaveInfos.Where(x => x.StaffId != staffId).OrderBy(y => y.LeaveId).ToList();
                 return result;
                 //var result = 
                 //foreach (var item in result)
@@ -188,7 +188,7 @@ namespace LeaveManagement.Repositories
                              join leaveinfo in _dbContext.LeaveInfos on reportlist.StaffId equals leaveinfo.StaffId
                              where reportlist.Approver == staffId
                              select leaveinfo;
-                return result.Where(x => x.StaffId != staffId).OrderByDescending(y => y.LeaveId).ToList();
+                return result.Where(x => x.StaffId != staffId).OrderBy(x => x.StaffId).ToList();
             }
         }
 
@@ -433,10 +433,10 @@ namespace LeaveManagement.Repositories
                 int dowEnd = ((int)info.EndDateTime.DayOfWeek == 0 ? 7 : (int)info.EndDateTime.DayOfWeek);
                 TimeSpan tSpan = info.EndDateTime - info.StartDateTime;
                 if (dowStart <= dowEnd)
-                {
                     totalDays = (((tSpan.Days / 7) * 5) + Math.Max((Math.Min((dowEnd + 1), 6) - dowStart), 0));
-                }
-                totalDays = (((tSpan.Days / 7) * 5) + Math.Min((dowEnd + 6) - Math.Min(dowStart, 6), 5));
+                
+                else
+                    totalDays = (((tSpan.Days / 7) * 5) + Math.Min((dowEnd + 6) - Math.Min(dowStart, 6), 5));
                 totalHours = (totalDays - 2) * 8 + info.HoursStartDate + info.HoursEndDate;
             }
             return totalHours;

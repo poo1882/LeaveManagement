@@ -28,9 +28,9 @@ namespace LeaveManagement.Controllers
         {
             List<LeaveInfo> leaves = _leaveRepo.GetHistory();
             var ordered = leaves
-               .OrderByDescending(v => v.ApprovalStatus == "Pending")
-               .ThenByDescending(v => v.ApprovalStatus == "Approved")
-               .ThenByDescending(v => v.ApprovalStatus == "Rejected")
+               .OrderByDescending(v => v.ApprovalStatus.ToLower() == "pending")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "approved")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "rejected")
                .ThenByDescending(v => v.ApprovedTime)
                .ThenBy(v => v.LeaveId);
             if (leaves == null)
@@ -63,9 +63,9 @@ namespace LeaveManagement.Controllers
         {
             var list = _leaveRepo.GetHistory(staffId);
             var ordered = list
-               .OrderByDescending(v => v.ApprovalStatus == "Pending")
-               .ThenByDescending(v => v.ApprovalStatus == "Approved")
-               .ThenByDescending(v => v.ApprovalStatus == "Rejected")
+               .OrderByDescending(v => v.ApprovalStatus.ToLower() == "pending")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "approved")
+               .ThenByDescending(v => v.ApprovalStatus.ToLower() == "rejected")
                .ThenByDescending(v => v.ApprovedTime)
                .ThenBy(v => v.LeaveId);
 
