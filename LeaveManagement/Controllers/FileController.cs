@@ -63,13 +63,15 @@ namespace LeaveManagement.Controllers
         [HttpGet]
         public FileResult LeavesByMonth(int month,int year)
         {
+            if (month == 0 || year == 0)
+                return null;
             var listData = _leaveRepo.GetHistory().Where(x =>x.StartDateTime.Month == month && x.StartDateTime.Year == year).OrderBy(x => x.LeaveId);
             var sb = new StringBuilder();
             sb.AppendLine("Leave ID," + "Name," + "Type," + "Status,"+"Start,"+"End,"+"Total");
             foreach (var data in listData)
             {
                 //List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
-                int totalHours = _leaveRepo.GetTotalHours(data.LeaveId);
+                int totalHours = _leaveRepo.GetTotalHours(data);
                 sb.Append(data.LeaveId + "," + _empRepo.GetName(data.StaffId) + ","+data.Type+","+data.ApprovalStatus+","+data.StartDateTime+","+data.EndDateTime+","+totalHours+"hrs.");
 
                 //for (int i = 0; i < approverAmount; i++)
@@ -93,13 +95,15 @@ namespace LeaveManagement.Controllers
         [HttpGet]
         public FileResult LeavesByYear(int year)
         {
+            if (year == 0)
+                return null;
             var listData = _leaveRepo.GetHistory().Where(x => x.StartDateTime.Year == year).OrderBy(x => x.LeaveId);
             var sb = new StringBuilder();
             sb.AppendLine("Leave ID," + "Name," + "Type," + "Status," + "Start," + "End," + "Total");
             foreach (var data in listData)
             {
                 //List<Reporting> reportings = _repRepo.GetApprover(data.StaffId);
-                int totalHours = _leaveRepo.GetTotalHours(data.LeaveId);
+                int totalHours = _leaveRepo.GetTotalHours(data);
                 sb.Append(data.LeaveId + "," + _empRepo.GetName(data.StaffId) + "," + data.Type + "," + data.ApprovalStatus + "," + data.StartDateTime + "," + data.EndDateTime + "," + totalHours + "hrs.");
 
                 //for (int i = 0; i < approverAmount; i++)

@@ -46,7 +46,7 @@ namespace LeaveManagement.Repositories
             if (DateTime.UtcNow.Day == 31 && DateTime.UtcNow.Month == 12)
                 return false;
             
-            info.ApprovalStatus = "Pending";
+            info.ApprovalStatus = "pending";
             if (info.HoursStartDate < 0 || info.HoursEndDate < 0)
                 return false;
             
@@ -88,8 +88,8 @@ namespace LeaveManagement.Repositories
             {
                 if (totalHoursFirstDay+info.HoursStartDate <= 8 && totalHoursLastDay +info.HoursEndDate <=8)
                 {
-                    int totalDays = (info.EndDateTime - info.StartDateTime).Days;
-                    totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+
+                    totalHours = GetTotalHours(info);
                     if (info.Type.ToLower()[0] == 'l' ||  remain.ViewHour(info.StaffId, info.StartDateTime.Year.ToString(), info.Type) >= totalHours)
                     {
                         //UpdateRemainHour(info.StaffId, info.Type, totalHours);
@@ -108,9 +108,9 @@ namespace LeaveManagement.Repositories
 
         }
 
-        public bool SetDeleted(int leaveId, string commentByAdmin)
+        public bool SetDeleted(LeaveInfo info, string commentByAdmin)
         {
-            var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
+            var leave = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == info.LeaveId);
             if (leave == null)
                 return false;
             leave.IsExisting = false;
@@ -122,8 +122,7 @@ namespace LeaveManagement.Repositories
                     totalHours = leave.HoursStartDate;
                 else
                 {
-                    int totalDays = (leave.EndDateTime - leave.StartDateTime).Days;
-                    totalHours = (totalDays - 1) * 8 + leave.HoursStartDate + leave.HoursEndDate;
+                    totalHours = GetTotalHours(info);
                 }
                 if (leave.Type.ToLower()[0] == 'l')
                     remaining.DeductRemainHour(leave.StaffId, leave.Type, totalHours);
@@ -227,14 +226,14 @@ namespace LeaveManagement.Repositories
             leave.ApprovalStatus = status.ToLower();
             if(status.ToLower() == "rejected")
             {
+               
                 var info = _dbContext.LeaveInfos.FirstOrDefault(x => x.LeaveId == leaveId);
                 RemainingHourRepository remaining = new RemainingHourRepository(_dbContext);
                 if (info.StartDateTime.ToString() == info.EndDateTime.ToString())
                     totalHours = info.HoursStartDate;
                 else
                 {
-                    int totalDays = (info.EndDateTime - info.StartDateTime).Days;
-                    totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                    totalHours = GetTotalHours(info);
                 }
                 if (leave.Type.ToLower()[0] == 'l')
                     remaining.DeductRemainHour(leave.StaffId, leave.Type, totalHours);
@@ -422,15 +421,23 @@ namespace LeaveManagement.Repositories
             _dbContext.SaveChanges();
         }
 
-        public int GetTotalHours(int leaveId)
+        public int GetTotalHours(LeaveInfo info)
         {
-            LeaveInfo info = ViewLeaveInfo(leaveId);
+            int totalDays;
+            //LeaveInfo info = ViewLeaveInfo(leaveId);
             if (info.StartDateTime.ToString() == info.EndDateTime.ToString())
                 totalHours = info.HoursStartDate;
             else
             {
-                int totalDays = (info.EndDateTime - info.StartDateTime).Days;
-                totalHours = (totalDays - 1) * 8 + info.HoursStartDate + info.HoursEndDate;
+                int dowStart = ((int)info.EndDateTime.DayOfWeek == 0 ? 7 : (int)info.StartDateTime.DayOfWeek);
+                int dowEnd = ((int)info.EndDateTime.DayOfWeek == 0 ? 7 : (int)info.EndDateTime.DayOfWeek);
+                TimeSpan tSpan = info.EndDateTime - info.StartDateTime;
+                if (dowStart <= dowEnd)
+                {
+                    totalDays = (((tSpan.Days / 7) * 5) + Math.Max((Math.Min((dowEnd + 1), 6) - dowStart), 0));
+                }
+                totalDays = (((tSpan.Days / 7) * 5) + Math.Min((dowEnd + 6) - Math.Min(dowStart, 6), 5));
+                totalHours = (totalDays - 2) * 8 + info.HoursStartDate + info.HoursEndDate;
             }
             return totalHours;
         }

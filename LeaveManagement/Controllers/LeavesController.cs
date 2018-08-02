@@ -96,9 +96,9 @@ namespace LeaveManagement.Controllers
 
         [Route("DeleteByAdmin")]
         [HttpPut]
-        public IActionResult SetToDeleted([FromQuery]int leaveId, string commentByAdmin)
+        public IActionResult SetToDeleted(LeaveInfo info, string commentByAdmin)
         {
-            if (_leaveRepo.SetDeleted(leaveId, commentByAdmin))
+            if (_leaveRepo.SetDeleted(info, commentByAdmin))
                 return Ok();
             return NotFound();
 
