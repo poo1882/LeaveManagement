@@ -38,8 +38,8 @@ namespace LeaveManagement.Repositories
             string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
             string subject = "Leaving application form #" + String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " is waiting for you to approve.";
-            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameTH;
-            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameTH;
+            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameEN;
+            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameEN;
             foreach (var item in approbations)
             {
                 i++;
@@ -86,8 +86,8 @@ namespace LeaveManagement.Repositories
         public bool SendRequestMailToOwner(string email, LeaveInfo leaveInfo)
         {
             var sb = new StringBuilder();
-            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameTH;
-            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameTH;
+            var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameEN;
+            var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameEN;
             string url = "https://scontent.fbkk1-5.fna.fbcdn.net/v/t1.0-9/11070664_902255393167706_2830773750406557759_n.png?_nc_fx=fbkk1-3&_nc_cat=0&oh=7721fcafb6bbd5d172efbbfd88c9544f&oe=5BE284C3";
             string style = "width: 100px; height: 100px;";
             string value = String.Format("LEA{0:D5}", leaveInfo.LeaveId);
@@ -159,7 +159,7 @@ namespace LeaveManagement.Repositories
             string subject = "Leaving application form #" + String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " has already been " + status.ToLower() + " ";
             string body = String.Format("LEA{0:D5} ", leaveInfo.LeaveId) + " sent leave application form by" + firstname + " " + lastname
                + "has been already " + status.ToLower() + " by "
-               + approver.FirstNameTH + " " + approver.LastNameTH + ".";
+               + approver.FirstNameEN + " " + approver.LastNameEN + ".";
             var sb = new StringBuilder();
             var name = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).FirstNameEN;
             var lastName = _dbContext.Employees.FirstOrDefault(x => x.StaffId == leaveInfo.StaffId).LastNameEN;
